@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-labelledby="title desc">
+  <title id="title">家具の商品画像準備中</title><desc id="desc">生成り色の背景に木と籐を思わせる抽象的な線を配したプレースホルダー</desc>
+  <rect width="600" height="750" fill="#f0eee7"/><rect x="120" y="190" width="360" height="270" rx="10" fill="#ded5c7"/>
+  <path d="M175 458V590M425 458V590M160 350h280" fill="none" stroke="#5b4a3d" stroke-width="12" stroke-linecap="round"/>
+  <path d="M230 225v220m45-220v220m45-220v220m45-220v220" stroke="#b4936f" stroke-width="5" opacity=".7"/>
+  <text x="300" y="655" text-anchor="middle" fill="#68695f" font-family="sans-serif" font-size="20" letter-spacing="4">IMAGE PENDING</text>
+</svg>

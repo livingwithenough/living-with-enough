@@ -4,3 +4,5 @@
 
 /* Editorial emphasis: reasons first, caveats always visible. */
 .card-reason{margin-top:20px;padding-left:14px;border-left:2px solid #a28c73}.card-reason h4,.card-caveats h4{font-size:14px;font-weight:500;margin:0 0 8px}.card-reason .reason{font-size:15px;color:var(--ink);line-height:2;margin-bottom:22px}.card-caveats{margin:0 0 22px}.card-caveats h4{color:var(--muted)}.card-caveats ul{padding-left:18px;margin:0;font-size:14px;color:var(--muted);line-height:1.9}.card-caveats li+li{margin-top:6px}.budget{background:transparent;border-top:1px solid var(--line);padding-top:32px;padding-bottom:32px}.budget h2{font-size:20px}.budget a{font-size:16px}.hero-note{font-family:inherit}.brand{font-size:25px}@media(max-width:760px){.brand{font-size:23px}.card-reason .reason{font-size:15px}.hero-note{font-size:12px}}
+
+.price-note{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 12px}.product-card .price-note{min-height:44px}.product-image img[src$='.svg']{object-fit:cover}.detail-image[src$='.svg']{background:var(--soft)}

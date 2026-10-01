@@ -5,6 +5,6 @@ export function filterProducts(items: Product[], category: Category | 'all', cei
 }
 export const yen = (price: number) => `¥${price.toLocaleString('ja-JP')}`;
 export function purchaseUrl(p: Product) {
-  if (p.isSample || p.status !== 'approved') return null;
-  try { const u = new URL(p.affiliateUrl || p.url); return u.protocol === 'https:' ? u.href : null; } catch { return null; }
+  if (p.isSample || p.status !== 'approved' || !p.affiliateUrl) return null;
+  try { const u = new URL(p.affiliateUrl); return u.protocol === 'https:' ? u.href : null; } catch { return null; }
 }
