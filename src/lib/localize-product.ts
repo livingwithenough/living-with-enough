@@ -26,6 +26,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     category: product.category,
     price: product.price,
     image: product.image,
+    a8BannerHtml: product.a8BannerHtml,
     shop: isJapanese ? product.shopNameJa : product.shopNameEn!,
     officialUrl: product.officialUrl,
     affiliateUrl: product.affiliateUrl,
@@ -34,10 +35,3 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     dimensions: product.dimensions,
     tags: isJapanese ? product.tagsJa : product.tagsEn!,
     whySelected: isJapanese ? product.whySelectedJa : product.whySelectedEn!,
-    caveats: isJapanese ? product.caveatsJa : product.caveatsEn!,
-    purchaseNotes: isJapanese ? product.purchaseNotesJa : product.purchaseNotesEn!,
-    priceCheckedAt: product.priceCheckedAt,
-    status: product.status,
-    isSample: product.isSample,
-  };
-}
