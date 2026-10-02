@@ -34,36 +34,3 @@ export type ProductRecord = {
   affiliateUrl: string;
   affiliateProvider: AffiliateProvider;
   image: string;
-  priceCheckedAt: string | null;
-  status: ProductStatus;
-  dimensions: string;
-  shopNameJa: string;
-  shopNameEn: string | null;
-  tagsJa: string[];
-  tagsEn: string[] | null;
-  isSample: boolean;
-};
-
-// View model used by the existing pages. This keeps the Japanese UI unchanged.
-export type Product = {
-  id: string;
-  locale: Locale;
-  name: string;
-  brand: string;
-  category: Category;
-  price: number;
-  image: string;
-  shop: string;
-  officialUrl: string;
-  affiliateUrl: string;
-  affiliateProvider: AffiliateProvider;
-  material: string;
-  dimensions: string;
-  tags: string[];
-  whySelected: string;
-  caveats: string[];
-  purchaseNotes: PurchaseNotes;
-  priceCheckedAt: string | null;
-  status: ProductStatus;
-  isSample: boolean;
-};
