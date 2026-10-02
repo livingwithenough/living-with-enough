@@ -13,7 +13,8 @@ export const products: ProductRecord[] = [
     materialJa: 'オーク無垢材・天然ラタン', materialEn: null,
     purchaseNotesJa: { availableInJapan: '日本国内向け販売サイトで取り扱い。', domesticShipping: '配送料は届け先により異なるため、販売サイトで確認してください。', paymentOptions: '販売サイトで確認してください。', deliveryLeadTime: '取り寄せ品。公式表示は約50〜70営業日後。', returnCancellationNotes: '返品・交換条件は販売サイトで確認してください。', thingsToKnowBeforeBuying: ['天然素材のため、色や木目、ラタンの表情に個体差があります。'] },
     purchaseNotesEn: null, brand: 'WOODLIFE.JP', category: 'Furniture', price: 27710,
-    officialUrl: 'https://www.woodlife.jp/product/ysys-a3122',    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15NWWY&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2Fysys-a3122', affiliateProvider: 'a8',
+    officialUrl: 'https://www.woodlife.jp/product/ysys-a3122',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15NWWY&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2Fysys-a3122', affiliateProvider: 'a8',
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15O4MP&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2Fysys-a3122" rel="nofollow">
 <img border="0" alt="" src="https://www.woodlife.jp/storage/products/202305/24/2_1684919955_zpmLRD9zIY.jpg"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BE68N+ATYY0I+2SJG+15O4MP" alt="">`,
