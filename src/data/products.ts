@@ -21,7 +21,7 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15O4MP&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2Fysys-a3122" rel="nofollow">
 <img border="0" alt="" src="https://www.woodlife.jp/storage/products/202305/24/2_1684919955_zpmLRD9zIY.jpg"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BE68N+ATYY0I+2SJG+15O4MP" alt="">`,
-    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅570 × 奥行610 × 高さ715mm', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['オーク無垢材', '天然ラタン', '完成品'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅570 × 奥行610 × 高さ715mm', modelNumber: 'ysys-a3122', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['オーク無垢材', '天然ラタン', '完成品'], tagsEn: null, isSample: false,
   },
   {
     id: 'masterwal-wildwood-dining-table', productNameJa: 'ワイルドウッド ダイニングテーブル', productNameEn: 'WILDWOOD DINING TABLE',
@@ -36,7 +36,7 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+BFEJSI+52NK+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.masterwal.jp%2Fshop%2Fg%2FgWWDT120100%2F" rel="nofollow">
 <img border="0" alt="" src="https://www.masterwal.jp/img/goods/L/WWDT_001.jpg"></a>
 <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4BE68N+BFEJSI+52NK+BWGDT" alt="">`,
-    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '掲載ページ選択仕様：幅120 × 奥行100 × 高さ71.5cm', shopNameJa: 'MASTERWAL公式オンラインショップ', shopNameEn: null, tagsJa: ['無垢材', '受注生産', 'ダイニングテーブル'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '掲載ページ選択仕様：幅120 × 奥行100 × 高さ71.5cm', modelNumber: 'WWDT120100', shopNameJa: 'MASTERWAL公式オンラインショップ', shopNameEn: null, tagsJa: ['無垢材', '受注生産', 'ダイニングテーブル'], tagsEn: null, isSample: false,
   },
   {
     id: 'masterwal-tr-chair', productNameJa: 'ティー・アール チェア', productNameEn: 'TR CHAIR',
@@ -51,7 +51,7 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+BFEJSI+52NK+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.masterwal.jp%2Fshop%2Fg%2FgTRDC-IN%2F" rel="nofollow">
 <img border="0" alt="" src="https://www.masterwal.jp/img/goods/L/TRDC_001.jpg"></a>
 <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4BE68N+BFEJSI+52NK+BWGDT" alt="">`,
-    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅46 × 奥行48.7 × 高さ78.3 × 座面高45cm', shopNameJa: 'MASTERWAL公式オンラインショップ', shopNameEn: null, tagsJa: ['無垢材', '日本製', 'ダイニングチェア'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅46 × 奥行48.7 × 高さ78.3 × 座面高45cm', modelNumber: 'TRDC-IN', shopNameJa: 'MASTERWAL公式オンラインショップ', shopNameEn: null, tagsJa: ['無垢材', '日本製', 'ダイニングチェア'], tagsEn: null, isSample: false,
   },
   {
     id: 'woodlife-sx-001', productNameJa: 'チェア椅子 折りたたみ 木製 ラタン オシャレ家具 sx-001', productNameEn: null,
@@ -66,7 +66,7 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15O4MP&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2Fsx-001" rel="nofollow">
 <img border="0" alt="" src="https://www.woodlife.jp/storage/products/202305/23/2_1684829708_acLh71nNuE.jpg"></a>
 <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4BE68N+ATYY0I+2SJG+15O4MP" alt="">`,
-    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅47 × 奥行54 × 高さ80cm', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['天然ラタン', '折りたたみ', '完成品'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅47 × 奥行54 × 高さ80cm', modelNumber: 'sx-001', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['天然ラタン', '折りたたみ', '完成品'], tagsEn: null, isSample: false,
   },
   {
     id: 'woodlife-y84m05', productNameJa: '［幅55］サイドテーブル 籐編み オーク材 無垢材 ナイトテーブル Y84M05', productNameEn: null,
@@ -81,7 +81,7 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+ATYY0I+2SJG+15O4MP&a8ejpredirect=https%3A%2F%2Fwww.woodlife.jp%2Fproduct%2FY84M05" rel="nofollow">
 <img border="0" alt="" src="https://www.woodlife.jp/storage/products/202209/21/1_1663752397_z4WFgxboW3.jpg"></a>
 <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BE68N+ATYY0I+2SJG+15O4MP" alt="">`,
-    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅550 × 奥行380 × 高さ580mm', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['オーク無垢材', '天然ラタン', '組立品'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-furniture.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '幅550 × 奥行380 × 高さ580mm', modelNumber: 'Y84M05', shopNameJa: 'WOODLIFE.JP', shopNameEn: null, tagsJa: ['オーク無垢材', '天然ラタン', '組立品'], tagsEn: null, isSample: false,
   },
   {
     id: 'true-towel-classic-sugoi-mini-bath-towel', productNameJa: 'TRUE TOWEL【classic SUGOI】ミニバスタオル', productNameEn: null,
@@ -96,6 +96,6 @@ export const products: ProductRecord[] = [
     a8BannerHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BE68N+BCFDRM+4ESE+BWGDT&a8ejpredirect=https%3A%2F%2Ftrue-towel.shop%2Fproducts%2Fclassic-sugoi-mbt" rel="nofollow">
 <img border="0" alt="" src="https://true-towel.shop/cdn/shop/files/DSC_1273-2-min.jpg?v=1747035838&width=800"></a>
 <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BE68N+BCFDRM+4ESE+BWGDT" alt="">`,
-    image: '/images/placeholder-everyday.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '約50 × 110cm（約280g）', shopNameJa: 'TRUE TOWEL公式オンラインストア', shopNameEn: null, tagsJa: ['今治タオル', 'ミニバスタオル', '毎日使うもの'], tagsEn: null, isSample: false,
+    image: '/images/placeholder-everyday.svg', priceCheckedAt: checkedAt, status: 'approved', dimensions: '約50 × 110cm（約280g）', modelNumber: null, shopNameJa: 'TRUE TOWEL公式オンラインストア', shopNameEn: null, tagsJa: ['今治タオル', 'ミニバスタオル', '毎日使うもの'], tagsEn: null, isSample: false,
   },
 ];
