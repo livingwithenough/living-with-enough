@@ -19,6 +19,12 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="audit-teaser">
+      <div><p className="eyebrow">Living with Enough · 暮らしの棚卸し</p><h2>暮らしを棚卸しする</h2></div>
+      <p>捨てる、売る、預ける、残す。<br/>今あるものの次を考える。</p>
+      <Link className="button" href="/audit/">3分で始める</Link>
+    </section>
+
     <section className="japandi-intro" aria-labelledby="what-is-japandi">
       <div>
         <p className="eyebrow">Japanese restraint × Nordic warmth</p>
