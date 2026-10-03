@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-labelledby="title desc">
-  <title id="title">日用品の商品画像準備中</title><desc id="desc">生成り色の背景に折りたたんだ布を思わせる抽象的な形を配したプレースホルダー</desc>
+  <title id="title">日用品を表す抽象画像</title><desc id="desc">生成り色の背景に折りたたんだ布を思わせる抽象的な形を配した画像</desc>
   <rect width="600" height="750" fill="#f0eee7"/><path d="M150 230h300v260H150z" fill="#ded5c7"/><path d="M150 315h300M150 400h300" stroke="#faf9f6" stroke-width="5"/>
   <path d="M205 230v260M300 230v260M395 230v260" stroke="#b9ad9c" stroke-width="3" opacity=".6"/>
   <text x="300" y="590" text-anchor="middle" fill="#68695f" font-family="sans-serif" font-size="20" letter-spacing="4">IMAGE PENDING</text>

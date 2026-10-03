@@ -49,7 +49,7 @@ export function Catalog({products}:{products:Product[]}) {
       <fieldset><legend>価格帯</legend><div className="filter-options">{priceBands.map(band=><button key={band} aria-pressed={priceBand===band} onClick={()=>update(category,band)}>{priceLabels[band]}</button>)}</div></fieldset>
       <p className="small">価格帯は、予算に合う商品を探すための補助機能です。</p>
     </div>
-    <p className="result-count" aria-live="polite">{visible.length}件の商品 <span>価格は2026年10月1日の確認時点</span></p>
+    <p className="result-count" aria-live="polite">{visible.length}件の商品</p>
     {visible.length?<div className="product-grid">{visible.map(p=><ProductCard key={p.id} product={p}/>)}</div>:<div className="empty"><h2>この条件の商品はまだありません。</h2><p>価格帯やカテゴリーを変えてお探しください。</p><button className="button" onClick={()=>update('all','all')}>条件をリセット</button></div>}
   </>;
 }

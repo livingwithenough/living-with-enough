@@ -3,59 +3,61 @@ import { AffiliateNotice } from '@/components/affiliate-notice';
 import { ProductCard } from '@/components/product-card';
 import { getApprovedProducts } from '@/lib/products';
 
+const actions = [
+  { title: '売る', text: '使っていないものは、捨てる前に価値を確かめる。' },
+  { title: '残す', text: 'よく使うものには、無理に手放さず定位置をつくる。' },
+  { title: '預ける', text: '今は使わないものを、家の外で保管する選択も考える。' },
+  { title: '任せる', text: '時間や手間が足りないことは、頼れる相手に任せる。' },
+] as const;
+
 export default function Home() {
+  const products = getApprovedProducts();
   return <>
-    <section className="hero">
-      <div className="hero-copy">
+    <section className="home-hero">
+      <div className="home-hero__main">
         <AffiliateNotice />
-        <p className="hero-brand">Living with Enough</p>
-        <h1>足るものを知る、<br/>静かな暮らし。</h1>
-        <p className="hero-en" lang="en">Japandi for a quieter life in Japan.<br/><br/>Japanese restraint, Nordic warmth,<br/>and pieces worth keeping.</p>
-        <p className="hero-ja">和の余白と北欧のぬくもり。<br/>今ある暮らしを生かしながら、<br/>長く残したい品を選ぶ。</p>
-        <Link className="button" href="#products">商品を見る</Link>
+        <p className="eyebrow">Living with Enough</p>
+        <h1>暮らしを、資産に。</h1>
+        <p className="home-hero__copy">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>今あるものを見直すと、<br/>部屋にも、家計にも、<br/>少し余白が生まれます。</p>
+        <Link className="button" href="/audit/">見直してみる <span aria-hidden="true">→</span></Link>
       </div>
-      <div className="hero-visual" role="img" aria-label="Japandiの室内全景写真は、利用権を確認した画像へ差し替え予定です">
-        <div><span lang="en">Japandi interior</span><small>室内全景写真 差し替え待ち</small></div>
-      </div>
+      <div className="home-hero__aside" aria-hidden="true"><span>Less, chosen well.</span></div>
     </section>
 
-    <section className="audit-teaser">
-      <div><p className="eyebrow">Living with Enough · 暮らしの棚卸し</p><h2>暮らしを棚卸しする</h2></div>
-      <p>捨てる、売る、預ける、残す。<br/>今あるものの次を考える。</p>
-      <Link className="button" href="/audit/">3分で始める</Link>
+    <section className="margin-message">
+      <p className="eyebrow">Living with enough.</p>
+      <h2>部屋の余白を、<br/>家計の余白に。</h2>
+      <p>売る。<br/>残す。<br/>預ける。<br/>任せる。<br/><br/>そして、<br/>本当に必要なものだけを選ぶ。</p>
     </section>
 
-    <section className="japandi-intro" aria-labelledby="what-is-japandi">
-      <div>
-        <p className="eyebrow">Japanese restraint × Nordic warmth</p>
-        <h2 id="what-is-japandi">Japandiとは。<span lang="en">What is Japandi?</span></h2>
-      </div>
-      <div className="intro-copy">
-        <p>Japandiは、日本の簡素さや余白と、北欧の温かさや機能性を合わせたインテリアの考え方です。ものを減らすこと自体が目的ではなく、自然素材と長く使えるものを選び、落ち着いて暮らせる空間をつくります。</p>
-        <p lang="en">Japandi brings together Japanese simplicity and Nordic warmth. It favors natural materials, functional forms and fewer, better pieces — creating a home that feels calm rather than empty.</p>
-      </div>
-      <aside className="resident-note">
-        <h3 lang="en">For English-speaking residents in Japan</h3>
-        <p lang="en">Discover Japandi furniture and everyday objects available from Japanese retailers, with practical guidance for shopping in Japan.</p>
-      </aside>
+    <section className="review-cta">
+      <div><p className="eyebrow">3 minutes</p><h2>迷っているものから、<br/>一つずつ。</h2></div>
+      <p>いくつかの質問に答えると、今日できる小さな一歩を整理できます。</p>
+      <Link className="button button--outline" href="/audit/">見直してみる <span aria-hidden="true">→</span></Link>
     </section>
 
-    <section className="home-products" id="products">
-      <div className="section-heading"><div><p className="eyebrow">Pieces worth keeping</p><h2>Japandiをつくる、暮らしの品。</h2></div><Link className="text-link" href="/products/">商品を見る</Link></div>
-      <p className="sample-notice">素材、形、空間の使い方から、なぜJapandiに合うかを具体的に紹介します。商品画像はA8.netの商品リンク機能で生成された広告素材です。</p>
-      <div className="product-grid">{getApprovedProducts().map(p=><ProductCard key={p.id} product={p} compact/>)}</div>
-    </section>
-
-    <section className="about-teaser">
-      <div><p className="eyebrow">Living with Enough</p><h2>足るものを知る、静かな暮らし。</h2></div>
-      <p>必要以上に増やさず、今ある暮らしを生かしながら、自然素材と長く使える品を選びます。</p>
-      <Link className="text-link" href="/about/">Living with Enoughについて</Link>
+    <section className="action-section" aria-labelledby="four-actions">
+      <div className="section-heading"><div><p className="eyebrow">Four choices</p><h2 id="four-actions">今あるものの、次を考える。</h2></div></div>
+      <div className="action-grid">{actions.map((action, index)=><article key={action.title}><span>0{index + 1}</span><h3>{action.title}</h3><p>{action.text}</p></article>)}</div>
     </section>
 
     <section className="guide-teaser">
-      <div><p className="eyebrow">Guides for life in Japan</p><h2>買う場所と、選ぶ基準を。</h2></div>
-      <p>日本で暮らす人が、素材や住まいの広さ、国内配送まで含めてJapandiの家具や生活用品を選べるガイドを準備しています。</p>
-      <Link className="text-link" href="/guides/">ガイドを見る</Link>
+      <div><p className="eyebrow">Guides</p><h2>暮らしを軽くするヒント。</h2></div>
+      <p>手放し方、残し方、ものの選び方。暮らしの中で迷ったときに使える基準をまとめます。</p>
+      <Link className="text-link" href="/guides/">ガイドを見る →</Link>
+    </section>
+
+    <section className="home-products" id="products">
+      <div className="section-heading"><div><p className="eyebrow">Choose after reviewing</p><h2>本当に必要なものだけ選ぶ。</h2></div><Link className="text-link" href="/products/">商品を見る →</Link></div>
+      <div className="style-note"><strong>Japandiは、選び方のひとつ。</strong><p>ものを見直したあとにも必要なら、素材、形、空間への作用を確かめて選びます。</p></div>
+      <div className="product-grid">{products.map(product=><ProductCard key={product.id} product={product} compact/>)}</div>
+      <p className="common-price-note">価格・在庫は販売先で変更される場合があります。</p>
+    </section>
+
+    <section className="about-teaser">
+      <div><p className="eyebrow">About</p><h2>今ある価値を、見落とさない。</h2></div>
+      <p>売ることも、買わないことも、残すことも。暮らしに合う選択を自分で決められる場所をつくります。</p>
+      <Link className="text-link" href="/about/">私たちについて →</Link>
     </section>
   </>;
 }
