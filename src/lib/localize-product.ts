@@ -5,7 +5,8 @@ export function hasLocaleContent(product: ProductRecord, locale: Locale) {
   if (locale === 'ja') return true;
   return Boolean(
     product.productNameEn &&
-      product.whySelectedEn &&
+      product.displayNameEn &&
+      product.japandiFitEn &&
       product.caveatsEn?.length &&
       product.materialEn &&
       product.purchaseNotesEn &&
@@ -21,7 +22,8 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
   return {
     id: product.id,
     locale,
-    name: isJapanese ? product.productNameJa : product.productNameEn!,
+    name: isJapanese ? product.displayNameJa : product.displayNameEn!,
+    officialName: isJapanese ? product.productNameJa : product.productNameEn!,
     brand: product.brand,
     category: product.category,
     price: product.price,
@@ -34,7 +36,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     material: isJapanese ? product.materialJa : product.materialEn!,
     dimensions: product.dimensions,
     tags: isJapanese ? product.tagsJa : product.tagsEn!,
-    whySelected: isJapanese ? product.whySelectedJa : product.whySelectedEn!,
+    japandiFit: isJapanese ? product.japandiFitJa : product.japandiFitEn!,
     caveats: isJapanese ? product.caveatsJa : product.caveatsEn!,
     purchaseNotes: isJapanese ? product.purchaseNotesJa : product.purchaseNotesEn!,
     priceCheckedAt: product.priceCheckedAt,
