@@ -35,6 +35,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     affiliateProvider: product.affiliateProvider,
     material: isJapanese ? product.materialJa : product.materialEn!,
     dimensions: product.dimensions,
+    modelNumber: product.modelNumber,
     tags: isJapanese ? product.tagsJa : product.tagsEn!,
     japandiFit: isJapanese ? product.japandiFitJa : product.japandiFitEn!,
     caveats: isJapanese ? product.caveatsJa : product.caveatsEn!,
