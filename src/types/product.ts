@@ -1,6 +1,8 @@
 import type { Locale } from '@/i18n/routing';
 
-export const categories = ['Furniture', 'Everyday'] as const;
+// Future categories can be added here without changing the catalog filter.
+// The UI only shows categories that are present in approved product data.
+export const categories = ['Furniture', 'Lighting', 'Tableware', 'Textiles', 'Plants', 'Everyday'] as const;
 export type Category = typeof categories[number];
 export type ProductStatus = 'candidate' | 'approved';
 export type AffiliateProvider = 'a8' | 'rakuten' | 'amazon' | 'other' | null;
@@ -40,6 +42,7 @@ export type ProductRecord = {
   priceCheckedAt: string | null;
   status: ProductStatus;
   dimensions: string;
+  modelNumber: string | null;
   shopNameJa: string;
   shopNameEn: string | null;
   tagsJa: string[];
@@ -64,6 +67,7 @@ export type Product = {
   affiliateProvider: AffiliateProvider;
   material: string;
   dimensions: string;
+  modelNumber: string | null;
   tags: string[];
   japandiFit: string;
   caveats: string[];
