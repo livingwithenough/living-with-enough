@@ -19,8 +19,10 @@ export type ProductRecord = {
   id: string;
   productNameJa: string;
   productNameEn: string | null;
-  whySelectedJa: string;
-  whySelectedEn: string | null;
+  displayNameJa: string;
+  displayNameEn: string | null;
+  japandiFitJa: string;
+  japandiFitEn: string | null;
   caveatsJa: string[];
   caveatsEn: string[] | null;
   materialJa: string;
@@ -50,6 +52,7 @@ export type Product = {
   id: string;
   locale: Locale;
   name: string;
+  officialName: string;
   brand: string;
   category: Category;
   price: number;
@@ -62,7 +65,7 @@ export type Product = {
   material: string;
   dimensions: string;
   tags: string[];
-  whySelected: string;
+  japandiFit: string;
   caveats: string[];
   purchaseNotes: PurchaseNotes;
   priceCheckedAt: string | null;
