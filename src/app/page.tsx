@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { AffiliateNotice } from '@/components/affiliate-notice';
 import { ProductCard } from '@/components/product-card';
@@ -7,15 +6,16 @@ import { getApprovedProducts } from '@/lib/products';
 export default function Home() {
   return <>
     <section className="hero">
-      <Image className="hero-background" src="/images/japandi-room-hero.png" alt="明るい木、ラタン、和紙、陶器を取り入れた自然光の入るJapandiの部屋" fill priority sizes="100vw" />
-      <div className="hero-overlay" />
       <div className="hero-copy">
         <AffiliateNotice />
         <p className="hero-brand">Living with Enough</p>
         <h1>足るものを知る、<br/>静かな暮らし。</h1>
-        <p className="hero-en" lang="en">Japandi for a quieter life in Japan.<br/>Japanese restraint, Nordic warmth, and pieces worth keeping.</p>
-        <p className="hero-ja">和の余白と北欧のぬくもり。今ある暮らしを生かしながら、長く残したいものを選ぶ。</p>
-        <Link className="button" href="/products/">Japandiのものを探す</Link>
+        <p className="hero-en" lang="en">Japandi for a quieter life in Japan.<br/><br/>Japanese restraint, Nordic warmth,<br/>and pieces worth keeping.</p>
+        <p className="hero-ja">和の余白と北欧のぬくもり。<br/>今ある暮らしを生かしながら、<br/>長く残したい品を選ぶ。</p>
+        <Link className="button" href="#products">商品を見る</Link>
+      </div>
+      <div className="hero-visual" role="img" aria-label="Japandiの室内全景写真は、利用権を確認した画像へ差し替え予定です">
+        <div><span lang="en">Japandi interior</span><small>室内全景写真 差し替え待ち</small></div>
       </div>
     </section>
 
@@ -34,15 +34,21 @@ export default function Home() {
       </aside>
     </section>
 
-    <section className="home-products">
-      <div className="section-heading"><div><p className="eyebrow">Pieces worth keeping</p><h2>Japandiの暮らしに合うもの。</h2></div><Link className="text-link" href="/products/">すべての商品を見る</Link></div>
+    <section className="home-products" id="products">
+      <div className="section-heading"><div><p className="eyebrow">Pieces worth keeping</p><h2>Japandiをつくる、暮らしの品。</h2></div><Link className="text-link" href="/products/">商品を見る</Link></div>
       <p className="sample-notice">素材、形、空間の使い方から、なぜJapandiに合うかを具体的に紹介します。商品画像はA8.netの商品リンク機能で生成された広告素材です。</p>
-      <div className="product-grid">{getApprovedProducts().map(p=><ProductCard key={p.id} product={p}/>)}</div>
+      <div className="product-grid">{getApprovedProducts().map(p=><ProductCard key={p.id} product={p} compact/>)}</div>
+    </section>
+
+    <section className="about-teaser">
+      <div><p className="eyebrow">Living with Enough</p><h2>足るものを知る、静かな暮らし。</h2></div>
+      <p>必要以上に増やさず、今ある暮らしを生かしながら、自然素材と長く使える品を選びます。</p>
+      <Link className="text-link" href="/about/">Living with Enoughについて</Link>
     </section>
 
     <section className="guide-teaser">
       <div><p className="eyebrow">Guides for life in Japan</p><h2>買う場所と、選ぶ基準を。</h2></div>
-      <p>日本で暮らす人が、素材や住まいの広さ、国内配送まで含めてJapandiのものを選べるガイドを準備しています。</p>
+      <p>日本で暮らす人が、素材や住まいの広さ、国内配送まで含めてJapandiの家具や生活用品を選べるガイドを準備しています。</p>
       <Link className="text-link" href="/guides/">ガイドを見る</Link>
     </section>
   </>;
