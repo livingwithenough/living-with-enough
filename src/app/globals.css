@@ -7,4 +7,54 @@
 
 .price-note{font-size:12px;line-height:1.8;color:var(--muted);margin:0 0 12px}.product-card .price-note{min-height:44px}.product-image img[src$='.svg']{object-fit:cover}.detail-image[src$='.svg']{background:var(--soft)}
 .affiliate-notice{display:inline-block;margin:0 0 18px;padding:3px 9px;border:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.6;letter-spacing:.08em}
-.a8-product-image{position:relative;background:var(--soft);overflow:hidden}.a8-product-image>a{display:block;width:100%;height:100%}.a8-product-image>a>img{width:100%;height:100%;object-fit:cover}.a8-product-image>img[width="1"]{position:absolute;width:1px;height:1px;inset:auto 0 0 auto}.detail-image.a8-product-image{aspect-ratio:4/5}.detail-image.a8-product-image>a>img{object-fit:contain;background:#fff}@media(max-width:760px){.detail-image.a8-product-image{max-height:none}.a8-product-image>a>img{object-position:50% 58%}}
+.a8-product-image{position:relative;background:var(--soft);overflow:hidden}.a8-product-image>a{display:block;width:100%;height:100%}.a8-product-image>a>img{width:100%;height:100%;object-fit:cover}.a8-product-image.product-image--contain>a>img{object-fit:contain;background:#fff}.a8-product-image>img[width="1"]{position:absolute;width:1px;height:1px;inset:auto 0 0 auto}.detail-image.a8-product-image{aspect-ratio:4/5}.detail-image.a8-product-image>a>img{object-fit:contain;background:#fff}@media(max-width:760px){.detail-image.a8-product-image{max-height:none}.a8-product-image>a>img{object-position:50% 58%}}
+
+/* v0.2: Japandi editorial entry */
+.hero{display:flex;align-items:center;position:relative;isolation:isolate;max-width:1440px;min-height:670px;overflow:hidden}
+.hero-background{z-index:-2;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(25,27,23,.72) 0%,rgba(25,27,23,.48) 40%,rgba(25,27,23,.04) 76%)}
+.hero-copy{width:min(720px,62%);padding:70px 8%;color:#fff;align-self:auto}
+.hero-copy>p.affiliate-notice{color:#fff;border-color:rgba(255,255,255,.65);background:rgba(27,30,25,.22)}
+.hero-copy>p.hero-brand{font:clamp(1.1rem,2vw,1.5rem) Georgia,serif;letter-spacing:.04em;margin-bottom:18px;color:#fff}
+.hero-copy h1{font-size:clamp(2.1rem,4vw,3.7rem);line-height:1.55;letter-spacing:.08em;margin-bottom:22px}
+.hero-copy>p.hero-en{font:clamp(1rem,1.6vw,1.25rem)/1.8 Georgia,serif;color:#fff;margin-bottom:19px;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.hero-copy>p.hero-ja{max-width:560px;font-size:14px;line-height:2;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.hero-copy .button{background:#f6f2e9;color:var(--ink);border-color:#f6f2e9}
+.hero-copy .button:hover{background:#fff}
+.japandi-intro{max-width:1280px;margin:auto;padding:90px 5%;display:grid;grid-template-columns:.85fr 1.25fr;gap:32px 8%;border-bottom:1px solid var(--line)}
+.japandi-intro h2 span{display:block;margin-top:5px;font:1rem Georgia,serif;letter-spacing:.04em;color:var(--muted)}
+.intro-copy p{line-height:2.15;margin-bottom:24px}
+.intro-copy p[lang=en]{font-family:Georgia,serif;color:var(--muted)}
+.resident-note{grid-column:2;padding:25px 28px;border-left:2px solid #aa9175;background:var(--soft)}
+.resident-note h3{font:1rem Georgia,serif;margin:0 0 10px}
+.resident-note p{font:14px/1.9 Georgia,serif;color:var(--muted);margin:0}
+.guide-teaser{max-width:1280px;margin:0 auto 80px;padding:45px 5%;display:grid;grid-template-columns:1fr 1.2fr auto;gap:28px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guide-teaser h2{font-size:24px;margin:0}.guide-teaser .eyebrow{margin-bottom:8px}.guide-teaser>p{color:var(--muted);font-size:14px;line-height:2;margin:0}
+.a8-product-image>a{padding:24px;background:#fff}
+.a8-product-image>a>img{object-fit:contain;background:#fff;transform:none!important}
+.product-card h3{font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;font-size:1.25rem;margin-bottom:5px}
+.official-name{font-size:11px;line-height:1.7;color:var(--muted);margin:0 0 16px}
+.card-meta>span:last-child{font-size:12px;color:var(--muted)}
+.card-reason h4 span,.detail h2 span{display:block;font:11px/1.7 Georgia,serif;color:var(--muted);letter-spacing:.02em;margin-top:3px}
+.detail-price{font-size:16px;color:var(--muted);margin:20px 0 5px}
+.detail-copy>.official-name{font-size:12px;margin-top:-8px}
+.guide-layout{max-width:1040px}.guide-header{max-width:760px;margin-bottom:45px}.guide-header>p:last-child{font-size:17px;line-height:2;color:var(--muted)}
+.guide-index{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:35px}.guide-index section{border-top:1px solid var(--line);padding:24px 0}.guide-index h2{font:1.2rem/1.7 Georgia,"Yu Mincho",serif}.guide-index section>p:last-child{font-size:14px;color:var(--muted);line-height:1.9}.guide-status{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--wood)}
+.guide-products{margin-top:50px;padding:26px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}.guide-products p{margin:0}
+@media(max-width:760px){
+  .site-header nav{width:100%;justify-content:space-between;gap:12px}
+  .hero{min-height:650px;align-items:end}
+  .hero-background{object-position:60% center}
+  .hero-overlay{background:linear-gradient(0deg,rgba(24,26,22,.8) 0%,rgba(24,26,22,.55) 52%,rgba(24,26,22,.12) 100%)}
+  .hero-copy{width:100%;padding:38px 6% 42px}
+  .hero-copy h1{font-size:28px;line-height:1.6}
+  .hero-copy .hero-en{font-size:15px;line-height:1.75}
+  .hero-copy .hero-ja{font-size:13px;line-height:1.9}
+  .japandi-intro{grid-template-columns:1fr;padding:56px 5%;gap:20px}
+  .resident-note{grid-column:1;padding:20px}
+  .guide-teaser{grid-template-columns:1fr;margin-bottom:55px;padding-top:35px;padding-bottom:35px}
+  .product-image{aspect-ratio:4/5}
+  .a8-product-image>a{padding:20px}
+  .guide-index{grid-template-columns:1fr}
+  .guide-products{align-items:flex-start;flex-direction:column}
+}
