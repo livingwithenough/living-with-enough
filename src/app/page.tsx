@@ -18,10 +18,17 @@ export default function Home() {
         <AffiliateNotice />
         <p className="eyebrow">Living with Enough</p>
         <h1>暮らしを、資産に。</h1>
+        <p className="home-hero__lead">家の中のものを見直して、売る・残す・預ける、その次を整理するサイトです。</p>
         <p className="home-hero__copy">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>今あるものを見直すと、<br/>部屋にも、家計にも、<br/>少し余白が生まれます。</p>
-        <Link className="button" href="/audit/">見直してみる <span aria-hidden="true">→</span></Link>
+        <Link className="button" href="/audit/">3分で見直してみる <span aria-hidden="true">→</span></Link>
       </div>
       <div className="home-hero__aside" aria-hidden="true"><span>Less, chosen well.</span></div>
+    </section>
+
+    <section className="hero-paths" aria-label="見直したものの次の選択肢">
+      <article><h2>売る</h2><p>使っていないものの価値を確かめる。</p></article>
+      <article><h2>預ける</h2><p>また使うものを、家の外に置く。</p></article>
+      <article><h2>残す</h2><p>よく使うものに、定位置をつくる。</p></article>
     </section>
 
     <section className="margin-message">
