@@ -60,7 +60,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: .08em;
   color: var(--muted);
 }
-.site-header nav { display: flex; align-items: center; gap: 27px; font-size: 13px; white-space: nowrap; }
+.site-header nav { display: flex; align-items: center; gap: 27px; font-size: 16px; line-height: 1.5; white-space: nowrap; }
 .site-header nav a { border-bottom: 1px solid transparent; }
 .site-header nav a:hover { border-bottom-color: currentColor; }
 .site-header .nav-primary {
@@ -278,12 +278,12 @@ legend { margin-bottom: 9px; font-size: 13px; font-weight: 600; }
 .guide-products { margin-top: 45px; padding-top: 24px; border-top: 1px solid var(--line); }
 .audit-page { min-height: calc(100vh - 200px); padding: 70px 5%; background: linear-gradient(140deg, var(--paper), #eef1eb); }
 .audit-hero, .audit-question, .audit-result { width: min(720px, 100%); margin: auto; }
-.audit-hero { padding: 34px 0 50px; }
+.audit-hero { width: min(780px, 100%); padding: 34px 0 50px; }
 .audit-hero h1 { margin-bottom: 26px; font-family: Georgia, "Yu Mincho", serif; font-weight: 400; }
-.audit-intro { margin: 0 0 30px; color: #515a53; font-size: 15px; line-height: 2; }
-.audit-hero .button { min-height: 42px; padding: 8px 18px; background: #667568; border-color: #667568; border-radius: 4px; color: white; }
+.audit-intro { max-width: 600px; margin: 0 0 30px; color: #465048; font-size: 18px; line-height: 1.85; }
+.audit-hero .button { min-height: 44px; padding: 8px 20px; background: #667568; border-color: #667568; border-radius: 4px; color: white; font-size: 17px; line-height: 1.4; }
 .audit-hero .button:hover { background: #5f6d62; border-color: #5f6d62; }
-.audit-note { margin-top: 12px; color: var(--muted); font-size: 11px; }
+.audit-note { margin-top: 13px; color: #59625b; font-size: 14px; line-height: 1.8; }
 .audit-progress { height: 2px; margin-bottom: 33px; background: var(--line); }
 .audit-progress span { display: block; height: 100%; background: var(--sage); transition: width .2s; }
 .audit-question h1 { margin-bottom: 29px; font-family: inherit; font-size: clamp(1.65rem, 3.5vw, 2.45rem); }
@@ -324,7 +324,7 @@ footer small { grid-column: 1 / -1; color: var(--muted); font-size: 11px; }
   body { font-size: 15px; }
   .site-header { padding: 17px 5%; gap: 15px; flex-wrap: wrap; }
   .brand { font-size: 21px; }
-  .site-header nav { width: 100%; display: grid; grid-template-columns: repeat(4, auto); gap: 6px; justify-content: space-between; font-size: 11px; }
+  .site-header nav { width: 100%; display: grid; grid-template-columns: repeat(4, auto); gap: 6px; justify-content: space-between; font-size: 14px; }
   .site-header .nav-primary { padding: 6px 9px; }
   .home-hero { min-height: 0; grid-template-columns: 1fr; }
   .home-hero__main { padding: 43px 6% 49px; }
@@ -355,7 +355,7 @@ footer small { grid-column: 1 / -1; color: var(--muted); font-size: 11px; }
   .audit-page { padding: 40px 6% 55px; }
   .audit-hero { padding: 12px 0 30px; }
   .audit-hero h1 { font-size: 32px; }
-  .audit-intro { font-size: 14px; }
+  .audit-intro { font-size: 17px; line-height: 1.85; }
   .audit-hero .button { width: auto; }
   .audit-question h1 { font-size: 24px; }
   .audit-options { grid-template-columns: 1fr; }
