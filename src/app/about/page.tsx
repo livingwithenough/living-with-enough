@@ -7,7 +7,7 @@ export default function About(){
   return <article className="prose page-shell">
     <p className="eyebrow">About Living with Enough</p>
     <h1>暮らしを、資産に。</h1>
-    <p className="lead">今あるものを見直し、部屋と家計に余白をつくる。</p>
+    <p className="lead">足るものを知る、静かな暮らし。<br/>今あるものを見直し、部屋と家計に余白をつくる。</p>
     <p>{brand.name}は、ものを手放すこと、残すこと、預けること、そして新しく選ぶことを、自分の基準で考えるための生活メディアです。</p>
     <h2>買う前に、今あるものを見る。</h2>
     <p>使っていないものにも、まだ役割や価値があるかもしれません。売れるものは価値を確かめ、使うものには定位置をつくる。今は使わないけれど理由があるものは、家の外で保管することも考えます。</p>

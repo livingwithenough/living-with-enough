@@ -53,11 +53,10 @@ export function AuditTool() {
   function reset() { setAnswers({}); setStep(0); setComplete(false); setStarted(false); }
 
   if (!started) return <section className="audit-hero">
-    <p className="eyebrow">Living with Enough</p>
     <h1>暮らしを、資産に。</h1>
-    <p className="audit-intro">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>売る、残す、預ける。<br/><br/>迷っているものから、<br/>一つずつ見直してみましょう。</p>
+    <p className="audit-intro">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>売る。残す。預ける。<br/><br/>迷っているものから、<br/>一つずつ見直してみる。</p>
     <button className="button" onClick={start}>見直してみる <span aria-hidden="true">→</span></button>
-    <p className="audit-note">約3分。入力内容は送信・保存されません。</p>
+    <p className="audit-note">約3分・入力内容は送信・保存されません</p>
   </section>;
 
   if (complete && result) return <section className="audit-result" aria-live="polite">

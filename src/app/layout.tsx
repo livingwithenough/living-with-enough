@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return <html lang="ja"><body>
     <a className="skip" href="#main">本文へスキップ</a>
     <header className="site-header">
-      <Link href="/" className="brand">{brand.name}<span>{brand.tagline}</span></Link>
+      <Link href="/" className="brand">{brand.name}</Link>
       <nav aria-label="メインナビゲーション">
         <Link className="nav-primary" href="/audit/">見直す</Link>
         <Link href="/guides/">ガイド</Link>
