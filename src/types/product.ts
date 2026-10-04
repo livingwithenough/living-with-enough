@@ -23,6 +23,8 @@ export type ProductRecord = {
   productNameEn: string | null;
   displayNameJa: string;
   displayNameEn: string | null;
+  livingBenefitJa: string;
+  livingBenefitEn: string | null;
   japandiFitJa: string;
   japandiFitEn: string | null;
   caveatsJa: string[];
@@ -69,6 +71,7 @@ export type Product = {
   dimensions: string;
   modelNumber: string | null;
   tags: string[];
+  livingBenefit: string;
   japandiFit: string;
   caveats: string[];
   purchaseNotes: PurchaseNotes;

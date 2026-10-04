@@ -15,6 +15,5 @@ export function ProductImage({ product, detail = false }: { product: Product; de
     : <Link href={`/products/${product.id}/`} className="product-image"><Image src={product.image} alt={product.name} width={600} height={900}/></Link>;
 }
 export function ProductCard({ product:p, compact = false }: {product:Product; compact?:boolean}) {
-  const fitCopy=compact?`${p.japandiFit.split('。')[0]}。`:p.japandiFit;
-  return <article className={`product-card${compact?' product-card--compact':''}`}><ProductImage product={p}/><div className="card-meta"><span>{p.brand}</span><span>{yen(p.price)}</span></div><h3><Link href={`/products/${p.id}/`}>{p.name}</Link></h3>{!compact&&<p className="official-name">{p.brand} · {p.officialName}</p>}<div className="card-reason"><h4>なぜJapandiに合うか</h4><p className="reason">{fitCopy}</p></div><div className="card-actions"><Link className="detail-link" href={`/products/${p.id}/`}>詳細を見る</Link><ShopLink product={p}/></div></article>;
+  return <article className={`product-card${compact?' product-card--compact':''}`}><ProductImage product={p}/><div className="card-meta"><span>{p.brand}</span><span>{yen(p.price)}</span></div><h3><Link href={`/products/${p.id}/`}>{p.name}</Link></h3>{!compact&&<p className="official-name">{p.brand} · {p.officialName}</p>}<div className="card-reason"><h4>暮らしでの役割</h4><p className="reason">{p.livingBenefit}</p></div><div className="card-actions"><Link className="detail-link" href={`/products/${p.id}/`}>詳細を見る</Link><ShopLink product={p}/></div></article>;
 }

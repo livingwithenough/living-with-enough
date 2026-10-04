@@ -10,6 +10,8 @@ export const products: ProductRecord[] = [
     productNameEn: null,
     displayNameJa: 'オークとラタンのチェア',
     displayNameEn: 'Oak and rattan chair',
+    livingBenefitJa: 'オークとラタンの自然な表情が、装飾を足さなくても部屋にやわらかな奥行きをつくる。',
+    livingBenefitEn: null,
     japandiFitJa: '明るいオークとラタンの編み目が、和の素材感と北欧の軽やかさをつなぐ。装飾を増やさなくても、自然素材そのものが空間に表情をつくる。',
     japandiFitEn: 'Light oak and natural rattan connect Japanese restraint with Nordic warmth. The materials add texture without adding visual clutter.',
     caveatsJa: ['天然素材には個体差がある。量販チェアより価格は高め。'], caveatsEn: null,
@@ -26,6 +28,7 @@ export const products: ProductRecord[] = [
   {
     id: 'masterwal-wildwood-dining-table', productNameJa: 'ワイルドウッド ダイニングテーブル', productNameEn: 'WILDWOOD DINING TABLE',
     displayNameJa: '無垢材のダイニングテーブル', displayNameEn: 'Solid wood dining table',
+    livingBenefitJa: '無垢材の広い天板が食事や作業の中心になり、細い黒脚が大きな家具の圧迫感を抑える。', livingBenefitEn: null,
     japandiFitJa: '無垢材の大きな面と細い黒脚だけで構成された、装飾の少ない佇まい。天然木の表情を主役にすることで、日本の簡素さと北欧家具の機能美を自然につなぐ。',
     japandiFitEn: 'A solid wood surface and restrained black frame keep the form simple. The natural grain becomes the decoration, balancing Japanese restraint with Nordic functionality.',
     caveatsJa: ['価格が高く、サイズも大きい。購入前に部屋と搬入経路の採寸が必要。気軽な模様替え目的には向かない。'], caveatsEn: null,
@@ -41,6 +44,7 @@ export const products: ProductRecord[] = [
   {
     id: 'masterwal-tr-chair', productNameJa: 'ティー・アール チェア', productNameEn: 'TR CHAIR',
     displayNameJa: '細身の無垢材チェア', displayNameEn: 'Slender solid wood chair',
+    livingBenefitJa: '細身の無垢材フレームが木の温かさを添えながら、椅子を置いた空間に軽さを残す。', livingBenefitEn: null,
     japandiFitJa: '細く整えた無垢材フレームと余計な装飾のない形が、空間に軽さを残す。木の温かさがありながら、視覚的には静か。',
     japandiFitEn: 'Its slender solid-wood frame brings warmth without visual heaviness — a natural fit for Japandi interiors built around calm, functional forms.',
     caveatsJa: ['一般的な量販チェアより高価。既存の椅子が十分使えるなら、買い替える必要があるかを先に考えたい。'], caveatsEn: null,
@@ -56,6 +60,7 @@ export const products: ProductRecord[] = [
   {
     id: 'woodlife-sx-001', productNameJa: 'チェア椅子 折りたたみ 木製 ラタン オシャレ家具 sx-001', productNameEn: null,
     displayNameJa: '折りたたみラタンチェア', displayNameEn: 'Folding rattan chair',
+    livingBenefitJa: '必要なときだけ広げ、使わないときは畳める。限られた空間を家具で埋めずに使える。', livingBenefitEn: null,
     japandiFitJa: '木とラタンの自然素材に加え、必要なときだけ使える折りたたみ構造もJapandiの機能性と相性がいい。空間を家具で埋めすぎない。',
     japandiFitEn: 'Natural wood and rattan suit the Japandi palette, while the folding design keeps the room flexible and uncluttered.',
     caveatsJa: ['折りたたみ式なので、重厚な固定式チェアを求める人には向かない。天然ラタンには個体差がある。'], caveatsEn: null,
@@ -71,6 +76,7 @@ export const products: ProductRecord[] = [
   {
     id: 'woodlife-y84m05', productNameJa: '［幅55］サイドテーブル 籐編み オーク材 無垢材 ナイトテーブル Y84M05', productNameEn: null,
     displayNameJa: 'オークと籐のサイドテーブル', displayNameEn: 'Oak and cane side table',
+    livingBenefitJa: '本や照明、植物を置く場所と小さな収納を一台にまとめ、ベッドやソファまわりを整える。', livingBenefitEn: null,
     japandiFitJa: 'オークと籐の柔らかな素材感に、収納とサイドテーブルの機能をまとめた一台。小さな家具で必要な役割を満たすJapandiらしい選択。',
     japandiFitEn: 'Oak and woven cane add natural texture, while the compact form combines useful functions without adding unnecessary furniture.',
     caveatsJa: ['小型家具としては高価。置く目的がはっきりしない場合は、今ある家具で代用できないかを先に考えたい。'], caveatsEn: null,
@@ -86,6 +92,7 @@ export const products: ProductRecord[] = [
   {
     id: 'true-towel-classic-sugoi-mini-bath-towel', productNameJa: 'TRUE TOWEL【classic SUGOI】ミニバスタオル', productNameEn: null,
     displayNameJa: 'Classic SUGOI ミニバスタオル', displayNameEn: 'Classic SUGOI mini bath towel',
+    livingBenefitJa: '大判すぎないサイズで洗濯や収納の負担を抑え、毎日使うタオルを少数に絞りやすい。', livingBenefitEn: null,
     japandiFitJa: 'Japandiは家具だけではなく、毎日触れる生活用品にもつながる。落ち着いた色と実用的なサイズで、暮らしの視覚的なノイズを増やさない。',
     japandiFitEn: 'Japandi extends beyond furniture to everyday objects. A restrained palette and practical size help keep daily life calm and visually uncluttered.',
     caveatsJa: ['一般的な量販タオルより価格は高い。サイズ感の好みがあるため、大判のバスタオルを好む人には向かない。'], caveatsEn: null,
