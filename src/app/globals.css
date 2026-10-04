@@ -281,8 +281,8 @@ legend { margin-bottom: 9px; font-size: 13px; font-weight: 600; }
 .audit-hero { padding: 34px 0 50px; }
 .audit-hero h1 { margin-bottom: 26px; font-family: Georgia, "Yu Mincho", serif; font-weight: 400; }
 .audit-intro { margin: 0 0 30px; color: #515a53; font-size: 15px; line-height: 2; }
-.audit-hero .button { min-height: 46px; padding: 10px 24px; background: #5c7061; border-color: #5c7061; border-radius: 5px; }
-.audit-hero .button:hover { background: #536657; border-color: #536657; }
+.audit-hero .button { min-height: 42px; padding: 8px 18px; background: #667568; border-color: #667568; border-radius: 4px; color: white; }
+.audit-hero .button:hover { background: #5f6d62; border-color: #5f6d62; }
 .audit-note { margin-top: 12px; color: var(--muted); font-size: 11px; }
 .audit-progress { height: 2px; margin-bottom: 33px; background: var(--line); }
 .audit-progress span { display: block; height: 100%; background: var(--sage); transition: width .2s; }
