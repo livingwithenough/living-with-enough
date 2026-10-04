@@ -18,7 +18,7 @@ export default function Home() {
         <AffiliateNotice />
         <p className="eyebrow">Living with Enough</p>
         <h1>暮らしを、資産に。</h1>
-        <p className="home-hero__lead">売る、残す、預ける。今あるものの、これからを考える。</p>
+        <p className="home-hero__lead">売る、残す、預ける。<br/>今あるものの、これからを考えるサイトです。</p>
         <p className="home-hero__copy">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>今あるものを見直すと、<br/>部屋にも、家計にも、<br/>少し余白が生まれます。</p>
         <Link className="button" href="/audit/">3分で見直してみる <span aria-hidden="true">→</span></Link>
       </div>
