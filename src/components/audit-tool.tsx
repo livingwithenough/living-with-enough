@@ -66,7 +66,14 @@ export function AuditTool() {
     <h1>{result.title}</h1>
     <p className="result-description">{result.description}</p>
     <section className="free-actions"><h2>お金をかけずにできること</h2><ol>{result.freeActions.map(action=><li key={action}>{action}</li>)}</ol></section>
-    {services.length > 0 && <section className="audit-services"><h2>{result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。'}</h2>{services.map(service=><a key={service.id} href={service.affiliateUrl} target="_blank" rel="sponsored noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id})}>{service.name}<span>広告・PR</span></a>)}</section>}
+    {services.length > 0 && <section className="audit-services">
+      <p className="audit-service-pr">PR・広告</p>
+      {services.map(service=><article key={service.id}>
+        <h2>{service.headline || (result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。')}</h2>
+        {service.description && <p>{service.description}</p>}
+        <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{service.ctaLabel || service.name}</a>
+      </article>)}
+    </section>}
     {result.showBuyLater && <section className="buy-later"><p className="eyebrow">最後に、必要なものだけ選ぶ</p><h2>整理した後にも、必要だったら。</h2><p>定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。</p><Link className="text-link" href="/products/" onClick={()=>trackEvent('product_click',{source:'audit'})}>商品を見る</Link></section>}
     <div className="audit-controls"><button className="text-button" onClick={back}>回答を一つ戻る</button><button className="text-button" onClick={reset}>もう一度見直す</button></div>
   </section>;

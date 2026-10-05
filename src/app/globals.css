@@ -308,8 +308,10 @@ legend { margin-bottom: 9px; font-size: 13px; font-weight: 600; }
 .free-actions, .audit-services, .buy-later { margin-top: 33px; padding-top: 25px; border-top: 1px solid var(--line); }
 .free-actions h2, .audit-services h2, .buy-later h2 { font-size: 18px; }
 .free-actions ol { padding-left: 1.3em; }
-.audit-services a { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid var(--line); }
-.audit-services a span { color: var(--muted); font-size: 10px; }
+.audit-service-pr { margin-bottom: 12px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+.audit-services article + article { margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--line); }
+.audit-services article > p { color: var(--muted); }
+.audit-services a { display: inline-block; margin-top: 7px; padding-bottom: 3px; border-bottom: 1px solid currentColor; color: var(--sage-deep); }
 .audit-controls { display: flex; gap: 24px; margin-top: 38px; }
 
 footer {

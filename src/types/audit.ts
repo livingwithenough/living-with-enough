@@ -53,8 +53,15 @@ export type AuditService = {
   name: string;
   status: AffiliateStatus;
   affiliateUrl: string;
-  provider: 'a8';
+  provider: 'A8.net';
+  advertiser?: string;
+  programName?: string;
+  programId?: string;
+  trackingCategory?: 'instrument' | 'audio';
   category: AuditServiceCategory;
   rewardMemo: string;
   itemTypes: AuditItem[];
+  headline?: string;
+  description?: string;
+  ctaLabel?: string;
 };
