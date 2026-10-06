@@ -311,6 +311,7 @@ legend { margin-bottom: 9px; font-size: 13px; font-weight: 600; }
 .audit-service-pr { margin-bottom: 12px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
 .audit-services article + article { margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--line); }
 .audit-services article > p { color: var(--muted); }
+.audit-services .audit-service-external { margin-top: 16px; font-size: 13px; line-height: 1.7; }
 .audit-services a { display: inline-block; margin-top: 7px; padding-bottom: 3px; border-bottom: 1px solid currentColor; color: var(--sage-deep); }
 .audit-controls { display: flex; gap: 24px; margin-top: 38px; }
 

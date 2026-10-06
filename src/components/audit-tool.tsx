@@ -71,6 +71,7 @@ export function AuditTool() {
       {services.map(service=><article key={service.id}>
         <h2>{service.headline || (result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。')}</h2>
         {service.description && <p>{service.description}</p>}
+        <p className="audit-service-external">ここから先は{service.name}の外部サイトへ移動します［PR］</p>
         <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{service.ctaLabel || service.name}</a>
       </article>)}
     </section>}
