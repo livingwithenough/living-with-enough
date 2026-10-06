@@ -57,9 +57,12 @@ export type AuditService = {
   advertiser?: string;
   programName?: string;
   programId?: string;
-  trackingCategory?: 'instrument' | 'audio' | 'cleaning';
+  trackingCategory?: 'instrument' | 'audio' | 'cleaning' | 'brand-goods';
   category: AuditServiceCategory;
   rewardMemo: string;
+  conditionsMemo?: string;
+  rejectionMemo?: string;
+  isPublished?: boolean;
   itemTypes: AuditItem[];
   headline?: string;
   description?: string;

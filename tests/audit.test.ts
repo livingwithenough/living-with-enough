@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { getAuditResult } from '../src/lib/audit';
-import { visibleAuditServices } from '../src/data/audit-services';
+import { auditServices, visibleAuditServices } from '../src/data/audit-services';
 import type { AuditAnswers } from '../src/types/audit';
 
 const base: AuditAnswers = { concern:'unused', item:'records', lastUsed:'over-year', futureUse:'probably-not', lettingGo:'sell' };
@@ -31,4 +31,11 @@ test('承認済みユアマイスター案件はOUTSOURCEにだけ表示する',
   assert.deepEqual(visibleAuditServices('outsource','audio').map(service=>service.trackingCategory),['cleaning']);
   assert.deepEqual(visibleAuditServices('sell','other'),[]);
   assert.deepEqual(visibleAuditServices('store','other'),[]);
+});
+test('ブランディアだけをブランド品SELLの主導線にする',()=>{
+  assert.deepEqual(visibleAuditServices('sell','clothes-bags').map(service=>service.programId),['s00000007299001']);
+  assert.deepEqual(visibleAuditServices('store','clothes-bags'),[]);
+  const brandOff = auditServices.find(service=>service.id==='brand-off');
+  assert.equal(brandOff?.status,'approved');
+  assert.equal(brandOff?.isPublished,false);
 });

@@ -42,7 +42,42 @@ export const auditServices: AuditService[] = [
     description: '手放すかどうかは、査定結果を見てから決められます。',
     ctaLabel: '査定を申し込む →',
   },
-  { id: 'brand-off', name: 'ブランドオフ宅配買取', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'sell', rewardMemo: '無料買取申込・着荷', itemTypes: ['clothes-bags'] },
+  {
+    id: 'brandear',
+    name: 'ブランディア宅配買取',
+    status: 'approved',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4BEA4U+5MFEGI+1KBI+62ENM',
+    provider: 'A8.net',
+    advertiser: 'ブランディア',
+    programName: '【宅配買取Brandear】300万人以上が利用した人気サイトBrandearの買取募集',
+    programId: 's00000007299001',
+    trackingCategory: 'brand-goods',
+    category: 'sell',
+    rewardMemo: '査定申込み953円',
+    conditionsMemo: '広告主新規。WEB査定申込後45日以内の査定完了かつ査定金額1,000円以上。宅配買取のみ対象。',
+    rejectionMemo: '虚偽・申込不備、申込後キャンセル、掲載違反。',
+    itemTypes: ['clothes-bags'],
+    headline: '使わなくなったブランド品は、価値を確かめてから決める。',
+    description: '手放すかどうかは、査定結果を見てから決められます。バッグ・財布・時計・アクセサリー・ブランド衣類など、取扱対象に当てはまる品だけが対象です。',
+    ctaLabel: '買取サービスを確認する →',
+  },
+  {
+    id: 'brand-off',
+    name: 'ブランドオフ宅配買取',
+    status: 'approved',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4BEA4U+5XQMYA+56WW+5YJRM',
+    provider: 'A8.net',
+    advertiser: 'BRAND OFF',
+    programName: 'ブランド品の買取なら【ブランドオフ宅配買取】',
+    programId: 's00000024224001',
+    trackingCategory: 'brand-goods',
+    category: 'sell',
+    rewardMemo: '無料買取申込＋着荷12,000円',
+    conditionsMemo: '一般メディアは対象品の60日以内の着荷かつ日本国内からの申込み。対象はブランドバッグ・小物、ブランド洋服、ブランド時計、ブランド貴金属等（金・インゴット除く）。',
+    rejectionMemo: '虚偽、いたずら、キャンセル、申込不備、海外申込、掲載違反、ジュエリーではない金・プラチナ商品（インゴット、コイン等）。',
+    isPublished: false,
+    itemTypes: ['clothes-bags'],
+  },
   { id: 'netoff', name: 'ネットオフ', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'sell', rewardMemo: '買取申込', itemTypes: ['books', 'hobbies', 'electronics'] },
   { id: 'minikura', name: 'minikura', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'store', rewardMemo: '新規ボックス注文', itemTypes: ['clothes-bags', 'books', 'records', 'hobbies', 'seasonal', 'other'] },
   { id: 'recro', name: 'リクロ', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'sell', rewardMemo: '査定・買取申込', itemTypes: ['clothes-bags'] },
@@ -70,6 +105,7 @@ export function visibleAuditServices(category: AuditService['category'], item: A
     service.category === category &&
     service.itemTypes.includes(item) &&
     service.status === 'approved' &&
+    service.isPublished !== false &&
     service.affiliateUrl.trim().startsWith('https://')
   );
 }
