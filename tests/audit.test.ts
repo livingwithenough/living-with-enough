@@ -19,12 +19,16 @@ test('購入案内は整理後の補助結果に限る',()=>{
 test('審査中またはURL未設定の案件は表示しない',()=>{
   assert.deepEqual(visibleAuditServices('sell','records'),[]);
   assert.deepEqual(visibleAuditServices('store','seasonal'),[]);
-  assert.deepEqual(visibleAuditServices('outsource','other'),[]);
 });
 test('承認済みUNI SOUND案件は対象カテゴリのSELLにだけ表示する',()=>{
   assert.deepEqual(visibleAuditServices('sell','instruments').map(service=>service.programId),['s00000027408001']);
   assert.deepEqual(visibleAuditServices('sell','audio').map(service=>service.programId),['s00000027408002']);
   assert.deepEqual(visibleAuditServices('sell','books'),[]);
   assert.deepEqual(visibleAuditServices('store','instruments'),[]);
-  assert.deepEqual(visibleAuditServices('outsource','audio'),[]);
+});
+test('承認済みユアマイスター案件はOUTSOURCEにだけ表示する',()=>{
+  assert.deepEqual(visibleAuditServices('outsource','other').map(service=>service.programId),['s00000020962001']);
+  assert.deepEqual(visibleAuditServices('outsource','audio').map(service=>service.trackingCategory),['cleaning']);
+  assert.deepEqual(visibleAuditServices('sell','other'),[]);
+  assert.deepEqual(visibleAuditServices('store','other'),[]);
 });

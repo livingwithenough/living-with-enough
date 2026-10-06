@@ -57,7 +57,7 @@ export type AuditService = {
   advertiser?: string;
   programName?: string;
   programId?: string;
-  trackingCategory?: 'instrument' | 'audio';
+  trackingCategory?: 'instrument' | 'audio' | 'cleaning';
   category: AuditServiceCategory;
   rewardMemo: string;
   itemTypes: AuditItem[];

@@ -46,7 +46,23 @@ export const auditServices: AuditService[] = [
   { id: 'netoff', name: 'ネットオフ', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'sell', rewardMemo: '買取申込', itemTypes: ['books', 'hobbies', 'electronics'] },
   { id: 'minikura', name: 'minikura', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'store', rewardMemo: '新規ボックス注文', itemTypes: ['clothes-bags', 'books', 'records', 'hobbies', 'seasonal', 'other'] },
   { id: 'recro', name: 'リクロ', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'sell', rewardMemo: '査定・買取申込', itemTypes: ['clothes-bags'] },
-  { id: 'yourmeister', name: 'ユアマイスター', status: 'pending', affiliateUrl: '', provider: 'A8.net', category: 'outsource', rewardMemo: '作業完了', itemTypes: ['clothes-bags', 'kimono', 'books', 'records', 'instruments', 'audio', 'electronics', 'tableware', 'hobbies', 'seasonal', 'furniture', 'other'] },
+  {
+    id: 'yourmeister',
+    name: 'ユアマイスター',
+    status: 'approved',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4BE7ST+6FLN3M+4HQS+5YJRM',
+    provider: 'A8.net',
+    advertiser: 'ユアマイスター',
+    programName: 'ハウスクリーニングはプロにおまかせ【ユアマイスター】',
+    programId: 's00000020962001',
+    trackingCategory: 'cleaning',
+    category: 'outsource',
+    rewardMemo: '作業完了1,800円／水回り3点セット以上は作業完了2,300円（一般サイトのみ）',
+    itemTypes: ['clothes-bags', 'kimono', 'books', 'records', 'instruments', 'audio', 'electronics', 'tableware', 'hobbies', 'seasonal', 'furniture', 'other'],
+    headline: '自分で全部やらなくてもいい。',
+    description: '掃除まで手が回らないときは、プロに任せる方法もあります。時間や手間も暮らしの資源です。',
+    ctaLabel: '頼めるサービスを見る →',
+  },
 ];
 
 export function visibleAuditServices(category: AuditService['category'], item: AuditService['itemTypes'][number]) {
