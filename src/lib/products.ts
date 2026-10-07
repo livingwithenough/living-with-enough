@@ -1,11 +1,12 @@
 import 'server-only';
+import { isPublishedProduct } from './product-publication';
 import { products } from '@/data/products';
 import { defaultLocale, type Locale } from '@/i18n/routing';
 import { localizeProduct } from './localize-product';
 
 export const getApprovedProducts = (locale: Locale = defaultLocale) =>
   products
-    .filter(product => product.status === 'approved')
+    .filter(isPublishedProduct)
     .map(product => localizeProduct(product, locale))
     .filter(product => product !== null);
 
