@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { categories, type Category, type Product } from '@/types/product';
+import { categories, categoryLabels, type Category, type Product } from '@/types/product';
 import { filterProducts, priceBands, type PriceBand } from '@/lib/catalog';
 import { ProductCard } from './product-card';
 
@@ -45,7 +45,7 @@ export function Catalog({products}:{products:Product[]}) {
   const visible=filterProducts(products,category,priceBand);
   return <>
     <div className="filters">
-      <fieldset><legend>カテゴリー</legend><div className="filter-options">{(['all',...visibleCategories] as const).map(c=><button key={c} aria-pressed={category===c} onClick={()=>update(c,priceBand)}>{c==='all'?'すべて':c}</button>)}</div></fieldset>
+      <fieldset><legend>カテゴリー</legend><div className="filter-options">{(['all',...visibleCategories] as const).map(c=><button key={c} aria-pressed={category===c} onClick={()=>update(c,priceBand)}>{c==='all'?'すべて':categoryLabels[c]}</button>)}</div></fieldset>
       <fieldset><legend>価格帯</legend><div className="filter-options">{priceBands.map(band=><button key={band} aria-pressed={priceBand===band} onClick={()=>update(category,band)}>{priceLabels[band]}</button>)}</div></fieldset>
       <p className="small">価格帯は、予算に合う商品を探すための補助機能です。</p>
     </div>

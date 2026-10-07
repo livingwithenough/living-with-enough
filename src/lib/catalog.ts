@@ -1,7 +1,8 @@
+import { isPublishedProduct } from './product-publication';
 import type { Category, Product } from '@/types/product';
 export const priceBands = ['all', 'up-to-10000', '10000-30000', '30000-100000', 'over-100000'] as const;
 export type PriceBand = typeof priceBands[number];
-export const approvedOnly = (items: Product[]) => items.filter(p => p.status === 'approved');
+export const approvedOnly = (items: Product[]) => items.filter(isPublishedProduct);
 export function matchesPriceBand(price: number, band: PriceBand) {
   if (band === 'up-to-10000') return price <= 10000;
   if (band === '10000-30000') return price > 10000 && price <= 30000;

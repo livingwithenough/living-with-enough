@@ -2,8 +2,14 @@ import type { Locale } from '@/i18n/routing';
 
 // Future categories can be added here without changing the catalog filter.
 // The UI only shows categories that are present in approved product data.
-export const categories = ['Furniture', 'Lighting', 'Tableware', 'Textiles', 'Plants', 'Everyday'] as const;
+export const categories = ['Furniture', 'Lighting', 'Tableware', 'Textiles', 'Plants', 'Everyday', 'SmallFurniture', 'Storage', 'LongLasting'] as const;
 export type Category = typeof categories[number];
+// Preserve stored keys and URL filters; translate only the visible labels.
+export const categoryLabels: Record<Category, string> = {
+  Furniture: '家具', Lighting: '照明', Tableware: '食器', Textiles: 'ファブリック',
+  Plants: '植物', Everyday: '暮らしの道具', SmallFurniture: '小さな家具',
+  Storage: '収納', LongLasting: '長く使いたいもの',
+};
 export type ProductStatus = 'candidate' | 'approved';
 export type AffiliateProvider = 'a8' | 'rakuten' | 'amazon' | 'other' | null;
 
