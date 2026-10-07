@@ -17,15 +17,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Link href="/" className="brand">{brand.name}</Link>
       <nav aria-label="メインナビゲーション">
         <Link className="nav-primary" href="/audit/">見直す</Link>
-        <Link href="/guides/">ガイド</Link>
-        <Link href="/products/">商品を見る</Link>
-        <Link href="/about/">私たちについて</Link>
+        <Link href="/products/">選ぶ</Link>
+        <Link href="/about/">Living with Enoughについて</Link>
       </nav>
     </header>
     <main id="main">{children}</main>
     <footer>
       <div><Link href="/" className="footer-brand">{brand.name}</Link><p>今ある価値を生かし、部屋と家計に余白を。</p></div>
-      <div className="footer-links"><Link href="/audit/">見直す</Link><Link href="/guides/">ガイド</Link><Link href="/products/">商品を見る</Link><Link href="/about/">私たちについて</Link><Link href="/affiliate-disclosure/">広告・アフィリエイトについて</Link></div>
+      <div className="footer-links"><Link href="/audit/">見直す</Link><Link href="/products/">選ぶ</Link><Link href="/about/">Living with Enoughについて</Link><Link href="/affiliate-disclosure/">広告・アフィリエイトについて</Link></div>
       <small>© {new Date().getFullYear()} {brand.name}</small>
     </footer>
   </body></html>;
