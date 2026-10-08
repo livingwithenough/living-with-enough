@@ -42,6 +42,7 @@ export type ProductRecord = {
   brand: string;
   category: Category;
   price: number;
+  priceLabel?: string;
   officialUrl: string;
   affiliateUrl: string;
   affiliateProvider: AffiliateProvider;
@@ -67,6 +68,7 @@ export type Product = {
   brand: string;
   category: Category;
   price: number;
+  priceLabel?: string;
   image: string;
   a8BannerHtml?: string | null;
   shop: string;
