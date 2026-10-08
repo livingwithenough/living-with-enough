@@ -28,6 +28,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     brand: product.brand,
     category: product.category,
     price: product.price,
+    priceLabel: product.priceLabel,
     image: product.image,
     a8BannerHtml: product.a8BannerHtml,
     shop: isJapanese ? product.shopNameJa : product.shopNameEn!,
