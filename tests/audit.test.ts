@@ -39,3 +39,21 @@ test('ブランディアだけをブランド品SELLの主導線にする',()=>{
   assert.equal(brandOff?.status,'approved');
   assert.equal(brandOff?.isPublished,false);
 });
+
+test('リネット保管は非公開で、将来の候補も衣類カテゴリのSTOREに限定する',()=>{
+  const service = auditServices.find(service=>service.id==='lenet-storage');
+  assert.ok(service);
+  assert.equal(service.isPublished,false);
+  assert.deepEqual(visibleAuditServices('store','clothes-bags'),[]);
+  // 公開条件が整った将来も、seasonalやSELLへ広がらないことを検証する。
+  service.isPublished = true;
+  try {
+    assert.deepEqual(visibleAuditServices('store','clothes-bags').map(service=>service.id),['lenet-storage']);
+    assert.deepEqual(visibleAuditServices('store','seasonal'),[]);
+    assert.deepEqual(visibleAuditServices('store','books'),[]);
+    assert.ok(!visibleAuditServices('sell','clothes-bags').some(service=>service.id==='lenet-storage'));
+    assert.ok(!visibleAuditServices('outsource','clothes-bags').some(service=>service.id==='lenet-storage'));
+  } finally {
+    service.isPublished = false;
+  }
+});
