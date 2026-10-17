@@ -166,6 +166,28 @@ img { display: block; max-width: 100%; }
 }
 .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 26px; }
 .product-card { min-width: 0; }
+.catalog-section { margin: 0 0 64px; }
+.catalog-section-heading { margin-bottom: 26px; padding-top: 28px; border-top: 1px solid var(--line); }
+.catalog-section-heading h2 { margin: 0 0 10px; font-family: Georgia, "Yu Mincho", serif; font-weight: 400; font-size: clamp(22px, 3vw, 28px); }
+.catalog-section-heading p { margin: 0; max-width: 700px; color: #5F5B55; font-size: 13px; }
+.catalog-editorial .product-card { display: flex; flex-direction: column; }
+.catalog-editorial .product-image { order: 1; position: relative; padding: 22px; background: #fff; border: 1px solid var(--line); }
+.catalog-editorial .product-image > img { display: block; max-width: 100%; max-height: 100%; }
+.catalog-editorial .a8-product-image > a { padding: 0; }
+.catalog-editorial .a8-product-image > a > img { display: block; max-width: 100%; max-height: 100%; }
+.catalog-editorial .product-card h3 { order: 2; min-height: 3.4em; margin: 18px 0 10px; line-height: 1.7; }
+.catalog-editorial .card-meta { order: 3; flex-direction: column; gap: 6px; margin: 0 0 10px; }
+.catalog-editorial .card-meta span:last-child { color: var(--ink); font-size: 14px; }
+.catalog-editorial .official-name { order: 4; min-height: 3.8em; line-height: 1.9; }
+.catalog-editorial .card-reason { order: 5; margin: 14px 0 24px; }
+.catalog-editorial .card-actions { order: 6; margin-top: auto; }
+.issued-shop-link { display: block; position: relative; padding-left: 12px; border-left: 1px solid var(--line); }
+.issued-shop-link > a { display: flex; align-items: center; min-height: 44px; font-size: 12px; overflow-wrap: anywhere; }
+.issued-shop-link > img[width="1"] { position: absolute; width: 1px; height: 1px; }
+@media (max-width: 600px) {
+  .catalog-section { margin-bottom: 48px; }
+  .catalog-editorial .product-card h3, .catalog-editorial .official-name { min-height: 0; }
+}
 .product-image, .a8-product-image {
   display: block;
   width: 100%;
