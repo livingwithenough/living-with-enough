@@ -1,9 +1,10 @@
 import 'server-only';
 import type { ProductRecord } from '@/types/product';
+import { englishProducts } from './products-en';
 
 const checkedAt = '2026-10-01';
 
-export const products: ProductRecord[] = [
+const records: ProductRecord[] = [
   {
     id: 'woodlife-ysys-a3122',
     productNameJa: 'ラタンチェア オーク 完成品 無垢材 木製 ラタン編み ysys-a3122',
@@ -1106,3 +1107,6 @@ export const products: ProductRecord[] = [
     "isSample": false
   },
 ];
+
+// English editorial fields only; Japanese facts and issued advertising assets stay intact.
+export const products: ProductRecord[] = records.map(product => ({ ...product, ...englishProducts[product.id] }));
