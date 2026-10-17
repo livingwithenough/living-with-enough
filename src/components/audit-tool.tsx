@@ -1,6 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import type { Locale } from '@/i18n/routing';
+import { localizedPath } from '@/i18n/routing';
+import { englishQuestions, englishAuditResult, englishServices } from '@/i18n/audit';
 import { useMemo, useRef, useState } from 'react';
 import { visibleAuditServices } from '@/data/audit-services';
 import { trackEvent } from '@/lib/analytics';
@@ -28,12 +31,15 @@ const questions: Array<{ key: keyof AuditAnswers; eyebrow: string; title: string
   ].map(([value,label])=>({value:value as LettingGo,label})) },
 ];
 
-export function AuditTool() {
+export function AuditTool({locale='ja'}:{locale?:Locale} = {}) {
+  const en=locale==='en';
+  const path=(p:string)=>localizedPath(locale,p);
+  const localizedQuestions=questions.map((q,index)=>en?{...q,title:englishQuestions[index].title,options:q.options.map((option,i)=>({...option,label:englishQuestions[index].options[i]}))}:q);
   const startTracked = useRef(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [complete, setComplete] = useState(false);
-  const result = useMemo(() => complete ? getAuditResult(answers as AuditAnswers) : null, [answers, complete]);
+  const result = useMemo(() => {if(!complete)return null;const decided=getAuditResult(answers as AuditAnswers);return en?englishAuditResult(decided):decided;}, [answers, complete, en]);
   const services = result && result.kind !== 'keep' ? visibleAuditServices(result.kind, (answers.item || 'other') as AuditItem) : [];
 
   function choose(value: string) {
@@ -41,7 +47,7 @@ export function AuditTool() {
       startTracked.current = true;
       trackEvent('audit_start');
     }
-    const question = questions[step];
+    const question = localizedQuestions[step];
     const next = { ...answers, [question.key]: value };
     setAnswers(next);
     if (step === questions.length - 1) {
@@ -56,33 +62,34 @@ export function AuditTool() {
   function reset() { setAnswers({}); setStep(0); setComplete(false); startTracked.current = false; }
 
   if (complete && result) return <section className="audit-result" aria-live="polite">
-    <p className="eyebrow">次にすること</p>
-    <div className="today-action"><span>今日やること</span><p>{result.today}</p></div>
+    <p className="eyebrow">{en?'Your next step':'次にすること'}</p>
+    <div className="today-action"><span>{en?'What to do today':'今日やること'}</span><p>{result.today}</p></div>
     <p className="result-label">{result.label}</p>
     <h1>{result.title}</h1>
     <p className="result-description">{result.description}</p>
-    <section className="free-actions"><h2>お金をかけずにできること</h2><ol>{result.freeActions.map(action=><li key={action}>{action}</li>)}</ol></section>
+    <section className="free-actions"><h2>{en?'Things you can do first, for free':'お金をかけずにできること'}</h2><ol>{result.freeActions.map(action=><li key={action}>{action}</li>)}</ol></section>
     {services.length > 0 && <section className="audit-services">
-      <p className="audit-service-pr">PR・広告</p>
+      {en&&<p className="small">The linked service may operate primarily in Japanese. Please check language support and service conditions before applying.</p>}
+      <p className="audit-service-pr">{en?'Advertising · Affiliate links':'PR・広告'}</p>
       {services.map(service=><article key={service.id}>
-        <h2>{service.headline || (result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。')}</h2>
-        {service.description && <p>{service.description}</p>}
-        <p className="audit-service-external">ここから先は{service.name}の外部サイトへ移動します［PR］</p>
-        <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{service.ctaLabel || service.name}</a>
+        <h2>{en?(englishServices[service.id]?.headline || 'Consider a service in Japan'):service.headline || (result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。')}</h2>
+        {(en?englishServices[service.id]?.description:service.description) && <p>{en?englishServices[service.id]?.description:service.description}</p>}
+        <p className="audit-service-external">{en?`External site: ${englishServices[service.id]?.name || service.id} [Ad]`:`ここから先は${service.name}の外部サイトへ移動します［PR］`}</p>
+        <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{en?(englishServices[service.id]?.cta || 'View service →'):(service.ctaLabel || service.name)}</a>
       </article>)}
     </section>}
-    {result.showBuyLater && <section className="buy-later"><p className="eyebrow">最後に、必要なものだけ選ぶ</p><h2>整理した後にも、必要だったら。</h2><p>定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。</p><Link className="text-link" href="/products/" onClick={()=>trackEvent('product_click',{source:'audit'})}>商品を見る</Link></section>}
-    <div className="audit-controls"><button className="text-button" onClick={back}>回答を一つ戻る</button><button className="text-button" onClick={reset}>もう一度見直す</button></div>
+    {result.showBuyLater && <section className="buy-later"><p className="eyebrow">{en?'Buying comes last':'最後に、必要なものだけ選ぶ'}</p><h2>{en?'If you still need something afterward':'整理した後にも、必要だったら。'}</h2><p>{en?'Once everything has a place, choose only what is still missing — and consider how long it will serve you.':'定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。'}</p><Link className="text-link" href={path('/products/')} onClick={()=>trackEvent('product_click',{source:'audit'})}>{en?'Browse products':'商品を見る'}</Link></section>}
+    <div className="audit-controls"><button className="text-button" onClick={back}>{en?'Back to the last answer':'回答を一つ戻る'}</button><button className="text-button" onClick={reset}>{en?'Review again':'もう一度見直す'}</button></div>
   </section>;
 
-  const question = questions[step];
+  const question = localizedQuestions[step];
   return <section className="audit-question">
-    <div className="audit-progress" aria-label={`${questions.length}問中${step + 1}問目`}><span style={{width:`${((step + 1) / questions.length) * 100}%`}}/></div>
+    <div className="audit-progress" aria-label={en?`Question ${step+1} of ${questions.length}`:`${questions.length}問中${step + 1}問目`}><span style={{width:`${((step + 1) / questions.length) * 100}%`}}/></div>
     <p className="eyebrow">{step + 1} / {questions.length}</p>
     <h1>{question.title}</h1>
     <div className="audit-options">{question.options.map(option=><button key={option.value} onClick={()=>choose(option.value)} aria-pressed={answers[question.key]===option.value}>{option.label}<span aria-hidden="true">→</span></button>)}</div>
     {step === 0
-      ? <Link className="text-button audit-back" href="/">← トップページへ</Link>
-      : <button className="text-button audit-back" onClick={back}>← 戻る</button>}
+      ? <Link className="text-button audit-back" href={path('/')}>{en?'← Back to home':'← トップページへ'}</Link>
+      : <button className="text-button audit-back" onClick={back}>{en?'← Back':'← 戻る'}</button>}
   </section>;
 }
