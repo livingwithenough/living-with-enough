@@ -4,6 +4,9 @@ import type { Product } from '@/types/product';
 import { purchaseUrl, yen } from '@/lib/catalog';
 export function ShopLink({ product }: { product: Product }) {
   const url = purchaseUrl(product);
+  if (url && product.a8TextHtml) {
+    return <span className="issued-shop-link" dangerouslySetInnerHTML={{ __html: product.a8TextHtml }} />;
+  }
   return url ? <a className="shop-link" href={url} target="_blank" rel="sponsored noopener noreferrer">販売サイトで見る <span aria-hidden="true">↗</span></a> : null;
 }
 export function ProductImage({ product, detail = false }: { product: Product; detail?: boolean }) {
