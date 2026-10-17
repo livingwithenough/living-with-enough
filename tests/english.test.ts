@@ -24,7 +24,7 @@ test('all 24 products have complete English content without requiring invented o
  for(const record of records){
   assert.ok(hasLocaleContent(record,'en'),record.id);
   const p=localizeProduct(record,'en')!;
-  for(const value of [p.name,p.livingBenefit,p.material,p.dimensions,p.priceLabel,p.shop,...p.tags,...p.caveats,...Object.values(p.purchaseNotes).flat()]){
+  for(const value of [p.name,p.brand,p.livingBenefit,p.material,p.dimensions,p.priceLabel,p.shop,...p.tags,...p.caveats,...Object.values(p.purchaseNotes).flat()]){
    assert.ok(value);assert.equal(japanese.test(String(value)),false,`${record.id}: ${value}`);
   }
   assert.equal(p.officialName,record.productNameEn||record.productNameJa);
