@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { visibleAuditServices } from '@/data/audit-services';
 import { trackEvent } from '@/lib/analytics';
 import { getAuditResult } from '@/lib/audit';
@@ -29,15 +29,18 @@ const questions: Array<{ key: keyof AuditAnswers; eyebrow: string; title: string
 ];
 
 export function AuditTool() {
-  const [started, setStarted] = useState(false);
+  const startTracked = useRef(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [complete, setComplete] = useState(false);
   const result = useMemo(() => complete ? getAuditResult(answers as AuditAnswers) : null, [answers, complete]);
   const services = result && result.kind !== 'keep' ? visibleAuditServices(result.kind, (answers.item || 'other') as AuditItem) : [];
 
-  function start() { setStarted(true); trackEvent('audit_start'); }
   function choose(value: string) {
+    if (step === 0 && !startTracked.current) {
+      startTracked.current = true;
+      trackEvent('audit_start');
+    }
     const question = questions[step];
     const next = { ...answers, [question.key]: value };
     setAnswers(next);
@@ -49,15 +52,8 @@ export function AuditTool() {
       if (decided.showBuyLater) trackEvent('result_buy');
     } else setStep(step + 1);
   }
-  function back() { if (complete) setComplete(false); else if (step > 0) setStep(step - 1); else setStarted(false); }
-  function reset() { setAnswers({}); setStep(0); setComplete(false); setStarted(false); }
-
-  if (!started) return <section className="audit-hero">
-    <h1>暮らしを、資産に。</h1>
-    <p className="audit-intro">使っていないもの。<br/>手放せずにいるもの。<br/>いつか使うと思っているもの。<br/><br/>売る。残す。預ける。<br/><br/>迷っているものから、<br/>一つずつ見直してみる。</p>
-    <button className="button" onClick={start}>見直してみる <span aria-hidden="true">→</span></button>
-    <p className="audit-note">約3分・入力内容は送信・保存されません</p>
-  </section>;
+  function back() { if (complete) setComplete(false); else if (step > 0) setStep(step - 1); }
+  function reset() { setAnswers({}); setStep(0); setComplete(false); startTracked.current = false; }
 
   if (complete && result) return <section className="audit-result" aria-live="polite">
     <p className="eyebrow">次にすること</p>
@@ -85,6 +81,8 @@ export function AuditTool() {
     <p className="eyebrow">{step + 1} / {questions.length}</p>
     <h1>{question.title}</h1>
     <div className="audit-options">{question.options.map(option=><button key={option.value} onClick={()=>choose(option.value)} aria-pressed={answers[question.key]===option.value}>{option.label}<span aria-hidden="true">→</span></button>)}</div>
-    <button className="text-button audit-back" onClick={back}>← 戻る</button>
+    {step === 0
+      ? <Link className="text-button audit-back" href="/">← トップページへ</Link>
+      : <button className="text-button audit-back" onClick={back}>← 戻る</button>}
   </section>;
 }
