@@ -48,6 +48,8 @@ export type ProductRecord = {
   affiliateProvider: AffiliateProvider;
   image: string;
   a8BannerHtml: string | null;
+  // Issued text creatives are separate from image banners; preserve their tracking pixel.
+  a8TextHtml?: string | null;
   priceCheckedAt: string | null;
   status: ProductStatus;
   dimensions: string;
@@ -71,6 +73,7 @@ export type Product = {
   priceLabel?: string;
   image: string;
   a8BannerHtml?: string | null;
+  a8TextHtml?: string | null;
   shop: string;
   officialUrl: string;
   affiliateUrl: string;
