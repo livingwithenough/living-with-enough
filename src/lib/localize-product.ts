@@ -1,6 +1,11 @@
 import type { Locale } from '@/i18n/routing';
 import type { Product, ProductRecord } from '@/types/product';
 
+const englishBrandLabels: Record<string, string> = {
+  '山崎実業 tower': 'Yamazaki tower',
+  'ヒオリエ／日織恵': 'Hiorie',
+};
+
 export function hasLocaleContent(product: ProductRecord, locale: Locale) {
   if (locale === 'ja') return true;
   return Boolean(
@@ -25,7 +30,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     name: isJapanese ? product.displayNameJa : product.displayNameEn!,
     officialName: isJapanese ? product.productNameJa : (product.productNameEn || product.productNameJa),
     officialNameLanguage: isJapanese || !product.productNameEn ? 'ja' : 'en',
-    brand: product.brand,
+    brand: isJapanese ? product.brand : (englishBrandLabels[product.brand] || product.brand),
     category: product.category,
     price: product.price,
     priceLabel: isJapanese ? product.priceLabel : product.priceLabelEn,
