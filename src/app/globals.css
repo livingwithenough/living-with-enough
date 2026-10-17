@@ -412,3 +412,23 @@ h1, h2 { font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif; }
 .filter-options button[aria-pressed="true"]:not(:hover) { background: var(--button); border-color: var(--button); color: var(--button-text); }
 .guide-status, .action-grid span { color: var(--muted-readable); }
 
+
+/* Language changes the copy, not the neutral visual identity. */
+.language-switcher { font-size: 13px; padding: 6px 0 6px 14px; border-left: 1px solid var(--line); }
+.japan-notice { padding: 24px; margin: 0 0 36px; background: var(--surface); border: 1px solid var(--line); }
+.japan-notice h2 { font: inherit; font-weight: 600; margin-bottom: 8px; }
+.japan-notice p { font-size: 15px; margin: 0; color: var(--muted-readable); }
+.residents-shell { max-width: 1180px; margin: 36px auto 0; padding: 0 5%; }
+html[lang="en"] .eyebrow { letter-spacing: .1em; }
+html[lang="en"] h1, html[lang="en"] h2 { line-height: 1.3; }
+html[lang="en"] .card-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+html[lang="en"] .card-meta { flex-wrap: wrap; }
+html[lang="en"] .detail-copy { min-width: 0; }
+html[lang="en"] .detail dd, html[lang="en"] .official-product, html[lang="en"] .official-name { overflow-wrap: anywhere; }
+html[lang="en"] .audit-options button { text-align: left; gap: 14px; }
+html[lang="en"] .button { white-space: normal; text-align: center; }
+@media(max-width:760px) {
+ html[lang="en"] .home-hero h1 { font-size: 35px; }
+ html[lang="en"] .audit-controls { flex-wrap: wrap; gap: 16px; }
+ html[lang="en"] .detail dl > div { grid-template-columns: 1fr; gap: 4px; }
+}

@@ -1,24 +1,18 @@
 export const locales = ['ja', 'en'] as const;
 export type Locale = (typeof locales)[number];
-
 export const defaultLocale: Locale = 'ja';
-
-// Only Japanese content is published in v0.1. Add "en" after translations are reviewed.
-export const publishedLocales = ['ja'] as const satisfies readonly Locale[];
-
+export const publishedLocales = locales;
 export const localeConfig = {
-  ja: { basePath: '/ja', htmlLang: 'ja', openGraphLocale: 'ja_JP' },
+  ja: { basePath: '', htmlLang: 'ja', openGraphLocale: 'ja_JP' },
   en: { basePath: '/en', htmlLang: 'en', openGraphLocale: 'en_US' },
 } as const;
-
-export const isLocale = (value: string): value is Locale =>
-  locales.includes(value as Locale);
-
+export const isLocale = (value: string): value is Locale => locales.includes(value as Locale);
 export function localizedPath(locale: Locale, path = '/') {
-  const normalizedPath = path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}/`;
-  return `${localeConfig[locale].basePath}${normalizedPath}`;
+  const normalized = path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}/`;
+  return `${localeConfig[locale].basePath}${normalized}`;
 }
-
-// The current Japanese URLs stay canonical until /ja pages are actually published.
-// At that point, the root route can use this value for a language choice or redirect.
-export const rootLocaleDestination = localizedPath(defaultLocale);
+export function languageAlternate(path: string, locale: Locale) {
+  const base = path.replace(/^\/en(?=\/|$)/, '') || '/';
+  return localizedPath(locale, base);
+}
+export const rootLocaleDestination = '/';

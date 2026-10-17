@@ -22,7 +22,7 @@ export type PurchaseNotes = {
   thingsToKnowBeforeBuying: string[];
 };
 
-// Storage model. English fields stay null until a human-reviewed translation exists.
+// Storage model. Official English names stay null when not verified; editorial display names are separate.
 export type ProductRecord = {
   id: string;
   productNameJa: string;
@@ -43,6 +43,7 @@ export type ProductRecord = {
   category: Category;
   price: number;
   priceLabel?: string;
+  priceLabelEn?: string;
   officialUrl: string;
   affiliateUrl: string;
   affiliateProvider: AffiliateProvider;
@@ -53,6 +54,7 @@ export type ProductRecord = {
   priceCheckedAt: string | null;
   status: ProductStatus;
   dimensions: string;
+  dimensionsEn?: string;
   modelNumber: string | null;
   shopNameJa: string;
   shopNameEn: string | null;
@@ -67,10 +69,12 @@ export type Product = {
   locale: Locale;
   name: string;
   officialName: string;
+  officialNameLanguage?: Locale;
   brand: string;
   category: Category;
   price: number;
   priceLabel?: string;
+  priceLabelEn?: string;
   image: string;
   a8BannerHtml?: string | null;
   a8TextHtml?: string | null;
@@ -80,6 +84,7 @@ export type Product = {
   affiliateProvider: AffiliateProvider;
   material: string;
   dimensions: string;
+  dimensionsEn?: string;
   modelNumber: string | null;
   tags: string[];
   livingBenefit: string;

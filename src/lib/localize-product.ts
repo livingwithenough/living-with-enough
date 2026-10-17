@@ -1,15 +1,19 @@
 import type { Locale } from '@/i18n/routing';
 import type { Product, ProductRecord } from '@/types/product';
 
+const englishBrandLabels: Record<string, string> = {
+  '山崎実業 tower': 'Yamazaki tower',
+  'ヒオリエ／日織恵': 'Hiorie',
+};
+
 export function hasLocaleContent(product: ProductRecord, locale: Locale) {
   if (locale === 'ja') return true;
   return Boolean(
-    product.productNameEn &&
-      product.displayNameEn &&
+    product.displayNameEn &&
       product.livingBenefitEn &&
-      product.japandiFitEn &&
       product.caveatsEn?.length &&
       product.materialEn &&
+      product.dimensionsEn &&
       product.purchaseNotesEn &&
       product.shopNameEn &&
       product.tagsEn,
@@ -24,11 +28,12 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     id: product.id,
     locale,
     name: isJapanese ? product.displayNameJa : product.displayNameEn!,
-    officialName: isJapanese ? product.productNameJa : product.productNameEn!,
-    brand: product.brand,
+    officialName: isJapanese ? product.productNameJa : (product.productNameEn || product.productNameJa),
+    officialNameLanguage: isJapanese || !product.productNameEn ? 'ja' : 'en',
+    brand: isJapanese ? product.brand : (englishBrandLabels[product.brand] || product.brand),
     category: product.category,
     price: product.price,
-    priceLabel: product.priceLabel,
+    priceLabel: isJapanese ? product.priceLabel : product.priceLabelEn,
     image: product.image,
     a8BannerHtml: product.a8BannerHtml,
     a8TextHtml: product.a8TextHtml,
@@ -37,11 +42,11 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
     affiliateUrl: product.affiliateUrl,
     affiliateProvider: product.affiliateProvider,
     material: isJapanese ? product.materialJa : product.materialEn!,
-    dimensions: product.dimensions,
+    dimensions: isJapanese ? product.dimensions : product.dimensionsEn!,
     modelNumber: product.modelNumber,
     tags: isJapanese ? product.tagsJa : product.tagsEn!,
     livingBenefit: isJapanese ? product.livingBenefitJa : product.livingBenefitEn!,
-    japandiFit: isJapanese ? product.japandiFitJa : product.japandiFitEn!,
+    japandiFit: isJapanese ? product.japandiFitJa : (product.japandiFitEn || ''),
     caveats: isJapanese ? product.caveatsJa : product.caveatsEn!,
     purchaseNotes: isJapanese ? product.purchaseNotesJa : product.purchaseNotesEn!,
     priceCheckedAt: product.priceCheckedAt,

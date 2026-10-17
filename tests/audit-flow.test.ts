@@ -6,6 +6,8 @@ import { resolve } from 'node:path';
 import { runInNewContext } from 'node:vm';
 import ts from 'typescript';
 import { getAuditResult } from '../src/lib/audit';
+import * as routing from '../src/i18n/routing';
+import * as auditEnglish from '../src/i18n/audit';
 import { visibleAuditServices } from '../src/data/audit-services';
 
 type Element = { type: unknown; props: { children?: unknown; [key: string]: unknown } };
@@ -22,12 +24,12 @@ function text(node: unknown): string {
 }
 
 // Exercise the component's handlers across renders without a browser or extra test dependency.
-function auditHarness() {
+function auditHarness(locale:'ja'|'en'='ja') {
   const hooks: unknown[] = [];
   const events: string[] = [];
   let cursor = 0;
   const require = createRequire(resolve('package.json'));
-  const exports: { AuditTool?: () => unknown } = {};
+  const exports: { AuditTool?: (props:{locale:'ja'|'en'}) => unknown } = {};
   const code = ts.transpileModule(readFileSync(resolve('src/components/audit-tool.tsx'), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
   }).outputText;
@@ -39,11 +41,13 @@ function auditHarness() {
     };
     if (name === 'next/link') return { __esModule: true, default: 'a' };
     if (name === '@/lib/analytics') return { trackEvent: (name: string) => events.push(name) };
+    if (name === '@/i18n/routing') return routing;
+    if (name === '@/i18n/audit') return auditEnglish;
     if (name === '@/lib/audit') return { getAuditResult };
     if (name === '@/data/audit-services') return { visibleAuditServices };
     return require(name);
   } });
-  function render() { cursor = 0; return elements(exports.AuditTool!()); }
+  function render() { cursor = 0; return elements(exports.AuditTool!({locale})); }
   function click(label: string) {
     const button = render().find(element => element.type === 'button' && text(element.props.children).replace('→', '').trim() === label);
     assert.ok(button, `Button not found: ${label}`);
@@ -77,4 +81,15 @@ test('audit opens on question one, starts once on answering, and preserves back/
   assert.equal(audit.render().find(element => element.type === 'h1')?.props.children, '今、一番気になっていることは？');
   audit.click('物が多い');
   assert.equal(audit.events.filter(event => event === 'audit_start').length, 2);
+});
+
+test('English audit uses the same values, result events and service links without an intro',()=>{
+ const audit=auditHarness('en');
+ assert.equal(audit.render().find(e=>e.type==='h1')?.props.children,'What are you most concerned about right now?');
+ assert.ok(audit.render().some(e=>e.type==='a'&&e.props.href==='/en/'));
+ audit.click('Things I don’t use'); audit.click('Audio equipment'); audit.click('More than a year ago'); audit.click('Probably not'); audit.click('I’d let it go if I can sell it');
+ assert.deepEqual(audit.events,['audit_start','audit_complete','result_sell']);
+ assert.ok(audit.render().some(e=>e.type==='h1'&&text(e.props.children)==='Check its value before throwing it away.'));
+ assert.ok(audit.render().some(e=>e.type==='a'&&e.props.href==='https://px.a8.net/svt/ejp?a8mat=4BE7ST+5MFEGI+5VHC+BWVTE'));
+ assert.ok(audit.render().some(e=>text(e.props.children).includes('primarily in Japanese')));
 });
