@@ -53,6 +53,9 @@ export type AuditService = {
   name: string;
   status: AffiliateStatus;
   affiliateUrl: string;
+  /** A8発行の原文と計測画像。URLや計測パラメーターは変更しない。 */
+  a8TextHtml?: string;
+  trackingPixelUrl?: string;
   provider: 'A8.net';
   advertiser?: string;
   programName?: string;

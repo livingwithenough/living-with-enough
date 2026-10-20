@@ -76,6 +76,7 @@ export function AuditTool({locale='ja'}:{locale?:Locale} = {}) {
         {(en?englishServices[service.id]?.description:service.description) && <p>{en?englishServices[service.id]?.description:service.description}</p>}
         <p className="audit-service-external">{en?`External site: ${englishServices[service.id]?.name || service.id} [Ad]`:`ここから先は${service.name}の外部サイトへ移動します［PR］`}</p>
         <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{en?(englishServices[service.id]?.cta || 'View service →'):(service.ctaLabel || service.name)}</a>
+        {service.trackingPixelUrl && <img src={service.trackingPixelUrl} width="1" height="1" alt="" aria-hidden="true" />}
       </article>)}
     </section>}
     {result.showBuyLater && <section className="buy-later"><p className="eyebrow">{en?'Buying comes last':'最後に、必要なものだけ選ぶ'}</p><h2>{en?'If you still need something afterward':'整理した後にも、必要だったら。'}</h2><p>{en?'Once everything has a place, choose only what is still missing — and consider how long it will serve you.':'定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。'}</p><Link className="text-link" href={path('/products/')} onClick={()=>trackEvent('product_click',{source:'audit'})}>{en?'Browse products':'商品を見る'}</Link></section>}

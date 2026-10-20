@@ -16,6 +16,7 @@ const resultCopy:Record<string,Pick<AuditResult,'label'|'title'|'description'|'t
 };
 export function englishAuditResult(result:AuditResult):AuditResult {return {...result,...resultCopy[result.title]};}
 export const englishServices:Record<string,{name:string;headline:string;description:string;cta:string}>={
+ 'moclean-storage':{name:'Moclean',headline:'For clothing: clean and store seasonal clothes in one step.',description:'For clothes you want to keep but do not need right now, Moclean combines cleaning and storage. This is a clothing service, not bag storage. Check eligible items, storage period, pricing, and return conditions before ordering.',cta:'View Moclean →'},
  'instrument-buyer':{name:'Gakki no Kaitoriya-san',headline:'Check the value of instruments you no longer use.',description:'You can decide whether to keep or sell after receiving a valuation.',cta:'Check the valuation service →'},
  'audio-buyer':{name:'Audio no Kaitoriya-san',headline:'Find out what unused audio equipment may be worth.',description:'You can decide whether to let it go after reviewing the valuation.',cta:'Check the valuation service →'},
  'brandear':{name:'Brandear',headline:'Check the value of branded items before deciding.',description:'Only eligible items are accepted, including certain branded bags, wallets, watches, accessories and clothing. Check the accepted brands and categories first.',cta:'Check the buying service →'},
