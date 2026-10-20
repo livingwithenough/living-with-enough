@@ -34,7 +34,7 @@ test('承認済みユアマイスター案件はOUTSOURCEにだけ表示する',
 });
 test('ブランディアだけをブランド品SELLの主導線にする',()=>{
   assert.deepEqual(visibleAuditServices('sell','clothes-bags').map(service=>service.programId),['s00000007299001']);
-  assert.deepEqual(visibleAuditServices('store','clothes-bags'),[]);
+  assert.deepEqual(visibleAuditServices('store','clothes-bags').map(service=>service.id),['moclean-storage']);
   const brandOff = auditServices.find(service=>service.id==='brand-off');
   assert.equal(brandOff?.status,'approved');
   assert.equal(brandOff?.isPublished,false);
@@ -44,11 +44,11 @@ test('リネット保管は非公開で、将来の候補も衣類カテゴリ�
   const service = auditServices.find(service=>service.id==='lenet-storage');
   assert.ok(service);
   assert.equal(service.isPublished,false);
-  assert.deepEqual(visibleAuditServices('store','clothes-bags'),[]);
+  assert.ok(!visibleAuditServices('store','clothes-bags').some(service=>service.id==='lenet-storage'));
   // 公開条件が整った将来も、seasonalやSELLへ広がらないことを検証する。
   service.isPublished = true;
   try {
-    assert.deepEqual(visibleAuditServices('store','clothes-bags').map(service=>service.id),['lenet-storage']);
+    assert.deepEqual(visibleAuditServices('store','clothes-bags').map(service=>service.id),['moclean-storage','lenet-storage']);
     assert.deepEqual(visibleAuditServices('store','seasonal'),[]);
     assert.deepEqual(visibleAuditServices('store','books'),[]);
     assert.ok(!visibleAuditServices('sell','clothes-bags').some(service=>service.id==='lenet-storage'));
@@ -56,4 +56,21 @@ test('リネット保管は非公開で、将来の候補も衣類カテゴリ�
   } finally {
     service.isPublished = false;
   }
+});
+
+test('モクリンは衣類のSTOREだけに表示し、正式なA8原文と計測画像を保持する',()=>{
+  const service=auditServices.find(service=>service.id==='moclean-storage');
+  assert.ok(service);
+  assert.equal(service.isPublished,true);
+  assert.equal(service.status,'approved');
+  assert.deepEqual(service.itemTypes,['clothes-bags']);
+  assert.match(service.headline!,/衣類の場合/);
+  assert.match(service.description!,/バッグの保管サービスではありません/);
+  assert.equal(service.affiliateUrl,'https://px.a8.net/svt/ejp?a8mat=4BEJHG+DEUKDU+526M+5YJRM');
+  assert.ok(service.a8TextHtml?.includes(`href="${service.affiliateUrl}"`));
+  assert.ok(service.a8TextHtml?.includes(`src="${service.trackingPixelUrl}"`));
+  for(const item of ['kimono','books','records','instruments','audio','electronics','tableware','hobbies','seasonal','furniture','other'] as const){
+    assert.ok(!visibleAuditServices('store',item).some(s=>s.id===service.id));
+  }
+  for(const category of ['sell','outsource'] as const)assert.ok(!visibleAuditServices(category,'clothes-bags').some(s=>s.id===service.id));
 });
