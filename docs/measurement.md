@@ -16,7 +16,7 @@ Base: main d06aad36f5c75475d7f51d0bf66fd5c4756b711d. This PR does not activate a
 
 The existing `living-with-enough:event` CustomEvent remains available whether configured, refused, offline or blocked. GA4 receives it only through trackEvent, not through a second CustomEvent listener. One shared client component initializes the tag once and observes App Router pathname changes. Repeated effect initialization on the same pathname is deduplicated; navigation away and back counts again. No pre-consent events are replayed. Query strings/fragments are excluded from manually sent page URLs/referrers; no advertising URL, tracking parameter or answer/free-text payload is sent.
 
-Consent is stored under `lwe:analytics-consent:v1` in this browser. Missing/unavailable storage defaults to denied; a choice still works in memory if storage is blocked. Advertising consent remains denied; Google Signals and ad personalization are disabled. Withdrawing consent sets Google's disable flag and blocks our sends (it does not remove already-created cookies or retroactively erase Google records). Browser privacy controls can delete existing cookies. An already-present gtag/GTM/Analytics script makes this implementation fail closed rather than installing a duplicate; resolve such a conflict before activation.
+Consent changes are synchronized across open tabs using the storage event. Consent is stored under `lwe:analytics-consent:v1` in this browser. Missing/unavailable storage defaults to denied; a choice still works in memory if storage is blocked. Advertising consent remains denied; Google Signals and ad personalization are disabled. Withdrawing consent sets Google's disable flag and blocks our sends (it does not remove already-created cookies or retroactively erase Google records). Browser privacy controls can delete existing cookies. An already-present gtag/GTM/Analytics script makes this implementation fail closed rather than installing a duplicate; resolve such a conflict before activation.
 
 | Event | Trigger / dimensions |
 | --- | --- |
@@ -69,3 +69,13 @@ Suggested normalized private report fields: `period_start, period_end, extracted
 - Consent API: https://developers.google.com/tag-platform/security/guides/consent
 - GSC ownership methods: https://support.google.com/webmasters/answer/9008080?hl=en
 - Japan external transmission information (Google): https://business.safety.google/intl/ja/tba-jp/
+
+## Verification results (2026-10-22)
+
+- npm test: 29/29 passed (24 existing + 5 analytics tests). npm run typecheck: passed.
+- Local npm run build: blocked before compilation by Windows SWC canonical-path Access denied (os error 5). No production workaround or configuration change was introduced. Cloudflare Pages preview build/deploy succeeded for code commit e0d139c and documentation commit d6511ba; preview https://2a330206.living-with-enough.pages.dev/.
+- Read-only live SEO audit at 2026-10-22T07:10:15Z: all 58 sitemap URLs return successful responses, matching production canonicals and three locale alternates; no noindex in meta or X-Robots-Tag. robots.txt allows crawling and points to the production sitemap. The unpublished guides index remains noindex. Local evidence: outputs/p0_measurement/seo-audit.json in the parent task workspace (not a public analytics export).
+- PC 1280px: JP home/products and EN audit/product detail/disclosure render correctly. TOP retains the exact four IDs. Product listing has 24 cards and no broken images. All 24 cards' external hrefs and image URLs match the production DOM exactly, including tracking images.
+- 390px: JP/EN STORE results (five questions completed), EN product list and JP disclosure show no horizontal overflow. Moclean's exact issued href and pixel remain present. No console errors observed on the tested audit tab.
+- Measurement ID absent: zero Google tag elements on all inspected preview pages; disclosure states analytics is disabled. Mock-browser tests verify single tag, duplicate effect/page-view suppression, no pre-consent replay, refusal/re-consent, invalid ID, preview-host exclusion, existing-tag exclusion, blocked storage, and product/provider/placement routing.
+- Real GA4 delivery, GA account configuration and GSC ownership remain unverified/unconfigured; follow the owner checklist above. No real traffic or revenue values were manufactured. No main merge or external configuration was performed.
