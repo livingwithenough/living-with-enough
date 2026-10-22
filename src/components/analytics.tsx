@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { configureAnalytics, trackProductLink } from '@/lib/analytics';
+import { configureAnalytics, getAnalyticsConsent, setAnalyticsConsent, trackProductLink } from '@/lib/analytics';
 
 export function Analytics() {
   const pathname = usePathname();
@@ -16,9 +16,14 @@ export function Analytics() {
       const anchor = target?.closest<HTMLAnchorElement>('a[href]');
       if (anchor) trackProductLink(anchor);
     };
+    const storage = (event: StorageEvent) => {
+      if (event.key === 'lwe:analytics-consent:v1' || event.key === null)
+        setAnalyticsConsent(getAnalyticsConsent());
+    };
+    window.addEventListener('storage', storage);
     document.addEventListener('click', click);
     document.addEventListener('auxclick', click);
-    return () => { document.removeEventListener('click', click); document.removeEventListener('auxclick', click); };
+    return () => { window.removeEventListener('storage', storage); document.removeEventListener('click', click); document.removeEventListener('auxclick', click); };
   }, []);
   return null;
 }
