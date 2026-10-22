@@ -62,3 +62,27 @@ test('issued A8 HTML, Rakuten links and internal detail links have distinct plac
  assert.equal(h.events.at(-1)!.detail.name,'product_click');assert.equal(h.events.at(-1)!.detail.source,'home');assert.equal(h.events.at(-1)!.detail.locale,'en');
  h.configure('/en/products/test/');h.api.trackProductLink({href:'https://example.com/',closest:()=>({dataset:{measureProduct:'test',measureLink:'a8_banner'}})});assert.equal(h.events.at(-1)!.detail.source,'product_detail');
 });
+
+test('delegated listener cleans up on remount and counts each native activation once',()=>{
+ const effects:Array<()=>void|(()=>void)>=[];
+ const listeners=new Map<string,Set<(event:any)=>void>>();
+ let activations=0;
+ const add=(name:string,fn:(event:any)=>void)=>{if(!listeners.has(name))listeners.set(name,new Set());listeners.get(name)!.add(fn);};
+ const remove=(name:string,fn:(event:any)=>void)=>listeners.get(name)?.delete(fn);
+ class Target { closest(){return {href:'https://example.com/issued'};} }
+ const code=ts.transpileModule(readFileSync('src/components/analytics.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+ const exports:{Analytics?:()=>unknown}={};
+ runInNewContext(code,{exports,process:{env:{}},Element:Target,document:{addEventListener:add,removeEventListener:remove},window:{addEventListener:add,removeEventListener:remove},require:(name:string)=>{
+  if(name==='react')return {useEffect:(effect:typeof effects[number])=>effects.push(effect)};
+  if(name==='next/navigation')return {usePathname:()=>'/products/'};
+  if(name==='@/lib/analytics')return {configureAnalytics:()=>{},trackProductLink:()=>activations++,getAnalyticsConsent:()=> 'denied',setAnalyticsConsent:()=>{}};
+  throw Error(name);
+ }});
+ exports.Analytics!();const cleanup=effects.map(effect=>effect());for(const fn of cleanup)fn?.();
+ effects.length=0;exports.Analytics!();for(const effect of effects)effect();
+ assert.equal(listeners.get('click')?.size,1);assert.equal(listeners.get('auxclick')?.size,1);assert.equal(listeners.get('storage')?.size,1);
+ const fire=(type:string,button:number,defaultPrevented=false)=>{for(const fn of listeners.get(type)||[])fn({type,button,defaultPrevented,target:new Target()});};
+ fire('click',0);assert.equal(activations,1);
+ fire('click',1);fire('auxclick',1);assert.equal(activations,2);
+ fire('auxclick',2);fire('click',0,true);assert.equal(activations,2);
+});
