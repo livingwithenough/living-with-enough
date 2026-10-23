@@ -86,3 +86,32 @@ test('delegated listener cleans up on remount and counts each native activation 
  fire('click',1);fire('auxclick',1);assert.equal(activations,2);
  fire('auxclick',2);fire('click',0,true);assert.equal(activations,2);
 });
+
+test('SPA page views and custom events use the immediately previous virtual URL as referrer',()=>{
+ const h=harness({consent:'granted'});const origin='https://living-with-enough.pages.dev';
+ h.configure('/en/?private=1#secret');h.configure('/en/');
+ h.configure('/en/products/?filter=private');h.configure('/en/products/item/');
+ h.api.trackEvent('affiliate_click',{product:'item'});
+ const click=h.googleEvents().find(c=>c[1]==='affiliate_click')![2] as Record<string,unknown>;
+ assert.equal(click.page_referrer,origin+'/en/products/');
+ assert.equal(click.page_location,origin+'/en/products/item/');
+ h.configure('/en/products/');h.configure('/en/products/');h.configure('/en/audit/');
+ const views=h.googleEvents().filter(c=>c[1]==='page_view').map(c=>c[2] as Record<string,unknown>);
+ assert.deepEqual(views.map(p=>p.page_referrer),['https://example.com/search',origin+'/en/',origin+'/en/products/',origin+'/en/products/item/',origin+'/en/products/']);
+ assert.equal(h.scripts.length,1);
+});
+
+test('re-granting consent on the same URL sends exactly one fresh page view without replay',()=>{
+ const h=harness({consent:'granted'});h.configure('/en/audit/');
+ h.api.setAnalyticsConsent('denied');const count=h.calls.length;
+ h.api.trackEvent('audit_start');h.configure('/en/audit/');
+ assert.equal(h.calls.length,count);
+ h.api.setAnalyticsConsent('granted');h.api.setAnalyticsConsent('granted');h.configure('/en/audit/');
+ assert.equal(h.googleEvents().filter(c=>c[1]==='page_view').length,2);
+ assert.equal(h.googleEvents().filter(c=>c[1]==='audit_start').length,0);
+ assert.equal((h.window as Record<string,unknown>)['ga-disable-G-TEST123'],false);
+ h.api.setAnalyticsConsent('denied');h.configure('/products/');h.configure('/en/audit/');
+ h.api.setAnalyticsConsent('granted');
+ assert.equal(h.googleEvents().filter(c=>c[1]==='page_view').length,3);
+ assert.equal(h.scripts.length,1);
+});
