@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { Analytics } from './analytics';
 import type { Locale } from '@/i18n/routing';
 import { localizedPath } from '@/i18n/routing';
 import { LanguageSwitcher } from './language-switcher';
 export function SiteShell({children,locale}:{children:React.ReactNode;locale:Locale}) {
   const en=locale==='en'; const path=(p:string)=>localizedPath(locale,p);
-  return <html lang={locale}><body>
+  return <html lang={locale}><body><Analytics/>
     <a className="skip" href="#main">{en?'Skip to content':'本文へスキップ'}</a>
     <header className="site-header"><Link href={path('/')} className="brand">Living with Enough</Link>
       <nav aria-label={en?'Main navigation':'メインナビゲーション'}>
