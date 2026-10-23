@@ -10,6 +10,8 @@ let hostname = '';
 let initialized = false;
 let lastPage = '';
 let currentPath = '/';
+let routeInitialized = false;
+let pageReferrer = '';
 
 export function analyticsContext(path: string) {
   const locale = path === '/en' || path.startsWith('/en/') ? 'en' : 'ja';
@@ -32,7 +34,7 @@ function allowed() {
     && /^G-[A-Z0-9]+$/.test(measurementId) && window.location.hostname === hostname;
 }
 
-function safeReferrer() {
+function documentReferrer() {
   try { const url = new URL(document.referrer); return url.origin + url.pathname; }
   catch { return ''; }
 }
@@ -51,7 +53,7 @@ function google() {
     w.gtag('js', new Date());
     w.gtag('config', measurementId, { send_page_view: false, allow_google_signals: false,
       allow_ad_personalization_signals: false, cookie_domain: 'none',
-      page_location: window.location.origin + currentPath, page_referrer: safeReferrer() });
+      page_location: window.location.origin + currentPath, page_referrer: pageReferrer });
     const script = document.createElement('script');
     script.id = 'lwe-ga4'; script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
@@ -65,26 +67,41 @@ function pageView() {
   if (!gtag || lastPage === currentPath) return;
   lastPage = currentPath;
   gtag('event', 'page_view', { ...analyticsContext(currentPath), page_path: currentPath,
-    page_location: window.location.origin + currentPath, page_referrer: safeReferrer(), send_to: measurementId });
+    page_location: window.location.origin + currentPath, page_referrer: pageReferrer, send_to: measurementId });
 }
 
 /** Static export: public values are supplied by the client component at build time. */
 export function configureAnalytics(id: string, allowedHostname: string, path: string) {
   measurementId = id; hostname = allowedHostname;
-  currentPath = path.split(/[?#]/)[0] || '/';
-  consent = getAnalyticsConsent();
+  const nextPath = path.split(/[?#]/)[0] || '/';
+  if (!routeInitialized) {
+    pageReferrer = documentReferrer();
+    routeInitialized = true;
+  } else if (nextPath !== currentPath) {
+    pageReferrer = window.location.origin + currentPath;
+  }
+  currentPath = nextPath;
+  applyConsent(getAnalyticsConsent());
   pageView();
 }
 
-export function setAnalyticsConsent(value: Consent) {
+function applyConsent(value: Consent) {
+  const previous = consent;
   consent = value;
-  try { window.localStorage.setItem(consentKey, value); } catch { /* Honor the in-memory choice. */ }
+  // A new permission period must include the current page, even when its URL is unchanged.
+  if (value === 'denied') lastPage = '';
   const w = window as unknown as AnalyticsWindow & Record<string, unknown>;
   if (initialized) {
     w[`ga-disable-${measurementId}`] = value !== 'granted';
     // Stop sends on refusal rather than sending cookieless pings.
-    if (value === 'granted') w.gtag?.('consent', 'update', { analytics_storage: 'granted' });
+    if (value === 'granted' && previous !== value)
+      w.gtag?.('consent', 'update', { analytics_storage: 'granted' });
   }
+}
+
+export function setAnalyticsConsent(value: Consent) {
+  applyConsent(value);
+  try { window.localStorage.setItem(consentKey, value); } catch { /* Honor the in-memory choice. */ }
   if (value === 'granted') pageView();
   window.dispatchEvent(new CustomEvent('living-with-enough:consent-changed'));
 }
@@ -96,7 +113,7 @@ export function trackEvent(name: AuditEventName, details: EventDetails = {}) {
   window.dispatchEvent(new CustomEvent('living-with-enough:event', { detail: { name, ...payload } }));
   const gtag = google();
   if (gtag) gtag('event', name, { ...payload, page_location: window.location.origin + currentPath,
-    page_path: currentPath, page_referrer: safeReferrer(), send_to: measurementId });
+    page_path: currentPath, page_referrer: pageReferrer, send_to: measurementId });
 }
 
 /** Observe issued HTML from its wrapper; never rewrite creatives or navigation. */
