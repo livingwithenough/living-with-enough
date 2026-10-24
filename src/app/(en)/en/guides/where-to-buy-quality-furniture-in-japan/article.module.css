@@ -1,0 +1,45 @@
+.article { max-width: 1000px; padding-top: 56px; padding-bottom: 90px; }
+.header, .body { max-width: 760px; margin-inline: auto; }
+.header h1 { font-size: clamp(2.1rem, 4.5vw, 3.5rem); letter-spacing: -.025em; }
+.meta, .disclosure, .caption { font-size: 13px; color: var(--muted-readable); }
+.disclosure { line-height: 1.8; margin-bottom: 28px; }
+.article a:not(.button) { text-decoration: underline; text-decoration-color: var(--link-underline); text-underline-offset: 4px; }
+.article a:hover { color: var(--button-hover); }
+.hero { margin: 36px 0 48px; }
+.hero img { width: 100%; height: 360px; object-fit: cover; object-position: center 48%; }
+.caption { margin-top: 10px; }
+.contents { border-block: 1px solid var(--line); padding: 24px 0; margin-bottom: 48px; }
+.contents h2 { font: inherit; font-weight: 600; margin-bottom: 12px; }
+.contents ul { display: flex; flex-wrap: wrap; gap: 10px 24px; padding: 0; list-style: none; margin: 0; font-size: 15px; }
+.body { overflow-wrap: anywhere; }
+.body section { scroll-margin-top: 32px; margin-block: 48px; }
+.body h2 { font-size: clamp(1.55rem, 3vw, 2rem); margin-bottom: 24px; }
+.body h3 { font-size: 20px; margin-block: 26px 12px; }
+.body p, .body li { line-height: 1.9; }
+.body ul, .body ol { padding-left: 24px; list-style: revert; }
+.body li { margin-bottom: 10px; }
+.shops { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
+.shop { border-top: 1px solid var(--line); padding-top: 18px; min-width: 0; }
+.shop h3 { margin-top: 0; }
+.shop p { margin-bottom: 12px; font-size: 16px; }
+.example { border-top: 1px solid var(--line); padding-block: 26px 10px; }
+.example h3 { margin-top: 0; }
+.example .name { font-family: Georgia, serif; font-size: 21px; }
+.spec { font-size: 14px; color: var(--muted-readable); }
+.checklist { background: var(--surface-alt); padding: 26px; border: 1px solid var(--line); }
+.terms { margin: 24px 0; }
+.terms div { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.terms dt { font-weight: 600; }
+.terms dd { margin: 0; }
+.message { padding: 22px; background: var(--surface); border-left: 2px solid var(--line-strong); }
+.end { border-block: 1px solid var(--line); padding-block: 30px; }
+@media(max-width:760px) {
+ .article { padding-top: 32px; }
+ .header h1 { font-size: 35px; }
+ .hero { margin-block: 26px 36px; }
+ .hero img { height: 240px; }
+ .shops { grid-template-columns: 1fr; gap: 20px; }
+ .body section { margin-block: 36px; }
+ .terms div { grid-template-columns: 1fr; gap: 4px; }
+ .checklist { padding: 20px; }
+}
