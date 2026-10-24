@@ -27,7 +27,7 @@ export default function Home() {
           <Link className="text-link" href="/products/">必要なものを選ぶ</Link>
         </div>
       </div>
-      <div className="home-hero__photo"><Image src="/images/home-living-room.jpg" alt="自然光が差し込む、白いソファと明るい木の家具がある整ったリビング" fill priority sizes="(max-width: 760px) 100vw, 50vw" /></div>
+      <div className="home-hero__photo"><Image src="/images/home-living-room.jpg" alt="自然光が差し込む、白いソファと明るい木の家具がある整ったリビング" fill priority sizes="(min-width: 1600px) 1600px, 100vw" /></div>
     </section>
     <section className="brand-promise" aria-labelledby="promise-title">
       <h2 id="promise-title">部屋の余白を、<br/>家計の余白に。</h2>
