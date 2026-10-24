@@ -353,8 +353,8 @@ h1, h2 { font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif; }
 .home-hero h1 { font-size: clamp(2rem, 3.4vw, 3rem); letter-spacing: .02em; }
 .home-hero__lead, .home-hero__copy { font-size: 17px; line-height: 1.85; }
 .home-hero__copy { margin-bottom: 22px; }
-.home-hero__photo { position: relative; min-height: 600px; overflow: hidden; }
-.home-hero__photo img { object-fit: cover; object-position: 45% center; }
+.home-hero__photo { position: relative; min-height: 0; aspect-ratio: 16 / 9; align-self: center; overflow: hidden; }
+.home-hero__photo img { object-fit: contain; object-position: center; }
 .home-hero__links { display: flex; align-items: flex-start; flex-direction: column; gap: 20px; }
 .button { font-size: 16px; }
 .text-link { font-size: 15px; white-space: normal; }
@@ -389,7 +389,7 @@ h1, h2 { font-family: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif; }
   .home-hero__main { padding: 40px 6% 44px; }
   .home-hero h1 { font-size: 32px; }
   .home-hero__lead, .home-hero__copy { font-size: 16px; }
-  .home-hero__photo { min-height: 0; height: 360px; }
+  .home-hero__photo { height: auto; }
   .home-hero__photo img { object-position: center; }
   .brand-promise { padding: 72px 6%; grid-template-columns: 1fr; gap: 24px; }
   .brand-promise h2 { font-size: 28px; }
