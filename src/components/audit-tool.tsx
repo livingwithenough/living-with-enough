@@ -45,7 +45,7 @@ export function AuditTool({locale='ja'}:{locale?:Locale} = {}) {
   function choose(value: string) {
     if (step === 0 && !startTracked.current) {
       startTracked.current = true;
-      trackEvent('audit_start');
+      trackEvent('audit_start',{locale,source:'audit'});
     }
     const question = localizedQuestions[step];
     const next = { ...answers, [question.key]: value };
@@ -53,9 +53,9 @@ export function AuditTool({locale='ja'}:{locale?:Locale} = {}) {
     if (step === questions.length - 1) {
       const decided = getAuditResult(next as AuditAnswers);
       setComplete(true);
-      trackEvent('audit_complete');
-      trackEvent(`result_${decided.kind}` as const);
-      if (decided.showBuyLater) trackEvent('result_buy');
+      trackEvent('audit_complete',{locale,source:'audit',category:next.item,result:decided.kind});
+      trackEvent(`result_${decided.kind}` as const,{locale,source:'audit',category:next.item});
+      if (decided.showBuyLater) trackEvent('result_buy',{locale,source:'audit',category:next.item});
     } else setStep(step + 1);
   }
   function back() { if (complete) setComplete(false); else if (step > 0) setStep(step - 1); }
@@ -75,11 +75,11 @@ export function AuditTool({locale='ja'}:{locale?:Locale} = {}) {
         <h2>{en?(englishServices[service.id]?.headline || 'Consider a service in Japan'):service.headline || (result.kind === 'sell' ? '売るなら、まず査定額だけ確かめる。' : result.kind === 'store' ? '預ける場所も、選択肢に入れる。' : '手が回らないことは、頼れる相手を探す。')}</h2>
         {(en?englishServices[service.id]?.description:service.description) && <p>{en?englishServices[service.id]?.description:service.description}</p>}
         <p className="audit-service-external">{en?`External site: ${englishServices[service.id]?.name || service.id} [Ad]`:`ここから先は${service.name}の外部サイトへ移動します［PR］`}</p>
-        <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory,result:result.kind})}>{en?(englishServices[service.id]?.cta || 'View service →'):(service.ctaLabel || service.name)}</a>
+        <a href={service.affiliateUrl} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={()=>trackEvent('affiliate_click',{locale,source:'audit',affiliate_provider:'a8',placement:'audit_service',service:service.id,advertiser:service.advertiser,program:service.programName,category:service.trackingCategory || answers.item,result:result.kind})}>{en?(englishServices[service.id]?.cta || 'View service →'):(service.ctaLabel || service.name)}</a>
         {service.trackingPixelUrl && <img src={service.trackingPixelUrl} width="1" height="1" alt="" aria-hidden="true" />}
       </article>)}
     </section>}
-    {result.showBuyLater && <section className="buy-later"><p className="eyebrow">{en?'Buying comes last':'最後に、必要なものだけ選ぶ'}</p><h2>{en?'If you still need something afterward':'整理した後にも、必要だったら。'}</h2><p>{en?'Once everything has a place, choose only what is still missing — and consider how long it will serve you.':'定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。'}</p><Link className="text-link" href={path('/products/')} onClick={()=>trackEvent('product_click',{source:'audit'})}>{en?'Browse products':'商品を見る'}</Link></section>}
+    {result.showBuyLater && <section className="buy-later"><p className="eyebrow">{en?'Buying comes last':'最後に、必要なものだけ選ぶ'}</p><h2>{en?'If you still need something afterward':'整理した後にも、必要だったら。'}</h2><p>{en?'Once everything has a place, choose only what is still missing — and consider how long it will serve you.':'定位置を決めても足りないものだけ、長く使えるかを確かめて選びます。'}</p><Link className="text-link" href={path('/products/')} onClick={()=>trackEvent('product_click',{locale,source:'audit',placement:'browse_products',category:answers.item})}>{en?'Browse products':'商品を見る'}</Link></section>}
     <div className="audit-controls"><button className="text-button" onClick={back}>{en?'Back to the last answer':'回答を一つ戻る'}</button><button className="text-button" onClick={reset}>{en?'Review again':'もう一度見直す'}</button></div>
   </section>;
 
