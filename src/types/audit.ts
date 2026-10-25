@@ -43,7 +43,8 @@ export type AuditEventName =
   | 'result_outsource'
   | 'result_buy'
   | 'affiliate_click'
-  | 'product_click';
+  | 'product_click'
+  | 'catalog_click';
 
 export type AffiliateStatus = 'pending' | 'approved' | 'rejected';
 export type AuditServiceCategory = 'sell' | 'store' | 'outsource';
