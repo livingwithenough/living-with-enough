@@ -1,3 +1,4 @@
+import { HomePathways } from '@/components/home-pathways';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AffiliateNotice } from '@/components/affiliate-notice';
@@ -24,11 +25,12 @@ export default function Home() {
         <p className="home-hero__copy">まず、今あるものから見直します。</p>
         <div className="home-hero__links">
           <Link className="button" href="/audit/">3分で見直してみる <span aria-hidden="true">→</span></Link>
-          <Link className="text-link" href="/products/">必要なものを選ぶ</Link>
+          <Link className="text-link" data-measure-catalog="home_secondary" href="/products/">必要なものを選ぶ</Link>
         </div>
       </div>
-      <div className="home-hero__photo"><Image src="/images/home-living-room.jpg" alt="自然光が差し込む、白いソファと明るい木の家具がある整ったリビング" fill priority sizes="(min-width: 1600px) 1600px, 100vw" /></div>
+      <div className="home-hero__photo"><Image src="/images/home-living-room.jpg" alt="自然光が差し込む、白いソファと明るい木の家具がある整ったリビング" fill priority sizes="(max-width: 760px) 100vw, 50vw" /></div>
     </section>
+    <HomePathways locale="ja"/>
     <section className="brand-promise" aria-labelledby="promise-title">
       <h2 id="promise-title">部屋の余白を、<br/>家計の余白に。</h2>
       <p>買い足す前に、まず今あるものを見る。<br/>手放すものも、残すものも、<br/>自分で決められるように。</p>
@@ -46,7 +48,7 @@ export default function Home() {
       <p className="home-products__intro">ものを見直したあとにも必要なら、<br/>長く使えるか、場所を取りすぎないか、<br/>暮らしを軽くするかを基準に選びます。</p>
       <div className="product-grid">{featuredProducts.map(product=><ProductCard key={product.id} product={product} compact/>)}</div>
       <p className="common-price-note">価格・在庫は販売先で変更される場合があります。</p>
-      <Link className="text-link home-products__all" href="/products/">すべての商品を見る →</Link>
+      <Link className="button home-products__all" data-measure-catalog="home_all_products" href="/products/">すべての商品を見る →</Link>
     </section>
     <section className="about-teaser">
       <h2>今ある価値を、見落とさない。</h2>
