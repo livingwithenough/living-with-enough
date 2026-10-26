@@ -100,7 +100,7 @@ test('Japanese and English clothing STORE results show Moclean, its pixel, and t
   assert.ok(link);
   assert.ok(rendered.some(e=>e.type==='img'&&e.props.width==='1'&&e.props.src==='https://www19.a8.net/0.gif?a8mat=4BEJHG+DEUKDU+526M+5YJRM'));
   (link.props.onClick as ()=>void)();
-  assert.deepEqual(audit.eventDetails.at(-1),{name:'affiliate_click',details:{service:'moclean-storage',advertiser:'有限会社たんぽぽ',program:'とにかく品質にこだわりまくった【おもてなしクリーニングのモクリン】',category:undefined,result:'store'}});
+  assert.deepEqual(audit.eventDetails.at(-1),{name:'affiliate_click',details:{locale,source:'audit',affiliate_provider:'a8',placement:'audit_service',service:'moclean-storage',advertiser:'有限会社たんぽぽ',program:'とにかく品質にこだわりまくった【おもてなしクリーニングのモクリン】',category:'clothes-bags',result:'store'}});
  }
 });
 

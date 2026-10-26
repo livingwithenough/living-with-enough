@@ -1,0 +1,642 @@
+{
+  "checkedAt": "2026-10-25",
+  "routes": {
+    "moving": {
+      "ja": "/guides/moving-and-unwanted-items/",
+      "en": "/en/guides/dispose-furniture-japan/"
+    },
+    "starting": {
+      "ja": "/guides/starting-a-home/",
+      "en": "/en/guides/starting-a-home-in-japan/"
+    },
+    "objects": {
+      "ja": "/guides/japanese-everyday-objects/",
+      "en": "/en/guides/japanese-everyday-objects/"
+    }
+  },
+  "content": {
+    "moving": {
+      "ja": {
+        "title": "引っ越し前の不用品整理：売る・処分する・預けるの選び方",
+        "description": "家具や不用品を引っ越し前に減らす実用ガイド。買取と廃棄物回収の違い、自治体の粗大ごみ、準備・費用・日程の確認方法を整理します。",
+        "lead": "退去日から逆算し、品物ごとに行き先を決める。まだ使える物を売ることと、ごみを処分することは別の手続きです。目的が決まっている方は、診断を経由せず下の入口から進めます。",
+        "sections": [
+          {
+            "id": "deadline",
+            "title": "まず、退去日と品物の一覧を用意する",
+            "paragraphs": [
+              "部屋ごとに「持っていく・売る候補・処分する・期限を決めて預ける」を記録します。写真、型番、寸法、付属品、動作状況も残すと、自治体や買取先への問い合わせが具体的になります。",
+              "退去直前まで買取の返事だけを待たず、自治体の予約可能日を早めに確認してください。買取不成立でも退去に間に合う代替ルートを用意します。"
+            ],
+            "bullets": [
+              "大型品は玄関・廊下・階段・エレベーターの搬出経路も測る。",
+              "管理会社に、共用部の養生・作業時間・搬出予約を確認する。",
+              "共有・レンタル・借り物は自分の判断で売却や廃棄をしない。"
+            ],
+            "links": []
+          },
+          {
+            "id": "sell",
+            "title": "まだ使える物：取扱対象を確認して買取へ",
+            "paragraphs": [
+              "買取は中古品として買い取る手続きです。家具を買い取れるサービスと、楽器・ブランド品など特定の品目を扱うサービスは分けて考えます。当サイトの承認済み買取先を家具の回収業者として紹介することはありません。",
+              "希望額だけでなく、対象地域・対象ブランド・搬出方法・本人確認・支払い時期・返送料・キャンセル条件を確認します。査定額を受け入れる前に、費用を差し引いた受取額を把握してください。"
+            ],
+            "bullets": [
+              "破損や欠品を隠さず伝え、付属品と説明書をまとめる。",
+              "機器はバックアップ・初期化・アカウント解除の方法も確認する。",
+              "最短訪問日や外国籍の方の本人確認は、個別に問い合わせる。"
+            ],
+            "links": []
+          },
+          {
+            "id": "dispose",
+            "title": "廃棄する物：自治体の正規ルートへ",
+            "paragraphs": [
+              "環境省は家庭ごみを自治体のルールで処理するよう案内しています。民間業者なら、地域の一般廃棄物処理業の許可・自治体委託、または適用される法令上の例外を自治体に確認してください。古物商許可や産業廃棄物の許可だけでは家庭ごみ回収の根拠になりません。",
+              "公式サイトで「市区町村名＋粗大ごみ」を探し、品目・寸法・手数料・予約日・排出場所を確認します。室内からの運び出しが含まれるとは限りません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "環境省：無許可回収を利用しないために",
+                "href": "https://www.env.go.jp/recycle/kaden/tv-recycle/qa.html"
+              }
+            ]
+          },
+          {
+            "id": "local-example",
+            "title": "具体例：横浜市。全国共通ルールではありません",
+            "paragraphs": [
+              "横浜市の英語案内は事前申込み・有料回収を説明し、日付・場所・料金を申込時に確認するとしています。約2週間の目安もありますが、実際の空き枠を確認してください。英語等で相談できる受付も明示されています。",
+              "他の自治体に同じ寸法基準や日数を当てはめないでください。予約変更・取消し、支払い済み手数料、運び出しの支援は自分の自治体へ確認します。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "横浜市の公式案内（英語）",
+                "href": "https://www.city.yokohama.lg.jp/lang/residents/en/garbage/oversizedgarbage.html"
+              }
+            ]
+          },
+          {
+            "id": "appliances",
+            "title": "家具と同じ方法で出せない家電もある",
+            "paragraphs": [
+              "テレビ、エアコン、冷蔵庫・冷凍庫、洗濯機・衣類乾燥機は家電リサイクル法の対象です。販売店等への引渡しとリサイクル料金・収集運搬料金を確認します。パソコンや電池も粗大ごみと決めつけず、自治体の専用案内を確認してください。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "環境省：家電の正しい引渡し",
+                "href": "https://www.env.go.jp/recycle/kaden/tv-recycle/qa.html"
+              }
+            ]
+          },
+          {
+            "id": "store",
+            "title": "また使う物：保管の総額と返却日を比べる",
+            "paragraphs": [
+              "使う日を決められる物だけ、保管期間・コース料金・箱代・送料・取出し料・最低期間・解約条件を合計します。家具やバッグを衣類向けクリーニング保管に送ることはできません。",
+              "下の保管候補は、衣類を預けたい場合だけの案内です。汎用トランクルームの広告ではありません。家具などの保管は受入品目を別途確認してください。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "help",
+            "title": "掃除を任せる：作業範囲を先に決める",
+            "paragraphs": [
+              "ハウスクリーニングはごみ回収や家財買取とは別です。清掃箇所、家具移動、廃棄物の持ち帰りが含まれるかを見積りで確認します。含まれると書かれていない作業を期待して申し込まないでください。",
+              "駐車料金・追加作業・対象外の汚れ・キャンセル期限も確認します。下の清掃候補から対応事業者・地域・日時を確認して進めます。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "questions",
+            "title": "申込前に使える確認メモ",
+            "paragraphs": [
+              "「この品物（型番・寸法・状態）を○月○日までに手放したいです。買取／処分のどちらですか。搬出・追加費用・必要書類・予約変更とキャンセル条件を教えてください。」",
+              "未確認の即日対応や無料回収を当てにせず、書面の見積りを残します。新しい不用品回収サービスの広告は追加していません。"
+            ],
+            "bullets": [],
+            "links": []
+          }
+        ]
+      },
+      "en": {
+        "title": "How to Dispose of Furniture and Unwanted Items in Japan",
+        "description": "Choose between selling, municipal oversized garbage, storage and cleaning in Japan. A moving-out guide to bookings, access, costs and safe collection routes.",
+        "lead": "Start with your move-out date, then give each item a destination. Selling usable goods and paying for waste collection are different transactions. Choose your purpose below; the five-question review is optional.",
+        "sections": [
+          {
+            "id": "deadline",
+            "title": "Make an exit plan before the final week",
+            "paragraphs": [
+              "List what you will take, offer for sale, dispose of or store until a specific date. Record photographs, model numbers, dimensions, accessories and faults. This gives a buyer or municipal reception desk something concrete to assess.",
+              "Ask your municipality about available dates early. Keep a disposal backup if a buyer declines. An unanswered valuation request is not a collection booking, and a price estimate does not solve the problem of getting a sofa downstairs."
+            ],
+            "bullets": [
+              "Measure the exit route, including turns, stairs and the elevator.",
+              "Ask your building manager about shared-area protection, bookings and work hours.",
+              "Check ownership before selling landlord-supplied or rented goods."
+            ],
+            "links": []
+          },
+          {
+            "id": "sell",
+            "title": "Still useful? Check the buyer’s actual categories",
+            "paragraphs": [
+              "A resale buyer purchases goods. A specialist in instruments or branded bags is not automatically a furniture-removal company. The approved options below are separated by what they accept; none is presented as a general waste collector.",
+              "Check your postcode, accepted items, valuation method, identity documents, payment timing, cancellation and return costs. Work out what you receive after charges. A fast-service headline is not a confirmed appointment."
+            ],
+            "bullets": [
+              "Disclose faults and missing accessories.",
+              "Check backup, erasure and account-removal procedures for devices.",
+              "Ask which identity document a foreign resident can use and whether language help is available. English support for the linked commercial services is unverified."
+            ],
+            "links": []
+          },
+          {
+            "id": "dispose",
+            "title": "For waste, start with your municipality",
+            "paragraphs": [
+              "The Ministry of the Environment says household waste should follow municipal rules. For private collection, verify the relevant municipal household-waste permission, commission or applicable legal exception with your municipality. A secondhand-dealer or industrial-waste licence alone does not authorise household-waste collection.",
+              "Find your official city or ward website and search for sodai gomi (粗大ごみ). Confirm category, dimensions, booking, fee and collection point. Do not assume the crew enters your apartment."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Ministry guidance on unauthorised waste collection (Japanese)",
+                "href": "https://www.env.go.jp/recycle/kaden/tv-recycle/qa.html"
+              }
+            ]
+          },
+          {
+            "id": "local-example",
+            "title": "A concrete example: Yokohama, not a nationwide rule",
+            "paragraphs": [
+              "Yokohama’s English page describes advance booking and paid collection, with the date, location and handling fee confirmed when you apply. It gives around two weeks as an estimate and lists English among its reception languages. Actual slots can differ.",
+              "Check your own municipality’s thresholds and process. Ask how to change or cancel a booking, what happens to paid fees and whether you qualify for help moving items outside."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "City of Yokohama: oversized garbage in English",
+                "href": "https://www.city.yokohama.lg.jp/lang/residents/en/garbage/oversizedgarbage.html"
+              }
+            ]
+          },
+          {
+            "id": "appliances",
+            "title": "Some appliances follow a separate route",
+            "paragraphs": [
+              "TVs, air conditioners, refrigerators/freezers and washing machines/clothes dryers use the appliance-recycling system. Check retailer take-back and recycling and collection/transport fees. Consult local instructions for computers and batteries rather than putting everything into oversized garbage."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Ministry appliance-recycling guidance (Japanese)",
+                "href": "https://www.env.go.jp/recycle/kaden/tv-recycle/qa.html"
+              }
+            ]
+          },
+          {
+            "id": "store",
+            "title": "Store something you will actually use again",
+            "paragraphs": [
+              "Set a retrieval date. Compare storage, boxes, shipping, retrieval, minimum term and cancellation with replacement and the role of the item in your next home.",
+              "Clothing-cleaning storage is not furniture or bag storage. The clothing option below is relevant only for eligible clothes. We do not advertise a general furniture-storage service here."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "help",
+            "title": "Cleaning help is not a waste-removal booking",
+            "paragraphs": [
+              "Decide which room or equipment needs cleaning. Ask about furniture moving and waste removal; do not infer either from house cleaning. Confirm parking, extras, exclusions and cancellation in the quote.",
+              "The contractor, area and appointment must match your need. A cleaning listing does not establish household-waste collection authority."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "questions",
+            "title": "A short message before booking",
+            "paragraphs": [
+              "You can adapt: この品物（型番・寸法・状態）を○月○日までに手放したいです。買取と処分のどちらですか。搬出、追加費用、必要書類、キャンセル条件、英語対応の有無を教えてください。",
+              "This asks whether it is resale or disposal, room removal, extra costs, documents, cancellation and English help. Keep the response in writing. No new waste-removal advertising is added to this guide."
+            ],
+            "bullets": [],
+            "links": []
+          }
+        ]
+      }
+    },
+    "starting": {
+      "ja": {
+        "title": "日本で新生活を始める：最初に必要なもの、あとで選ぶもの",
+        "description": "寝る・洗う・食べる・洗濯するための最小限から準備。家具寸法、配送、通販、返品の確認と既存商品の役割別候補を紹介します。",
+        "lead": "部屋を一度に完成させなくても大丈夫。備え付けと手持ちを確認し、初日を過ごすための物から順番にそろえます。",
+        "sections": [
+          {
+            "id": "first-night",
+            "title": "初日は、不足だけを埋める",
+            "paragraphs": [
+              "管理会社に寝具・照明・カーテン・エアコン・冷蔵庫等が付くか一覧で確認します。日本の賃貸に必ずある／ないと決めつけず、自分の契約を見ます。",
+              "寝る、洗う、トイレを使う、食べる、スマホを充電する。そのための寝具・タオル・トイレットペーパー・洗面用品・食事と水・充電手段を先に準備します。窓の目隠しやライフラインの利用開始も確認してください。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "wait",
+            "title": "買わずに待てるものを決める",
+            "paragraphs": [
+              "大きなソファ、収納家具、食器セット、用途の重なる調理道具は、暮らしてから判断できます。使えるタオルやハンガーがあれば買い替えは不要です。",
+              "短期滞在なら譲受け・中古・レンタルも比較し、運搬・返却・処分の費用も含めます。無料の品物でも運搬費は別です。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "measure",
+            "title": "最初の家具は、実測と動線から",
+            "paragraphs": [
+              "帖数だけで決めず置場をcmで測ります。椅子を引く幅、扉、歩く場所、コンセントを残して床に印を付けます。食卓と作業机を兼用できるかも考えます。",
+              "梱包寸法と玄関・廊下・階段・エレベーターも測り、搬入を販売店に確認します。背もたれのないスツールを長時間作業用に無理に選ばないでください。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "laundry",
+            "title": "洗濯と乾燥をひとつの流れに",
+            "paragraphs": [
+              "洗濯機の有無・接続条件と干せる場所を確認します。物干しは広げる寸法、洗濯物の重さ、収納場所も必要です。かごはどこが畳めるのかを区別します。",
+              "次の候補は全部を買うリストではありません。手頃な日用品、必要な時だけの道具、長く使う家具を役割で分けます。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "ordering",
+            "title": "通販の注文前に",
+            "paragraphs": [
+              "販売者、型番、色、サイズ、セット数、送料込み総額を確認します。最低表示価格が希望仕様の価格とは限りません。発送と到着、組立と室内設置を別々に確認します。",
+              "サイズ違い・受注生産・開封後・搬入不可の返品条件を先に読みます。画面の翻訳は英語決済や配送時の英語対応の保証にはなりません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "IKEA Japan：配送の公式案内（英語）",
+                "href": "https://www.ikea.com/jp/en/customer-service/services/delivery/"
+              }
+            ]
+          },
+          {
+            "id": "checklist",
+            "title": "購入前チェック",
+            "paragraphs": [
+              "「この仕様の在庫・納期・送料・梱包寸法・搬入と組立・返品条件を教えてください。英語で問い合わせできますか。」と具体的に確認できます。"
+            ],
+            "bullets": [
+              "手持ちや備え付けで代用できないか。",
+              "使用頻度に価格と置場が見合うか。",
+              "部屋と搬入経路に入り、余白も残るか。",
+              "氏名・住所・建物名・部屋番号・連絡先は正確か。",
+              "支払方法、受取日、追加料金、キャンセル条件を保存したか。"
+            ],
+            "links": []
+          }
+        ]
+      },
+      "en": {
+        "title": "Starting a Home in Japan: What You Actually Need",
+        "description": "A buy-less checklist for your first home in Japan: first-night essentials, compact furniture, laundry, measurements, online orders, delivery and returns.",
+        "lead": "You do not need a complete room on day one. Confirm what the property provides, bring what already works and fill the gaps in the order you will use them.",
+        "sections": [
+          {
+            "id": "first-night",
+            "title": "Before the keys: ask what is already there",
+            "paragraphs": [
+              "Ask the landlord or agent for an inventory: bedding, lights, curtains, air conditioning, refrigerator and washer. Do not assume a furnished label includes everything or that all Japanese rentals have the same equipment. Confirm your contract.",
+              "Plan somewhere to sleep, washing, toilet paper, a towel, toiletries, food and water, and phone charging. Measure windows if privacy matters immediately. Confirm utility availability as well as furniture."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "wait",
+            "title": "Make a list of things you can postpone",
+            "paragraphs": [
+              "A large sofa, matching dish set, extra storage and several similar kitchen tools can wait until you know your routines. Keep usable towels and hangers you already own. A home can function while unfinished.",
+              "For a short stay compare used, borrowed or rented goods. Include transport, return and eventual disposal. Free furniture can still cost money to move. Do not buy storage simply for things you have not decided to keep."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "measure",
+            "title": "Choose the first surface and seat by measurement",
+            "paragraphs": [
+              "Measure centimetres, not just advertised tatami-mat room size. Mark the footprint. Leave space for doors, chairs, walking and sockets.",
+              "One table may work for meals and work at different times. Check its height against your seat. A backless stool is not necessarily an all-day work chair. Bigger or custom furniture can wait until your routines and length of stay are clearer.",
+              "Compare package size with the entrance, turns, stairs and elevator. Ask the retailer about difficult access before ordering. A floor footprint alone does not prove a piece will reach the room."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "laundry",
+            "title": "Plan washing, drying and putting clothes away together",
+            "paragraphs": [
+              "Confirm washer space and connection requirements, and where you may dry laundry. A folding rack needs open space and storage space. Consider the loaded footprint, not just the folded object.",
+              "The options below are alternatives for specific jobs, not a starter bundle. Begin with a few everyday basics, add a tool only for a real gap, and leave long-term furniture until later."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "ordering",
+            "title": "How to approach a Japanese online order",
+            "paragraphs": [
+              "Check seller, model, colour, size and quantity. A single towel and a towel set are different purchases. Compare shipping and option costs; the cheapest displayed variant may not be yours.",
+              "Separate dispatch from arrival. Confirm handover, assembly, packaging removal and whether you can receive the delivery. Save the chosen specification and confirmation.",
+              "Read size-mismatch, opened-item, custom-order and failed-access cancellation terms before payment. A translated screen does not prove that checkout, calls or delivery support will be in English."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "IKEA Japan: official delivery information in English",
+                "href": "https://www.ikea.com/jp/en/customer-service/services/delivery/"
+              }
+            ]
+          },
+          {
+            "id": "checklist",
+            "title": "Your pre-purchase checklist",
+            "paragraphs": [
+              "You can send: この仕様の在庫、納期、送料、梱包寸法、室内への搬入と組立、返品条件を教えてください。英語で問い合わせできますか。 This asks about stock, lead time, shipping, package size, room delivery/assembly, returns and English inquiries."
+            ],
+            "bullets": [
+              "Can existing or supplied belongings do the job?",
+              "Does the cost and footprint suit the frequency of use?",
+              "Will it fit the room and delivery route with usable space remaining?",
+              "Are the name, address, building, room and reachable phone correct?",
+              "Have I saved payment, receipt, delivery and cancellation details?"
+            ],
+            "links": []
+          }
+        ]
+      }
+    },
+    "objects": {
+      "ja": {
+        "title": "長く使いたい、日本の暮らしの道具",
+        "description": "棕櫚たわし・箒、南部鉄器、うつわ、タオルを役割から考えるガイド。製造地や原料の違い、手入れと向かない使い方を公式情報から確認します。",
+        "lead": "美しくても使う場面がなければ増やさない。作り手の情報と手入れを続けられるかを一緒に見ます。実使用レビューではなく、公式情報に基づく編集ガイドです。",
+        "sections": [
+          {
+            "id": "choose",
+            "title": "足りない役割を、ひとつだけ",
+            "paragraphs": [
+              "鍋を洗う、床のほこりを掃く、毎日の器を選ぶ。同じ役割の道具が十分なら買い足さなくても構いません。産地や手仕事は使いやすさの保証ではありません。",
+              "日本製、国産原料、手作り、国指定の伝統的工芸品は別です。未確認の認定や原料産地をブランド全体へ当てはめません。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "brush",
+            "title": "棕櫚たわし：洗う対象に合う形を",
+            "paragraphs": [
+              "髙田耕造商店は和歌山県海南市のたわし・ほうき専門店。国内外の棕櫚を選んでおり、和歌山で作った道具でも全原料が国産とは限りません。用途と硬さを確認し、傷が気になる表面は対象物の手入れ説明も読みます。",
+              "食器・野菜・からだ用を混用せず、洗浄と乾燥ができる置場を用意します。漂白・食洗機・高温処理の可否、補修や交換部材は選ぶ型について確認してください。",
+              "むすびの商品説明では、使用後に水を切って乾かす方法を案内しています。置場も道具の一部として考えます。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "公式：むすびの仕様",
+                "href": "https://takada1948.shop-pro.jp/?pid=146303278"
+              },
+              {
+                "label": "メーカー英語紹介（決済言語は未確認）",
+                "href": "https://takadatawashi.com/"
+              }
+            ]
+          },
+          {
+            "id": "broom",
+            "title": "棕櫚箒：小さな掃除をすぐ始める",
+            "paragraphs": [
+              "五玉・焼檜柄は生産地が和歌山県海南市、原料が棕櫚・檜・ステンレス。手作りの寸法差や、最初に繊維の粉が出る場合があります。柄の長さと収納場所も測ります。",
+              "掃除機で十分なら急いで追加しなくても構いません。毛先を押しつぶさず保管できるか、床材と手入れが合うかを先に確認。寿命は使い方で変わります。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "公式：五玉・焼檜柄の注意と寸法",
+                "href": "https://takada1948.shop-pro.jp/?pid=146303236"
+              }
+            ]
+          },
+          {
+            "id": "iron",
+            "title": "南部鉄器：鉄瓶・鉄急須・フライパンは別の道具",
+            "paragraphs": [
+              "及源鋳造は、鋳物の鉄器として鍋・鉄瓶・急須を作るメーカーです。製造の考え方と歴史は公式の「及源について」で確認できます。個別の製品認定や原料の産地は別途確認します。",
+              "OIGENの公式Q&Aは製品別に説明しています。鉄鍋は油慣らしや乾燥が必要で、鉄瓶内部に洗剤を使う方法とは異なります。同じ手入れを全ての鉄器に当てはめないでください。",
+              "重さ、熱い持ち手、対応熱源、乾燥と保管を考えます。軽さや手入れの少なさを優先する人には不向きな場合もあります。修理可否と費用は個別相談で、保証ではありません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "OIGEN：製品別Q&A",
+                "href": "https://oigen.jp/pages/q-a"
+              },
+              {
+                "label": "OIGEN：修理相談",
+                "href": "https://enjoy.oigen.jp/contact_repair"
+              },
+              {
+                "label": "OIGEN：メーカーの歴史",
+                "href": "https://enjoy.oigen.jp/aboutoigen"
+              }
+            ]
+          },
+          {
+            "id": "ceramics",
+            "title": "うつわ：産地より、日々の使い方から",
+            "paragraphs": [
+              "よく作る一皿に合うサイズから。重なり方、棚の奥行、電子レンジ・食洗機・オーブン対応を個別に確認します。陶器と磁器をまとめて全部使えるとは扱いません。",
+              "釉薬や仕上げで手入れは変わります。変色や貫入を受け入れられるか、欠けたときの使用中止・補修方針も考えます。今回は器の個別広告商品や写真は追加していません。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "towels",
+            "title": "タオル：必要枚数と干せる場所から",
+            "paragraphs": [
+              "洗濯間隔と乾かせる量から必要枚数を決めます。産地表示は個別商品を確認し、ブランドの所在地と原料の産地を混同しません。",
+              "既存候補には寸法・価格確認日・注意事項があります。洗濯表示を守り乾かしてから収納。吸水性や耐久性を実測したレビューではありません。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "buying",
+            "title": "国内での買い方と言語の確認",
+            "paragraphs": [
+              "両メーカーへは広告ではない通常の公式リンクを設けています。国内配送・在庫・送料・納期・返品・問い合わせ言語は注文前に確認してください。髙田耕造商店には英語紹介がありますが、国内店の英語決済・接客は未確認。OIGENも英語購入対応は未確認です。",
+              "提携と素材利用条件が確認できるまで、新しい広告リンクや写真は追加しません。まず今ある道具で役割を満たせるかを考えます。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "髙田耕造商店（通常リンク）",
+                "href": "https://takada1948.jp/"
+              },
+              {
+                "label": "OIGEN公式店（通常リンク）",
+                "href": "https://oigen.jp/"
+              }
+            ]
+          }
+        ]
+      },
+      "en": {
+        "title": "Japanese Everyday Objects Worth Keeping",
+        "description": "Choose shuro brushes, brooms, cast iron, ceramics and towels by their role. Maker sources, care, limitations and buying questions without invented reviews.",
+        "lead": "A beautiful object still needs a job. Consider maker information alongside the space and care you can give it. This is a source-based editorial guide, not a claim that we have tested these products.",
+        "sections": [
+          {
+            "id": "choose",
+            "title": "Name one job your existing tools cannot do",
+            "paragraphs": [
+              "Washing a pan, sweeping crumbs and choosing a bowl are different needs. Keep working tools. Craft and origin are information, not proof of suitability.",
+              "Made in Japan, Japanese-grown material, handmade and officially designated traditional craft are separate claims. Verify each for the particular item; do not give an entire brand an assumed certification."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "brush",
+            "title": "A shuro brush: match shape to surface",
+            "paragraphs": [
+              "Takada is a brush and broom specialist in Kainan, Wakayama. It selects shuro from Japan and abroad; local manufacture does not establish Japanese-grown fibre. Choose the intended use rather than treating kitchen and body brushes as interchangeable.",
+              "Check surface compatibility, cleaning treatments, washing and drying for the model. Plan ventilated storage. Replacement parts and repair are unverified; do not assume indefinite life.",
+              "The Musubi listing describes draining and drying after use. Choose its storage spot before buying."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Maker: Musubi specifications (Japanese)",
+                "href": "https://takada1948.shop-pro.jp/?pid=146303278"
+              },
+              {
+                "label": "Takada English introduction",
+                "href": "https://takadatawashi.com/"
+              }
+            ]
+          },
+          {
+            "id": "broom",
+            "title": "A shuro broom: small, frequent cleaning",
+            "paragraphs": [
+              "The five-ball cypress-handle listing states Kainan production and shuro, cypress and stainless steel. It notes initial fibre dust and handmade size variation. Measure the handle and storage space too.",
+              "If a vacuum already works, a broom may add clutter. Check floor suitability and model-specific care, and keep bristles from being compressed in storage. Lifespan depends on use."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Maker: five-ball broom specifications",
+                "href": "https://takada1948.shop-pro.jp/?pid=146303236"
+              }
+            ]
+          },
+          {
+            "id": "iron",
+            "title": "Cast iron: kettles, teapots and pans need different care",
+            "paragraphs": [
+              "Oigen makes cast iron cookware, kettles and teapots. Its official maker history explains the foundry tradition; verify a specific product’s origin and any certification separately.",
+              "OIGEN separates its advice by product. Iron pans need conditioning and drying; its kettle advice does not use detergent inside. Do not transfer one object’s routine to another.",
+              "Consider weight, hot handles, heat-source compatibility and storage. It may not suit someone prioritising low weight or minimal care. Ask about repair suitability and cost rather than assuming every defect is repairable."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "OIGEN product Q&A (Japanese)",
+                "href": "https://oigen.jp/pages/q-a"
+              },
+              {
+                "label": "OIGEN repair inquiry (Japanese)",
+                "href": "https://enjoy.oigen.jp/contact_repair"
+              },
+              {
+                "label": "OIGEN: maker history",
+                "href": "https://enjoy.oigen.jp/aboutoigen"
+              }
+            ]
+          },
+          {
+            "id": "ceramics",
+            "title": "Ceramics: start with the meal, not a whole set",
+            "paragraphs": [
+              "Choose a bowl for something you regularly cook. Check stacking, shelf depth and stated microwave, dishwasher and oven suitability. A material or regional name does not establish identical use across all pieces.",
+              "Glazes and finishes change care. Ask about staining, cracks and retiring chipped items. No specific ceramic product or copied maker photography is added here. Use these questions when comparing in a shop."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "towels",
+            "title": "Towels: choose for your laundry routine",
+            "paragraphs": [
+              "Work out quantities between washes and drying space. Check the individual origin label; a Japanese brand does not establish Japanese-grown cotton.",
+              "Our existing pages record dimensions, dated prices and caveats. Follow the washing label and dry before storage. These are comparisons, not measured absorbency or durability reviews."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "buying",
+            "title": "Buying without inventing English support",
+            "paragraphs": [
+              "Takada and OIGEN links here are ordinary official links, not new affiliate links. Confirm domestic delivery, current stock, lead time, returns and inquiry language. Takada has an English introduction; English checkout/support for its domestic store is unverified, as is English purchasing support for OIGEN.",
+              "No new maker photography or advertising creatives are used. A purchase CTA can be added only after partnership and material conditions are verified. A commercial relationship will not make an unnecessary purchase necessary."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Takada official site (ordinary link)",
+                "href": "https://takada1948.jp/"
+              },
+              {
+                "label": "OIGEN official store (ordinary link)",
+                "href": "https://oigen.jp/"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "products": {
+    "starting": [
+      "hiorie-hotel-big-face-towel",
+      "mawa-economic-40p-20",
+      "tower-folding-drying-rack",
+      "tower-leg-laundry-basket",
+      "woodlife-sx-001"
+    ],
+    "objects": [
+      "true-towel-classic-sugoi-face-towel",
+      "hiorie-hotel-big-face-towel"
+    ]
+  }
+}
