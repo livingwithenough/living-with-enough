@@ -81,3 +81,18 @@ The ¥2,000,000/month goal is not a forecast. A scenario can later use measured 
 ## Release checks
 
 Local integrated tests/typecheck and protected-source hashes are recorded in tests. Final preview must validate 67 sitemap URLs, actual canonical/hreflang pairs, JA/EN goals and product detail/issued ads, PC and 390px, no Google tag with missing ID/denied consent, and all blocked services absent. Local Windows build has a known SWC path canonicalization access-denied failure; report it separately from Cloudflare static-export success. Do not merge this PR or alter external account settings in this task.
+
+
+### Verified integration preview (2026-10-26 JST)
+
+- PR: https://github.com/livingwithenough/living-with-enough/pull/11 (main is not merged; #6 and #7 remain open).
+- Content head: f170c880ae52d7bd598513889316fb4d2e3abefa. Cloudflare Pages check 121328013150 reports Deployed successfully. Preview: https://4c27d9df.living-with-enough.pages.dev/ .
+- 41/41 regression tests passed and TypeScript typecheck passed. Protected product/service/audit sources and the hero image match main; the remote integration tree matches the validated local sources after line-ending normalization.
+- HTTP crawl: all 67 sitemap URLs returned 200, have the expected production canonical, no HTML noindex, valid emitted JSON-LD and no internal page targets outside the valid sitemap.
+- Browser checks at 1280px and 390px: JA/EN homes, practical guides, existing English furniture guide, product details and question-one audit. No horizontal overflow or completed broken images on checked pages. Desktop hero photo height 350px; mobile copy/CTA precede the photo. Existing retailer CTA is before the product role/specification sections, with at least 48px button height.
+- JA goal-to-guide and JA-to-EN translation navigation exercised. Five published service IDs only on moving guides: instrument-buyer, audio-buyer, brandear, moclean-storage, yourmeister. Moclean issued HTML/pixel appears once, clothing limitation is explicit. No Lenet, pending storage or Hello Storage ads. No new craft ads.
+- Preview has no Google tag (missing/preview ID fail-closed behavior). Consent, one-event dispatch, SPA referrer and re-grant page_view behavior are covered by regression tests; production DebugView and ASP confirmed outcomes remain unmeasured.
+- QA screenshots and machine-readable crawl/mobile/desktop results are saved locally under outputs/integrated-reader-pathways/. Screenshots are not added to the production bundle.
+- Local Windows build fails before compilation with the known SWC jsc.baseUrl path access error; it is not the Cloudflare result.
+
+Release still requires owner review, and any advertiser-required URL/creative review for the added article placements. A8 re-authentication prevented a fresh new-campaign check; no application or condition is invented. GA4/GSC external account setup is not performed.
