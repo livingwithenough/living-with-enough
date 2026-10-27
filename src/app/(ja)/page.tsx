@@ -1,9 +1,14 @@
+import type { Metadata } from 'next';
 import { HomePathways } from '@/components/home-pathways';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AffiliateNotice } from '@/components/affiliate-notice';
 import { ProductCard } from '@/components/product-card';
 import { getApprovedProducts } from '@/lib/products';
+
+export const metadata: Metadata = {
+  verification: { google: 'mq6V8AiNLsgp9CCdXqAjjS-tpWt4lw3COv0q-N4HY38' },
+};
 
 const actions = [
   { title: '売る', text: '使っていないものは、捨てる前に価値を確かめる。' },
