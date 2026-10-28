@@ -21,9 +21,10 @@ export function Analytics() {
         setAnalyticsConsent(getAnalyticsConsent());
     };
     window.addEventListener('storage', storage);
-    document.addEventListener('click', click);
-    document.addEventListener('auxclick', click);
-    return () => { window.removeEventListener('storage', storage); document.removeEventListener('click', click); document.removeEventListener('auxclick', click); };
+    // Observe before Next Link prevents native navigation during React bubbling.
+    document.addEventListener('click', click, true);
+    document.addEventListener('auxclick', click, true);
+    return () => { window.removeEventListener('storage', storage); document.removeEventListener('click', click, true); document.removeEventListener('auxclick', click, true); };
   }, []);
   return null;
 }
