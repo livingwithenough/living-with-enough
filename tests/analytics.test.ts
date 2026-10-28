@@ -124,3 +124,30 @@ test('catalog and direct service clicks have distinct placements without double 
  const catalog={href:'https://living-with-enough.pages.dev/en/products/',closest:(s:string)=>s==='[data-measure-catalog]'?{dataset:{measureCatalog:'home_all_products'}}:null};
  h.api.trackProductLink(catalog);assert.equal(h.events.length,2);assert.equal(h.events[1].detail.name,'catalog_click');assert.equal(h.events[1].detail.placement,'home_all_products');assert.equal(h.scripts.length,0);
 });
+
+test('capture observes Next.js link activation before the router prevents default navigation',()=>{
+ const effects:Array<()=>void|(()=>void)>=[];
+ const listeners:Array<{name:string;fn:(event:any)=>void;capture:boolean}>=[];
+ const add=(name:string,fn:(event:any)=>void,capture=false)=>listeners.push({name,fn,capture});
+ const remove=(name:string,fn:(event:any)=>void,capture=false)=>{const i=listeners.findIndex(l=>l.name===name&&l.fn===fn&&l.capture===capture);if(i>=0)listeners.splice(i,1);};
+ let activations=0;
+ class Target {closest(){return {href:'https://living-with-enough.pages.dev/en/products/item/'};}}
+ const exports:{Analytics?:()=>unknown}={};
+ const code=ts.transpileModule(readFileSync('src/components/analytics.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+ runInNewContext(code,{exports,process:{env:{}},Element:Target,document:{addEventListener:add,removeEventListener:remove},window:{addEventListener:add,removeEventListener:remove},require:(name:string)=>{
+  if(name==='react')return {useEffect:(effect:typeof effects[number])=>effects.push(effect)};
+  if(name==='next/navigation')return {usePathname:()=>'/en/products/'};
+  if(name==='@/lib/analytics')return {configureAnalytics:()=>{},trackProductLink:()=>activations++,getAnalyticsConsent:()=> 'denied',setAnalyticsConsent:()=>{}};
+  throw Error(name);
+ }});
+ exports.Analytics!();const cleanup=effects.map(effect=>effect());
+ const event={type:'click',button:0,defaultPrevented:false,target:new Target()};
+ for(const l of listeners.filter(l=>l.name==='click'&&l.capture))l.fn(event);
+ // Next Link handles the same real activation at the React root before document bubbling.
+ event.defaultPrevented=true;
+ for(const l of listeners.filter(l=>l.name==='click'&&!l.capture))l.fn(event);
+ assert.equal(activations,1,'a real internal navigation must count once despite router preventDefault');
+ assert.equal(event.defaultPrevented,true,'tracking must not change router behavior');
+ for(const fn of cleanup)fn?.();
+ assert.equal(listeners.length,0,'cleanup must remove listeners with matching capture options');
+});
