@@ -25,6 +25,7 @@ export function localizeProduct(product: ProductRecord, locale: Locale): Product
 
   const isJapanese = locale === 'ja';
   return {
+    editorial: product.editorial,
     id: product.id,
     locale,
     name: isJapanese ? product.displayNameJa : product.displayNameEn!,
