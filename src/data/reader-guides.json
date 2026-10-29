@@ -12,6 +12,18 @@
     "objects": {
       "ja": "/guides/japanese-everyday-objects/",
       "en": "/en/guides/japanese-everyday-objects/"
+    },
+    "prepare": {
+      "ja": "/guides/prepare-with-enough/",
+      "en": "/en/guides/disaster-preparedness-japan/"
+    },
+    "foods": {
+      "ja": "/guides/thoughtful-foods-japan/",
+      "en": "/en/guides/thoughtful-foods-japan/"
+    },
+    "gifts": {
+      "ja": "/guides/meaningful-gifts-japan/",
+      "en": "/en/guides/meaningful-gifts-japan/"
     }
   },
   "content": {
@@ -506,6 +518,16 @@
                 "href": "https://oigen.jp/"
               }
             ]
+          },
+          {
+            "id": "new-selections",
+            "title": "買い足す前に、必要な役割を一つ選ぶ",
+            "paragraphs": [
+              "棕櫚の長柄箒、鋳鉄の小さなフライパン、日常の器を、仕様・重さ・手入れと一緒に登録しました。写真は利用許諾が未取得のため共通プレースホルダーです。",
+              "むすびたわしや天然木ちりとりなど、公式でSOLD OUTを確認した商品は公開候補から除外。工芸の一般的な紹介と、現在注文できる商品の紹介を分けています。"
+            ],
+            "bullets": [],
+            "links": []
           }
         ]
       },
@@ -621,6 +643,588 @@
                 "href": "https://oigen.jp/"
               }
             ]
+          },
+          {
+            "id": "new-selections",
+            "title": "Choose one useful role before adding anything",
+            "paragraphs": [
+              "The new broom, cast-iron pans and ceramics are compared by size, weight and care. Unlicensed maker photographs are not reproduced.",
+              "Items marked sold out, including the musubi scrubber and wooden dustpan, remain private candidates. Cultural context is separate from a claim that an item can currently be ordered."
+            ],
+            "bullets": [],
+            "links": []
+          }
+        ]
+      }
+    },
+    "prepare": {
+      "ja": {
+        "title": "備えすぎない防災。必要なものを、必要なだけ。",
+        "description": "家の水・食品・トイレ用品を数え、足りない分だけ備える防災ガイド。備蓄量、ローリングストック、小さな住居の収納と自治体・多言語情報を整理します。",
+        "lead": "まず買い物ではなく、家にある量を数えることから。住む場所、家族人数、調理の可否に合う備えを、公式情報と一緒に確認します。",
+        "sections": [
+          {
+            "id": "quantity",
+            "title": "一人分ではなく、暮らしの人数で計算する",
+            "paragraphs": [
+              "農林水産省は、人数分の食品を最低3日〜1週間分、水は飲料・調理用を合わせ一人一日約3Lを目安に示しています。たとえば大人一人3日なら約9L、7日なら約21Lが計算の出発点です。",
+              "これは一律の安全保証ではありません。地域の孤立リスク、気候、家族の食事・介護・乳幼児などの事情に合わせ、自治体や専門窓口の案内を確認します。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "農林水産省：災害時の食品備蓄",
+                "href": "https://www.maff.go.jp/j/syokuiku/plan/4_plan/togo/html/part8.html"
+              }
+            ]
+          },
+          {
+            "id": "inventory",
+            "title": "家にあるものを、使える状態まで数える",
+            "paragraphs": [
+              "水、普段の食品、電池、ライト、充電器、トイレ用品を場所ごとに点検。数量だけでなく、賞味期限、開封状態、必要な電池・水・器具も書きます。",
+              "「必要量 − 期限内で使える手持ち = 買い足す目安」。同じ用途の道具を増やす前に、まず動作を確かめます。"
+            ],
+            "bullets": [
+              "メモ欄：品名／家族人数／必要量／使える在庫／不足／保管場所／点検日",
+              "停電時に冷蔵・加熱できることを前提にしない。"
+            ],
+            "links": []
+          },
+          {
+            "id": "gaps",
+            "title": "水・食品・トイレ・明かりの不足から",
+            "paragraphs": [
+              "携帯トイレは回数で数えます。所沢市の案内では一人一日5回を備蓄の目安としています。15回分ならその計算で一人約3日分ですが、個人差があるため余裕と自治体の案内を確認してください。",
+              "アルファ化米は炊いた米を乾燥させ、水や湯で戻す食品です。水も必要です。ようかんだけで主食・栄養・飲料が揃うとは考えません。",
+              "照明は手持ちのライトと電池を確認。電源は出力・容量・保管条件、転倒防止は天井や家具への適合と施工条件を確認し、条件を検証できていない型番を勧めません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "所沢市：備蓄量とトイレの目安",
+                "href": "https://www.city.tokorozawa.saitama.jp/moshimo/bosai/taisaku/saigaisonae2/bousai20211028093335180.html"
+              }
+            ]
+          },
+          {
+            "id": "rotation",
+            "title": "普段食べるものを、古い順に使う",
+            "paragraphs": [
+              "ローリングストックは、普段の食品を少し余分に持ち、古いものから使い、使った分を補う方法です。食べ慣れない大箱を揃えるより、実際に食べ切れる量から始めます。",
+              "水や調理器具が使えない場合も考え、加熱不要の食品などを組み合わせます。アレルゲンと表示の保存方法を優先してください。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "農林水産省：ローリングストック",
+                "href": "https://www.maff.go.jp/j/zyukyu/foodstock/chapter02.html"
+              }
+            ]
+          },
+          {
+            "id": "space",
+            "title": "小さな住居では、通路を空けたまま分散する",
+            "paragraphs": [
+              "水を高い棚に積み上げたり、玄関や避難経路を塞いだりしないようにします。重い物は低い位置へ。湿気や高温を避けるなど現品の保管条件も守ります。",
+              "日常食品は台所、トイレ用品は取り出しやすい場所というように、使う場所と定位置を合わせます。見つけられない備蓄を増やさないことも備えです。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "expiry",
+            "title": "点検日を決め、必要な分だけ補充する",
+            "paragraphs": [
+              "賞味期限は製造からの期間と、届いた時に残る期間を分けて読みます。販売ページに残存期間の幅がある商品は、一番長い期間を保証しません。",
+              "季節の変わり目などに点検日を決め、期限が近い物を普段の食事へ。電池・充電用品は説明書に沿って点検し、破損や異常のある物は使用しません。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "municipality",
+            "title": "自分の自治体の情報を保存する",
+            "paragraphs": [
+              "市区町村の公式サイトで「防災」「ハザードマップ」「避難場所」「ごみ・災害時トイレ」を探します。浸水・土砂など想定する災害と、自宅からの経路を確認してください。",
+              "地図と緊急連絡先は通信できない時にも見られる形で保存。避難場所と避難所の役割、開設状況は自治体の最新発表を優先します。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "language",
+            "title": "日本語以外で避難情報を得るには",
+            "paragraphs": [
+              "Safety tipsは、英語などで地震・津波・気象の情報を受け取れるアプリです。日本在住の方にも役立つ機能としてJNTOが案内しています。通知・位置情報の設定を事前に確認してください。",
+              "自分の自治体の外国人向け防災ページも保存します。アプリだけに頼らず、自治体の発表や放送と照合し、身近な人と確認方法を共有しましょう。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "JNTO：Safety tips",
+                "href": "https://www.jnto.go.jp/safety-tips/eng/app.html"
+              },
+              {
+                "label": "観光庁：災害時の多言語情報",
+                "href": "https://www.mlit.go.jp/kankocho/en/shisaku/kokusai/traveltojapan.html"
+              }
+            ]
+          }
+        ]
+      },
+      "en": {
+        "title": "Disaster Preparedness in Japan: What You Actually Need",
+        "description": "Count water, food and toilet supplies you already own. A practical Japan preparedness guide covering quantities, rolling stock, small homes, expiry dates and multilingual local information.",
+        "lead": "Start with an inventory, not a shopping bundle. Your household size, location and ability to cook matter more than owning every item on a checklist.",
+        "sections": [
+          {
+            "id": "quantity",
+            "title": "Calculate for your household",
+            "paragraphs": [
+              "Japan’s agriculture ministry suggests at least three days to a week of food per person, with roughly three litres of water daily for drinking and cooking. For one adult, that is about nine litres for three days or 21 litres for seven.",
+              "Treat these as planning references, not a guarantee. Remote areas, weather and individual needs can change what is appropriate. Ask your municipality and relevant care providers about infant feeding, allergies or other specific requirements."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "MAFF: household food reserves (Japanese)",
+                "href": "https://www.maff.go.jp/j/syokuiku/plan/4_plan/togo/html/part8.html"
+              }
+            ]
+          },
+          {
+            "id": "inventory",
+            "title": "Count what is usable, not just what is there",
+            "paragraphs": [
+              "Check water, familiar food, lights, batteries, chargers and toilet supplies. Record expiry dates and the extra water, batteries or equipment each item needs. Test what you already own before replacing it.",
+              "Subtract usable stock from your target quantity. A bag labelled “emergency” is not useful if you cannot find it or use its contents."
+            ],
+            "bullets": [
+              "Inventory columns: item / people / target / usable stock / gap / location / review date",
+              "Plan for losing refrigeration or the ability to cook."
+            ],
+            "links": []
+          },
+          {
+            "id": "gaps",
+            "title": "Fill gaps in water, food, toilets and lighting",
+            "paragraphs": [
+              "Toilet supplies are counted in uses. Tokorozawa City uses five visits per person per day as a planning reference. A 15-use kit is roughly three days for one person on that basis; individual needs vary. Check your toilet’s dimensions and local waste rules.",
+              "Alpha rice is cooked rice that has been dried so it can be rehydrated. It still needs water. A sweet such as yokan, a firm bean jelly, can add variety but does not replace meals or drinking water.",
+              "Check your existing torch and batteries. For power equipment, verify output, storage and device compatibility. Furniture restraints must suit the furniture and ceiling; no unchecked model is recommended here."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Tokorozawa: reserve quantities (Japanese)",
+                "href": "https://www.city.tokorozawa.saitama.jp/moshimo/bosai/taisaku/saigaisonae2/bousai20211028093335180.html"
+              }
+            ]
+          },
+          {
+            "id": "rotation",
+            "title": "Use a rolling stock system",
+            "paragraphs": [
+              "Rolling stock means keeping a modest reserve of familiar food, eating the oldest items first and replacing what you use. Start with food you will actually finish.",
+              "Include options that need no heating, and check water requirements, allergens and storage labels. Do not assume the refrigerator or stove will work."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "MAFF: rolling stock (Japanese)",
+                "href": "https://www.maff.go.jp/j/zyukyu/foodstock/chapter02.html"
+              }
+            ]
+          },
+          {
+            "id": "space",
+            "title": "Keep exits clear in a small apartment",
+            "paragraphs": [
+              "Avoid blocking the entrance or escape routes with cartons. Store heavy water low down, not on high shelves, and follow each product’s heat and humidity limits.",
+              "Put everyday food near the kitchen and toilet supplies somewhere easy to reach. More boxes are not necessarily better preparation."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "expiry",
+            "title": "Separate shelf life from time remaining",
+            "paragraphs": [
+              "“Five years” may mean from manufacture, not from delivery. Read the seller’s stated remaining-life range; the longest date is not a promise for every package.",
+              "Choose a regular review date. Use approaching-expiry food in normal meals and replenish it. Check lights and chargers according to their manuals, and stop using damaged equipment."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "municipality",
+            "title": "Find information for your own address",
+            "paragraphs": [
+              "Search your city or ward’s official website for 防災 (disaster preparedness), ハザードマップ (hazard map) and 避難場所 (evacuation site). Check the risks that apply to your address and the routes from home.",
+              "A temporary evacuation site and a shelter are not always the same place. Save maps and contacts offline, and follow current municipal announcements about openings and routes."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "language",
+            "title": "Set up multilingual alerts before you need them",
+            "paragraphs": [
+              "JNTO’s Safety tips app offers earthquake, tsunami and weather alerts in English and other languages, with tools useful for residents as well as visitors. Check notification and location settings beforehand.",
+              "Bookmark your municipality’s information for foreign residents. Use alerts alongside local official announcements and broadcasts, and agree with household members how to check updates."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "JNTO: Safety tips",
+                "href": "https://www.jnto.go.jp/safety-tips/eng/app.html"
+              },
+              {
+                "label": "Japan Tourism Agency: disaster information",
+                "href": "https://www.mlit.go.jp/kankocho/en/shisaku/kokusai/traveltojapan.html"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "foods": {
+      "ja": {
+        "title": "少しで満たされる、日本の食卓",
+        "description": "日本の塩、お茶、常温食品を、原材料・製法・使い切れる量から選ぶ。保存方法、アレルゲンと購入条件を公式情報で確かめるガイド。",
+        "lead": "調味料を増やす前に、いつ使い切るかを考える。普段の一皿や一杯に役立つものを、少量から選びます。",
+        "sections": [
+          {
+            "id": "portion",
+            "title": "使い切る量を先に決める",
+            "paragraphs": [
+              "一袋の安さより、開封後に使う頻度と保管場所を確認します。少人数なら小さな袋が合うこともあります。まとめ買いの値引きだけで量を増やしません。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "salt",
+            "title": "塩は、製法と料理で選ぶ",
+            "paragraphs": [
+              "海の精あらしおは伊豆大島近海の海水を天日・平釜で製塩したもの。普段の料理に使う量から試す候補です。栄養・健康面で他の塩より優れるとは断定しません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "海の精：原料・工程・保存方法",
+                "href": "https://www.uminosei.com/shouhin/shio/ara/"
+              }
+            ]
+          },
+          {
+            "id": "tea",
+            "title": "茶器を増やさず、お茶を知る",
+            "paragraphs": [
+              "煎茶は蒸して仕上げる緑茶、ほうじ茶は焙煎の香りを楽しむ茶です。玉露・煎茶・ほうじ茶の少量アソートなら、好みが分からない人も茶種を比べられます。",
+              "急須があるなら茶葉も選択肢ですが、使う道具を増やしたくない場合は一杯用ティーバッグを。国内向け商品と海外向けストアは仕様や配送条件が同じとは限りません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "一保堂：12袋アソート",
+                "href": "https://www.ippodo-tea.co.jp/collections/teabag/products/teabag5065107"
+              }
+            ]
+          },
+          {
+            "id": "miso-dashi",
+            "title": "味噌・だしは、材料を読んでから",
+            "paragraphs": [
+              "味噌は発酵した大豆などを使う調味料、だしは昆布や魚などから取る出汁です。動物性原料・大豆・小麦を含む製品があり、「日本の食品」だから一律に菜食・グルテン不使用とは扱えません。",
+              "味噌は発酵方法や塩分、だしは原料と濃さを確認。普段の汁物や煮物に使う分から選び、未確認の保存条件を推測で補わないことが大切です。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "まるや：木桶と熟成の製法",
+                "href": "https://www.8miso.co.jp/make2.html"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "title": "原材料・保存方法・期限を一緒に読む",
+            "paragraphs": [
+              "アレルゲンの「不使用」と製造工程での混入リスクは別です。重いアレルギーがある方は現品表示と製造元へ確認してください。未確認欄を「含まれない」と読み替えません。",
+              "期限は未開封時と開封後で違います。日本茶は公式の保存案内に従い、密封し、光・におい・高温多湿を避けます。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "一保堂：お茶の保存方法",
+                "href": "https://support.ippodo-tea.co.jp/hc/ja/articles/360003061416-%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E4%BF%9D%E5%AD%98%E6%96%B9%E6%B3%95%E3%81%AF"
+              }
+            ]
+          },
+          {
+            "id": "stock",
+            "title": "普段の食事と、備えをつなぐ",
+            "paragraphs": [
+              "常温で食べられる食品も、まず味や食べやすさを確かめてから必要量を決めます。ようかんは甘い補助食品の候補で、主食や水の代わりではありません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "不足分だけ備える防災ガイド",
+                "href": "/guides/prepare-with-enough/"
+              }
+            ]
+          }
+        ]
+      },
+      "en": {
+        "title": "Thoughtful Foods from Japan",
+        "description": "Choose Japanese tea, salt and pantry food by ingredients, practical use, storage and quantities you can finish. Verified sources and clear limits on shipping and language support.",
+        "lead": "A useful pantry is one you use. Start with a small amount, a place to store it and a clear idea of when you will finish it.",
+        "sections": [
+          {
+            "id": "portion",
+            "title": "Choose the amount you will finish",
+            "paragraphs": [
+              "A larger pack is not better value if it stays open for months. Check how often you cook with it and where it will be stored. Small households may find a smaller bag more practical."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "salt",
+            "title": "Compare salt by production and cooking use",
+            "paragraphs": [
+              "Umi no Sei’s coarse salt uses seawater from around Izu Oshima, concentrated with sun and heated in flat pans. It is a candidate for everyday seasoning, not a health upgrade or a reason to collect several more salts."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Maker: salt ingredients and production (Japanese)",
+                "href": "https://www.uminosei.com/shouhin/shio/ara/"
+              }
+            ]
+          },
+          {
+            "id": "tea",
+            "title": "Try tea without buying more equipment",
+            "paragraphs": [
+              "Sencha is a steamed green tea; hojicha is roasted tea with a different aroma. A small assortment of gyokuro, sencha and hojicha lets a recipient compare styles without committing to a large bag.",
+              "Single-cup tea bags suit someone without a Japanese teapot. A drip-style bag is another format; check the instructions rather than assuming both formats brew the same way. Global stores may sell different versions and have separate terms."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Ippodo: 12-bag assortment (Japanese)",
+                "href": "https://www.ippodo-tea.co.jp/collections/teabag/products/teabag5065107"
+              }
+            ]
+          },
+          {
+            "id": "miso-dashi",
+            "title": "Understand miso and dashi before buying",
+            "paragraphs": [
+              "Miso is a fermented seasoning often made with soybeans. Dashi is stock, commonly from ingredients such as kelp or fish. Do not assume every Japanese seasoning is vegan or free from wheat, soy or seafood.",
+              "Compare the fermentation method and intended use of miso, and the ingredients and concentration of dashi. Start with an amount for your normal cooking; do not guess storage requirements."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Maruya: fermentation method (Japanese)",
+                "href": "https://www.8miso.co.jp/make2.html"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "title": "Read ingredients, storage and dates together",
+            "paragraphs": [
+              "An ingredient not being used is not a promise about every allergy or cross-contact risk. Check the current package and ask the maker if you have an allergy. Unverified information does not mean “absent.”",
+              "Shelf life normally refers to unopened storage under stated conditions. For tea, the maker advises protecting it from air, odours, light, heat and humidity and resealing the original bag after opening."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Ippodo: tea storage (Japanese)",
+                "href": "https://support.ippodo-tea.co.jp/hc/ja/articles/360003061416-%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E4%BF%9D%E5%AD%98%E6%96%B9%E6%B3%95%E3%81%AF"
+              }
+            ]
+          },
+          {
+            "id": "stock",
+            "title": "Connect everyday food with preparedness",
+            "paragraphs": [
+              "Try a shelf-stable food before committing to emergency quantities. A sweet bean bar can add variety but does not replace meals or drinking water. Build around familiar food you can rotate."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Prepare with Enough",
+                "href": "/en/guides/disaster-preparedness-japan/"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "gifts": {
+      "ja": {
+        "title": "心を込めた日本の贈り物",
+        "description": "新居祝い、日頃のお礼、海外の友人への日本の贈り物。茶、器、タオルを相手の用途から選び、包装・配送・食品の条件を確認するガイド。",
+        "lead": "喜ばれる理由を、相手の暮らしから考える。物の数や値段ではなく、受け取ったあとに使えるかを大切にします。",
+        "sections": [
+          {
+            "id": "recipient",
+            "title": "相手の暮らしから、一つ選ぶ",
+            "paragraphs": [
+              "新居祝いなら収納場所と手持ちの食器、結婚祝いなら人数や好み、日頃のお礼なら負担にならない量を確認します。先に聞くことは、気遣いの一部です。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "new-home",
+            "title": "新居祝いには、寸法と手入れも贈る",
+            "paragraphs": [
+              "小皿やカップは、食器棚の寸法や食洗機の使い方と合わせて選びます。今回の器は一つずつの候補で、セット購入の推奨ではありません。",
+              "タオルなら洗濯頻度と干す場所から枚数を。既存のTRUE TOWEL・ヒオリエの詳細で寸法を比べられます。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "thanks",
+            "title": "お茶は、茶器の有無と飲む量から",
+            "paragraphs": [
+              "少量アソートは、急須を持たない相手にも使いやすい候補です。好み・カフェインを避けたい事情・飲み切る期間を先に聞き、健康効果を贈る理由にはしません。",
+              "茶種や淹れ方が分かる公式説明へのリンクを添えると、初めて飲む相手にも意図が伝わります。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "care",
+            "title": "職人の道具は、手入れを楽しむ人へ",
+            "paragraphs": [
+              "鋳鉄の調理道具は重さと手入れ、棕櫚の箒は長い柄の置き場所を確認します。相手が望まない作業を増やす贈り物にしないことも大切です。"
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "wrapping",
+            "title": "包装・熨斗・到着日は別々に確認",
+            "paragraphs": [
+              "KINTOは有料330円の布ギフトバッグを案内しています。熨斗、複数品のまとめ方、配送日などは個別に確認し、注文画面で最終条件を確かめます。",
+              "ギフト対応があるブランドでも、すべての商品・配送先に同じサービスが付くとは断定しません。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "KINTO：ギフト条件",
+                "href": "https://kinto.co.jp/pages/about_gift"
+              }
+            ]
+          },
+          {
+            "id": "overseas",
+            "title": "海外へ贈るときは、輸入条件を先に",
+            "paragraphs": [
+              "食品は送り先の税関・検疫規則と配送業者の条件を確認します。国や原材料で制限が異なり、「日本で買える」は「海外に送れる」と同じではありません。",
+              "KINTO日本ストアと髙田耕造商店は海外・転送配送不可の案内。一保堂は別のGlobal店を案内していますが、この掲載商品そのものの海外取扱いは保証しません。海外用の買い物かご・税・送料・返品を別途確認してください。"
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "一保堂：Global Online Shop",
+                "href": "https://global.ippodo-tea.co.jp"
+              },
+              {
+                "label": "KINTO：利用条件",
+                "href": "https://kinto.co.jp/pages/user-guide"
+              }
+            ]
+          }
+        ]
+      },
+      "en": {
+        "title": "Meaningful Gifts from Japan",
+        "description": "Practical Japanese gifts for a new home, a thank-you or a friend abroad. Choose tea, ceramics and towels around the recipient’s needs, with careful checks on wrapping and delivery.",
+        "lead": "Start with the person receiving it. A thoughtful gift fits their home, habits and ability to care for it—not just your idea of Japan.",
+        "sections": [
+          {
+            "id": "recipient",
+            "title": "Choose for a person and a specific occasion",
+            "paragraphs": [
+              "For a housewarming, ask about cupboard space and existing dishes. For a wedding, consider household size and preferences. For a thank-you, keep quantity modest. Asking first can be more thoughtful than guessing."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "new-home",
+            "title": "For a new home, include practical details",
+            "paragraphs": [
+              "Check plate and cup dimensions against storage space and dishwasher habits. These are individual options, not a suggested complete set.",
+              "For towels, compare washing frequency and drying space before deciding quantities. Existing TRUE TOWEL and Hiorie details provide dimensions and buying notes."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "thanks",
+            "title": "For a thank-you, tea can stay small",
+            "paragraphs": [
+              "A tea assortment can suit someone without a teapot. Ask about taste, caffeine preferences and how quickly it will be used. Do not make health claims on the recipient’s behalf.",
+              "Sencha is steamed green tea, hojicha is roasted tea and gyokuro is a shaded tea style. Share the maker’s brewing instructions so the gift is usable from the first cup."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "care",
+            "title": "Give craft tools to someone who wants the upkeep",
+            "paragraphs": [
+              "Cast-iron cookware brings weight and care requirements. A shuro palm-fibre broom needs a storage spot for its long handle. Check these details rather than giving someone an unwanted maintenance task."
+            ],
+            "bullets": [],
+            "links": []
+          },
+          {
+            "id": "wrapping",
+            "title": "Separate wrapping, noshi and arrival dates",
+            "paragraphs": [
+              "Noshi is a Japanese ceremonial gift presentation; it is not the same as ordinary gift wrapping. KINTO lists a ¥330 fabric gift bag, but noshi availability is not verified here.",
+              "Check the exact product, combination of items, delivery address and date before paying. A brand’s gift service does not imply identical terms for every order."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "KINTO: gift service (Japanese)",
+                "href": "https://kinto.co.jp/pages/about_gift"
+              }
+            ]
+          },
+          {
+            "id": "overseas",
+            "title": "For friends abroad, check import rules first",
+            "paragraphs": [
+              "Food restrictions depend on destination and ingredients. Read the destination customs/quarantine guidance and carrier rules before buying. Availability in Japan does not establish international shipping eligibility.",
+              "KINTO’s Japan store and Takada do not ship internationally or through forwarders. Ippodo links a separate global store, but availability of these exact Japanese listings there is unverified. Confirm duties, shipping costs, checkout language and returns separately."
+            ],
+            "bullets": [],
+            "links": [
+              {
+                "label": "Ippodo: separate Global Online Shop",
+                "href": "https://global.ippodo-tea.co.jp"
+              },
+              {
+                "label": "KINTO: buying conditions (Japanese)",
+                "href": "https://kinto.co.jp/pages/user-guide"
+              }
+            ]
           }
         ]
       }
@@ -637,6 +1241,20 @@
     "objects": [
       "true-towel-classic-sugoi-face-towel",
       "hiorie-hotel-big-face-towel"
+    ],
+    "prepare": [],
+    "foods": [],
+    "gifts": [
+      "true-towel-classic-sugoi-face-towel",
+      "hiorie-hotel-big-face-towel"
     ]
+  },
+  "checkedDates": {
+    "moving": "2026-10-25",
+    "starting": "2026-10-25",
+    "objects": "2026-10-29",
+    "prepare": "2026-10-29",
+    "foods": "2026-10-29",
+    "gifts": "2026-10-29"
   }
 }

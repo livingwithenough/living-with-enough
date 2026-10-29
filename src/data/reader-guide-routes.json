@@ -10,5 +10,17 @@
   "objects": {
     "ja": "/guides/japanese-everyday-objects/",
     "en": "/en/guides/japanese-everyday-objects/"
+  },
+  "prepare": {
+    "ja": "/guides/prepare-with-enough/",
+    "en": "/en/guides/disaster-preparedness-japan/"
+  },
+  "foods": {
+    "ja": "/guides/thoughtful-foods-japan/",
+    "en": "/en/guides/thoughtful-foods-japan/"
+  },
+  "gifts": {
+    "ja": "/guides/meaningful-gifts-japan/",
+    "en": "/en/guides/meaningful-gifts-japan/"
   }
 }
