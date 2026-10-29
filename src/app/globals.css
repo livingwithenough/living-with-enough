@@ -472,3 +472,10 @@ html[lang="en"] .button { white-space: normal; text-align: center; }
 .detail-purchase { margin:24px 0 32px; padding:20px; background:var(--surface-alt); border:1px solid var(--line); }
 .detail-purchase>p { font-size:13px; margin:0 0 8px; }
 @media(max-width:760px) { .home-hero { grid-template-columns:1fr; } .home-hero__main { padding:36px 6%; } .home-hero__photo { max-height:none; } .pathway-grid,.reader-goals { grid-template-columns:1fr; } .home-pathways { padding-top:44px; } .reader-guide h1 { font-size:30px; } .reader-guide h2 { font-size:25px; } .reader-service,.reader-product { padding:24px 0; } .detail-purchase { padding:16px; } .detail-purchase a { max-width:100%; overflow-wrap:anywhere; } }
+
+/* Editorial records use no unlicensed product photography. */
+.editorial-placeholder { background:var(--surface-alt); min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:24px; color:var(--muted-readable); text-align:center; font-size:13px; }
+.detail .editorial-placeholder { min-height:360px; height:auto; }
+.editorial-placeholder span:last-child {font-family:Georgia,serif;letter-spacing:.12em;}
+.detail-copy dd,.reader-sources a {overflow-wrap:anywhere;}
+@media(max-width:760px){.detail .editorial-placeholder{min-height:220px;}.filters fieldset{min-width:0;}.filter-options{flex-wrap:wrap;}}
