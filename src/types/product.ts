@@ -1,14 +1,15 @@
+import type { EditorialProduct } from './editorial-product';
 import type { Locale } from '@/i18n/routing';
 
 // Future categories can be added here without changing the catalog filter.
 // The UI only shows categories that are present in approved product data.
-export const categories = ['Furniture', 'Lighting', 'Tableware', 'Textiles', 'Plants', 'Everyday', 'SmallFurniture', 'Storage', 'LongLasting'] as const;
+export const categories = ['Furniture', 'Lighting', 'Tableware', 'Textiles', 'Plants', 'Everyday', 'SmallFurniture', 'Storage', 'LongLasting', 'Preparedness', 'Food'] as const;
 export type Category = typeof categories[number];
 // Preserve stored keys and URL filters; translate only the visible labels.
 export const categoryLabels: Record<Category, string> = {
   Furniture: '家具', Lighting: '照明', Tableware: '食器', Textiles: 'ファブリック',
   Plants: '植物', Everyday: '暮らしの道具', SmallFurniture: '小さな家具',
-  Storage: '収納', LongLasting: '長く使いたいもの',
+  Preparedness:'暮らしの備え', Food:'日本の食卓', Storage: '収納', LongLasting: '長く使いたいもの',
 };
 export type ProductStatus = 'candidate' | 'approved';
 export type AffiliateProvider = 'a8' | 'rakuten' | 'amazon' | 'other' | null;
@@ -24,6 +25,7 @@ export type PurchaseNotes = {
 
 // Storage model. Official English names stay null when not verified; editorial display names are separate.
 export type ProductRecord = {
+  editorial?: EditorialProduct;
   id: string;
   productNameJa: string;
   productNameEn: string | null;
@@ -65,6 +67,7 @@ export type ProductRecord = {
 
 // View model used by the existing pages. This keeps the Japanese UI unchanged.
 export type Product = {
+  editorial?: EditorialProduct;
   id: string;
   locale: Locale;
   name: string;
