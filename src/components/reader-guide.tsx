@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { guideKeys,guideRoutes,readerGuides,guideProducts,editorialCheckedAt,type GuideKey } from '@/data/reader-guides';
+import { guideKeys,guideRoutes,readerGuides,guideProducts,guideCheckedAt,type GuideKey } from '@/data/reader-guides';
 import type { Locale } from '@/i18n/routing';
 import { localizedPath } from '@/i18n/routing';
 import { getApprovedProduct } from '@/lib/products';
@@ -7,7 +7,7 @@ import { readerSchema } from '@/lib/reader-seo';
 import { furnitureGuide } from '@/data/furniture-guide';
 import { ServiceOptions } from './service-options';
 export function ReaderGuide({guideKey,locale}:{guideKey:GuideKey;locale:Locale}) {
- const en=locale==='en',c=readerGuides[guideKey][locale],path=(p:string)=>localizedPath(locale,p);
+ const editorialCheckedAt=guideCheckedAt(guideKey);const en=locale==='en',c=readerGuides[guideKey][locale],path=(p:string)=>localizedPath(locale,p);
  const ids=guideKey==='moving'?[]:guideProducts[guideKey];
  return <article className="reader-guide page-shell"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(readerSchema(guideKey,locale)).replace(/</g,'\u003c')}}/>
  <nav className="breadcrumbs" aria-label={en?'Breadcrumb':'パンくず'}><Link href={path('/')}>{en?'Home':'TOP'}</Link><span>/</span><Link href={path('/guides/')}>{en?'Guides':'ガイド'}</Link><span>/</span><span aria-current="page">{c.title}</span></nav>
@@ -19,7 +19,7 @@ export function ReaderGuide({guideKey,locale}:{guideKey:GuideKey;locale:Locale})
  {guideKey==='moving'&&s.id==='store'&&<ServiceOptions locale={locale} kind="store"/>}
  {guideKey==='moving'&&s.id==='help'&&<ServiceOptions locale={locale} kind="outsource"/>}
  </section>)}
- {ids.length>0&&<section id="selected-products"><h2>{en?'Compare only what you still need':'必要な役割だけ、候補を比べる'}</h2><p>{en?'These are existing approved products, not a bundle to buy. Prices are dated records, not live quotes. Keep what already works.':'既存の承認済み商品から選んだ候補です。セット購入の推奨ではなく、価格も記録時点の情報です。使える手持ちを先に生かしてください。'}</p>{ids.map(id=>{const p=getApprovedProduct(id,locale);if(!p||p.isSample)return null;return <article key={id} className="reader-product" data-measure-product={p.id} data-measure-category={p.category} data-measure-provider={p.affiliateProvider||'none'}><h3>{p.name}</h3><p>{p.livingBenefit}</p><p className="small">{p.priceLabel||'¥'+p.price.toLocaleString('ja-JP')} · {en?'Checked: ':'価格確認日：'}{p.priceCheckedAt|| (en?'Not recorded':'未記録')}</p><p>{en?'Dimensions: ':'寸法：'}{p.dimensions}</p><ul>{p.caveats.map(n=><li key={n}>{n}</li>)}</ul><Link className="text-link" href={path('/products/'+id+'/')}>{en?'Read dimensions, delivery and purchase notes →':'寸法・配送・購入前の注意を確認する →'}</Link></article>;})}</section>}
+ {ids.length>0&&<section id="selected-products"><h2>{en?'Compare only what you still need':'必要な役割だけ、候補を比べる'}</h2><p>{en?'These are sourced editorial options, not a shopping bundle. Some existing products use affiliate links; new official links earn no commission. Prices are dated records. Keep what already works.':'仕様を確認した編集上の候補です。既存の広告商品と、報酬のない新しい公式リンクを区別しています。セット購入の推奨ではなく、価格も記録時点の情報です。'}</p>{ids.map(id=>{const p=getApprovedProduct(id,locale);if(!p||p.isSample)return null;return <article key={id} className="reader-product" data-measure-product={p.id} data-measure-category={p.category} data-measure-provider={p.affiliateProvider||'none'}><h3>{p.name}</h3><p>{p.livingBenefit}</p><p className="small">{p.priceLabel||'¥'+p.price.toLocaleString('ja-JP')} · {en?'Checked: ':'価格確認日：'}{p.priceCheckedAt|| (en?'Not recorded':'未記録')}</p><p>{en?'Dimensions: ':'寸法：'}{p.dimensions}</p><ul>{p.caveats.map(n=><li key={n}>{n}</li>)}</ul><Link className="text-link" href={path('/products/'+id+'/')}>{en?'Read dimensions, delivery and purchase notes →':'寸法・配送・購入前の注意を確認する →'}</Link></article>;})}</section>}
  {guideKey==='starting'&&<section><h2>{en?'For the next furniture decision':'次に家具を選ぶときに'}</h2><p>{en?'For retailer comparisons and detailed delivery/return checks, use our furniture buying guide rather than starting another shopping list.':'販売店比較と配送・返品の詳しい確認は、英語の家具購入ガイドへ。買い物リストを増やす前に条件を確かめます。'}</p><Link className="text-link" href={furnitureGuide.path}>Where to Buy Quality Furniture in Japan →</Link></section>}
  <aside className="reader-related"><h2>{en?'A useful next step':'次の一歩'}</h2><ul>{guideKeys.filter(k=>k!==guideKey).map(k=><li key={k}><Link href={guideRoutes[k][locale]}>{readerGuides[k][locale].title}</Link></li>)}</ul><p><Link className="button" data-measure-catalog="guide_catalog" href={path('/products/')}>{en?'Browse all products':'すべての商品を見る'}</Link></p><p><Link href={path('/audit/')}>{en?'Not sure? The optional five-question review can help.':'迷っているときは、任意の5問診断で見直す。'}</Link></p></aside></div></article>;
 }

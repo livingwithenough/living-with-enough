@@ -41,10 +41,12 @@ export function groupCatalogProducts(products: Product[]) {
       return [product];
     }),
   })).filter(section => section.items.length > 0);
+  const features=[{id:'objects',title:'長く使いたい日本の道具',description:'使う役割と手入れから選ぶ道具。'},{id:'prepare',title:'暮らしの備え',description:'家の在庫を数えて、不足分だけ備える。'},{id:'foods',title:'少しで満たされる、日本の食卓',description:'使い切れる量と保存条件から選ぶ。'}];
+  const featureGroups=features.map(f=>({...f,items:products.filter(p=>{if(assigned.has(p.id)||!p.editorial?.features.includes(f.id as 'objects'|'prepare'|'foods'))return false;assigned.add(p.id);return true;})})).filter(g=>g.items.length);
   // New records without an editorial assignment must remain discoverable.
   const other = products.filter(product => !assigned.has(product.id));
   return [
-    ...groups,
+    ...groups,...featureGroups,
     ...(other.length ? [{ id: 'other-products', title: 'そのほかの暮らしの道具', description: '使う場所と役割から、必要なものを選びます。', items: other }] : []),
   ];
 }

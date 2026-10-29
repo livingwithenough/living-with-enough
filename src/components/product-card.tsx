@@ -8,6 +8,7 @@ function measurement(product: Product) {
     'data-measure-provider': product.affiliateProvider || 'none' };
 }
 export function ShopLink({ product }: { product: Product }) {
+  if(product.editorial) return <a className="shop-link" href={product.officialUrl} target="_blank" rel="noopener noreferrer">{product.locale==='en'?'Official website ↗':'公式サイトを見る ↗'}</a>;
   const url = purchaseUrl(product);
   if (url && product.a8TextHtml) {
     return <span {...measurement(product)} data-measure-link="a8_text" className="issued-shop-link" dangerouslySetInnerHTML={{ __html: product.a8TextHtml }} />;
@@ -15,6 +16,7 @@ export function ShopLink({ product }: { product: Product }) {
   return url ? <a {...measurement(product)} data-measure-link="shop_link" className="shop-link" href={url} target="_blank" rel="sponsored noopener noreferrer">{product.locale==='en' ? (product.affiliateProvider==='rakuten'?'View on Rakuten Japan':product.shop==='FLYMEe'?'View on FLYMEe':product.brand==='MASTERWAL'?'View on MASTERWAL':'View at retailer'):'販売サイトで見る'} <span aria-hidden="true">↗</span></a> : null;
 }
 export function ProductImage({ product, detail = false }: { product: Product; detail?: boolean }) {
+  if(product.editorial) return <div className={detail?'detail-image editorial-placeholder':'product-image editorial-placeholder'}><span>{product.locale==='en'?'Product photograph not licensed':'商品写真の使用許諾未取得'}</span><span>Living with Enough</span></div>;
   if (product.a8BannerHtml) {
     return <div {...measurement(product)} data-measure-link="a8_banner" className={`${detail ? 'detail-image' : 'product-image'} a8-product-image`} dangerouslySetInnerHTML={{ __html: product.a8BannerHtml }} />;
   }

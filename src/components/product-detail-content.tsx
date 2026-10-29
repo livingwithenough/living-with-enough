@@ -1,3 +1,4 @@
+import { EditorialProductDetail } from './editorial-product-detail';
 import Link from 'next/link';
 import type { Product } from '@/types/product';
 import { categoryLabels } from '@/types/product';
@@ -7,6 +8,7 @@ import { yen } from '@/lib/catalog';
 import { ProductImage,ShopLink } from './product-card';
 import { AffiliateNotice } from './affiliate-notice';
 export function ProductDetailContent({product:p}:{product:Product}) {
+ if(p.editorial)return <EditorialProductDetail product={p}/>;
  const en=p.locale==='en',n=p.purchaseNotes,path=(s:string)=>localizedPath(p.locale,s);
  const care=[...n.thingsToKnowBeforeBuying,...p.caveats].filter(t=>/手入れ|洗濯|オイル|研磨|care|wash|oil|clean|finish/i.test(t));
  const labels=en?categoryLabelsEn:categoryLabels;
