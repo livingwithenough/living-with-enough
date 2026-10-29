@@ -151,3 +151,12 @@ test('capture observes Next.js link activation before the router prevents defaul
  for(const fn of cleanup)fn?.();
  assert.equal(listeners.length,0,'cleanup must remove listeners with matching capture options');
 });
+
+test('ordinary manufacturer links do not become affiliate clicks in an editorial product wrapper',()=>{
+ const h=harness();h.configure('/en/products/');
+ const product={dataset:{measureProduct:'kinto-21889',measureCategory:'Tableware',measureProvider:'none'}};
+ const anchor={href:'https://kinto.co.jp/collections/ceramic-lab/products/21889',closest:(selector:string)=>selector==='[data-measure-product]'?product:null};
+ h.api.trackProductLink(anchor);assert.equal(h.events.length,0);assert.equal(h.scripts.length,0);
+ anchor.href='https://living-with-enough.pages.dev/en/products/kinto-21889/';
+ h.api.trackProductLink(anchor);assert.equal(h.events.length,1);assert.equal(h.events[0].detail.name,'product_click');
+});

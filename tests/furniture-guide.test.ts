@@ -63,7 +63,7 @@ test('guide metadata and sitemap add one English-only canonical while preserving
  assert.equal(metadata.alternates.canonical,'https://living-with-enough.pages.dev'+furnitureGuide.path);
  assert.equal(Object.keys(metadata.alternates.languages).length,0);assert.equal(metadata.robots.index,true);
  const sitemap=load('src/app/sitemap.ts').default();
- assert.equal(sitemap.length,67);assert.equal(new Set(sitemap.map((p:any)=>p.url)).size,67);
+ assert.equal(sitemap.length,61+2*guideKeys.length);assert.equal(new Set(sitemap.map((p:any)=>p.url)).size,sitemap.length);
  for(const path of ['/','/audit/','/products/','/about/','/affiliate-disclosure/',...products.map(p=>`/products/${p.id}/`)]){
   for(const prefix of ['','/en']){const entry=sitemap.find((p:any)=>p.url==='https://living-with-enough.pages.dev'+prefix+path);assert.ok(entry);assert.equal(Object.keys(entry.alternates.languages).length,3);}
  }

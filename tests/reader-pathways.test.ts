@@ -8,6 +8,7 @@ import {runInNewContext} from 'node:vm';
 import ts from 'typescript';
 import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
+import editorialData from '../src/data/editorial-products.json';
 import {guideKeys,guideRoutes,readerGuides} from '../src/data/reader-guides';
 import {guideSwitchDestination} from '../src/lib/guide-routing';
 const nodeRequire=createRequire(resolve('package.json')),cache=new Map<string,any>();
@@ -35,7 +36,7 @@ test('guide service rendering preserves issued links/pixels and excludes unpubli
 });
 test('reader product links use existing approved records and product detail has exactly one issued text creative',()=>{
  const {ReaderGuide}=load('src/components/reader-guide.tsx');const {ProductDetailContent}=load('src/components/product-detail-content.tsx');const {getApprovedProducts}=load('src/lib/products.ts');
- for(const locale of ['ja','en']){const start=renderToStaticMarkup(createElement(ReaderGuide,{guideKey:'starting',locale}));assert.ok(start.includes('where-to-buy-quality-furniture-in-japan'));assert.ok(!start.includes('0.gif'));assert.equal(count(start,'class="reader-product"'),5);const objects=renderToStaticMarkup(createElement(ReaderGuide,{guideKey:'objects',locale}));assert.ok(objects.includes('takada1948'));assert.ok(objects.includes('oigen.jp'));assert.ok(!objects.includes('affiliate.rakuten'));const products=getApprovedProducts(locale);assert.equal(products.length,24);for(const p of products){const html=renderToStaticMarkup(createElement(ProductDetailContent,{product:p}));if(p.a8TextHtml)assert.equal(count(html,p.a8TextHtml),1,p.id);if(p.a8BannerHtml)assert.equal(count(html,p.a8BannerHtml),1,p.id);assert.ok(html.indexOf('detail-purchase')<html.indexOf(locale==='en'?'Role in your home':'暮らしでの役割'));}}
+ for(const locale of ['ja','en']){const start=renderToStaticMarkup(createElement(ReaderGuide,{guideKey:'starting',locale}));assert.ok(start.includes('where-to-buy-quality-furniture-in-japan'));assert.ok(!start.includes('0.gif'));assert.equal(count(start,'class="reader-product"'),5);const objects=renderToStaticMarkup(createElement(ReaderGuide,{guideKey:'objects',locale}));assert.ok(objects.includes('takada1948'));assert.ok(objects.includes('oigen.jp'));assert.ok(!objects.includes('affiliate.rakuten'));const products=getApprovedProducts(locale);assert.equal(products.length,24+editorialData.filter(p=>p.publication==='published').length);for(const p of products){const html=renderToStaticMarkup(createElement(ProductDetailContent,{product:p}));if(p.a8TextHtml)assert.equal(count(html,p.a8TextHtml),1,p.id);if(p.a8BannerHtml)assert.equal(count(html,p.a8BannerHtml),1,p.id);assert.ok(html.indexOf('detail-purchase')<html.indexOf(locale==='en'?'Role in your home':'暮らしでの役割'));}}
 });
 test('home retains four featured records, direct goal links, copy-first mobile and catalog CTA',()=>{
  for(const [file,locale] of [['src/app/(ja)/page.tsx','ja'],['src/app/(en)/en/page.tsx','en']]){const home=readFileSync(file,'utf8');assert.match(home,/slice\(0, ?4\)/);assert.ok(home.includes('<HomePathways locale="'+locale+'"'));assert.ok(home.includes('button home-products__all'));assert.ok(home.includes('data-measure-catalog="home_all_products"'));}
@@ -43,3 +44,16 @@ test('home retains four featured records, direct goal links, copy-first mobile a
 });
 
 test("preserve all 24 product records, issued advertising and audit rules against the integration baseline",()=>{const baseline={"src/data/products.ts":"aa505c55702b67765fec4537c2d70e6c13b59ebd970de7b1966855a7bd5495a4","src/data/products-en.ts":"31c5fc4a44d1649eea0ce740b5ba90405b40ab5c6b29c00be3e7921e2301f19e","src/data/audit-services.ts":"9bac6f36cf35b004c4f5f285adf04110dcc9ea16656b46a774d5e4471983a3e8","src/lib/audit.ts":"dc43bc3090258ec4b2faa535ea167b0e865bbaeecf71596d0e175c61101ad102","src/i18n/audit.ts":"3e679a2df8d8eac995e4b322d6bdf7a101453978908242002dc37eb5dbb39360"};for(const [file,hash] of Object.entries(baseline)){assert.equal(createHash("sha256").update(readFileSync(file,"utf8").replace(/\r\n/g,"\n")).digest("hex"),hash,file);}});
+
+test('editorial detail pages render ordinary links, facts, sources and reciprocal features without ad HTML',()=>{
+ const {getApprovedProducts}=load('src/lib/products.ts');const {ProductDetailContent}=load('src/components/product-detail-content.tsx');
+ for(const locale of ['ja','en'])for(const p of getApprovedProducts(locale).filter((p:any)=>p.editorial)){
+ const html=renderToStaticMarkup(createElement(ProductDetailContent,{product:p}));
+ assert.ok(html.includes(p.officialUrl.replace(/&/g,'&amp;')));
+ assert.ok(!html.includes('rel="sponsored'));assert.ok(!html.includes('data-measure-link='));
+ assert.ok(!html.includes('px.a8.net'));assert.ok(!html.includes('affiliate.rakuten'));
+ assert.ok(html.includes(locale==='en'?'no affiliate commission':'成果報酬なし'));
+ assert.ok(html.includes(locale==='en'?'What is not verified':'未確認事項'));
+ assert.ok(html.indexOf('detail-purchase')<html.indexOf(locale==='en'?'Role in your home':'暮らしでの役割'));
+ }
+});
